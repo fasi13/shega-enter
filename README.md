@@ -20,13 +20,7 @@ Postman Or somthing. The schema would be
 
 Post: `http://localhost:3000/api/admin-add`
 
-`{
-    "name": "",
-    "email": "",
-    "password": "",
-    "password2":""
-    
-}`
+`{"name": "","email": "","password": "","password2":""}`
 
 To start server and client simultaneously
 
