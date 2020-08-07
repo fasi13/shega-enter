@@ -1,18 +1,20 @@
+
 import React, { Component, Fragment } from "react";
 import Navbar from "../partials/Navbar";
 import Sidebar from "../partials/Sidebar";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faList} from "@fortawesome/free-solid-svg-icons/faList";
 import ReactDatatable from '@ashvin27/react-datatable';
-import PropTypes from "prop-types";
+ import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import axios from "axios";
+import api from '../../utils/api';
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
-import UserAddModal from "../partials/UserAddModal";
-import UserUpdateModal from "../partials/UserUpdateModal";
+import SelectedJokeAddModal from "../partials/SelectedJokeAddModal";
+// import AdminUpdateModal from "../partials/AdminUpdateModal";
 import { toast, ToastContainer} from "react-toastify";
+// import { SELECTED_JOKE_ADD } from "../../actions/types";
 
-class Users extends Component {
+class Jokes extends Component {
 
     constructor(props) {
         super(props);
@@ -26,23 +28,16 @@ class Users extends Component {
                 sortable: true,
             },
             {
-                key: "name",
-                text: "Name",
+                key: "title",
+                text: "Title",
                 className: "name",
                 align: "left",
                 sortable: true,
             },
             {
-                key: "email",
-                text: "Email",
+                key: "JokesBody",
+                text: "Description ",
                 className: "email",
-                align: "left",
-                sortable: true
-            },
-            {
-                key: "date",
-                text: "Date",
-                className: "date",
                 align: "left",
                 sortable: true
             },
@@ -58,7 +53,7 @@ class Users extends Component {
                         <Fragment>
                             <button
                                 data-toggle="modal"
-                                data-target="#update-user-modal"
+                                data-target="#update-admin-modal"
                                 className="btn btn-primary btn-sm"
                                 onClick={() => this.editRecord(record)}
                                 style={{marginRight: '5px'}}>
@@ -78,8 +73,8 @@ class Users extends Component {
         this.config = {
             page_size: 10,
             length_menu: [ 10, 20, 50 ],
-            filename: "Users",
-            no_data_text: 'No user found!',
+            filename: "Jokes",
+            no_data_text: 'No Jokes found!',
             button: {
                 excel: true,
                 print: true,
@@ -109,10 +104,8 @@ class Users extends Component {
         this.state = {
             currentRecord: {
                 id: '',
-                name: '',
-                email: '',
-                password: '',
-                password2: '',
+                title: '',
+                JokesBody: ''
             }
         };
 
@@ -124,12 +117,12 @@ class Users extends Component {
     };
 
     componentWillReceiveProps(nextProps) {
-        this.getData()
+        this.getData();
+        
     }
-
     getData() {
-        axios
-            .post("/api/user-data")
+        api
+            .get("/jokes/selected-jokes-data")
             .then(res => {
                 this.setState({ records: res.data})
             })
@@ -141,10 +134,12 @@ class Users extends Component {
     }
 
     deleteRecord(record) {
-        axios
-            .post("/api/user-delete", {_id: record._id})
+        
+        api
+            .delete(`/jokes/delete-joke/${record._id}`)
             .then(res => {
                 if (res.status === 200) {
+                    
                    toast(res.data.message, {
                        position: toast.POSITION.TOP_CENTER,
                    })
@@ -164,13 +159,13 @@ class Users extends Component {
                 <Navbar/>
                 <div className="d-flex" id="wrapper">
                     <Sidebar/>
-                    <UserAddModal/>
-                    <UserUpdateModal record={this.state.currentRecord}/>
+                    <SelectedJokeAddModal/>
+                    {/* <AdminUpdateModal record={this.state.currentRecord}/> */}
                     <div id="page-content-wrapper">
                         <div className="container-fluid">
                             <button className="btn btn-link mt-3" id="menu-toggle"><FontAwesomeIcon icon={faList}/></button>
-                            <button className="btn btn-outline-primary float-right mt-3 mr-2" data-toggle="modal" data-target="#add-user-modal"><FontAwesomeIcon icon={faPlus}/> Add User</button>
-                            <h1 className="mt-2 text-primary">Users List</h1>
+                            <button className="btn btn-outline-primary float-right mt-3 mr-2" data-toggle="modal" data-target="#add-joke-modal"><FontAwesomeIcon icon={faPlus}/> Add Selected Jokes</button>
+                            <h1 className="mt-2 text-primary">Joke List</h1>
                             <ReactDatatable
                                 config={this.config}
                                 records={this.state.records}
@@ -187,7 +182,7 @@ class Users extends Component {
 
 }
 
-Users.propTypes = {
+Jokes.propTypes = {
     auth: PropTypes.object.isRequired,
 };
 
@@ -198,4 +193,4 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps
-)(Users);
+)(Jokes);

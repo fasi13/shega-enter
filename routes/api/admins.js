@@ -5,80 +5,91 @@ const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
-const validateUpdateUserInput = require('../../validation/updateUser');
-const User = require('../../models/User');
+const validateUpdateAdminInput = require('../../validation/updateAdmin');
+const Admin = require('../../models/Admin');
+const Joke = require('../../models/Jokes');
+const { useReducer } = require('react');
 
-router.post('/user-add', (req, res) => {
+router.post('/admin-add', async (req, res) => {
+
+    // add joke schema for the first time 
+    const doesJokeExist = await Joke.exists({});
+    if(!doesJokeExist){
+        let joke = new Joke({JokesID:1});
+        joke.save();
+    }
+
     const { errors, isValid } = validateRegisterInput(req.body);
     if (!isValid) {
         return res.status(400).json(errors);
     }
-    User.findOne({ email: req.body.email }).then(user => {
-        if (user) {
+    Admin.findOne({ email: req.body.email }).then(admin => {
+        if (admin) {
             return res.status(400).json({ email: 'Email already exists' });
         } else {
-            const newUser = new User({
+            const newAdmin = new Admin({
                 name: req.body.name,
                 email: req.body.email,
                 password: req.body.password
             });
             bcrypt.genSalt(10, (err, salt) => {
-                bcrypt.hash(newUser.password, salt, (err, hash) => {
+                bcrypt.hash(newAdmin.password, salt, (err, hash) => {
                     if (err) throw err;
-                    newUser.password = hash;
-                    newUser
+                    newAdmin.password = hash;
+                    newAdmin
                         .save()
-                        .then(user => {
-                            return res.status(200).json({message: 'User added successfully. Refreshing data...'})
+                        .then(admin => {
+                            return res.status(200).json({message: 'Admin added successfully. Refreshing data...'})
                         }).catch(err => console.log(err));
                 });
             });
         }
     });
+    
 });
 
-router.post('/user-data', (req, res) => {
-    User.find({}).select(['-password']).then(user => {
-        if (user) {
-            return res.status(200).send(user);
+router.post('/admin-data', (req, res) => {
+    Admin.find({}).select(['-password']).then(admin => {
+        if (admin) {
+            return res.status(200).send(admin);
         }
     });
 });
 
-router.post('/user-delete', (req, res) => {
-    User.deleteOne({ _id: req.body._id}).then(user => {
-        if (user) {
-            return res.status(200).json({message: 'User deleted successfully. Refreshing data...', success: true})
+router.post('/admin-delete', (req, res) => {
+    Admin.deleteOne({ _id: req.body._id}).then(admin => {
+        if (admin) {
+            return res.status(200).json({message: 'Admin deleted successfully. Refreshing data...', success: true})
         }
     });
 });
 
-router.post('/user-update', (req, res) => {
-    const { errors, isValid } = validateUpdateUserInput(req.body);
+router.post('/admin-update', (req, res) => {
+    const { errors, isValid } = validateUpdateAdminInput(req.body);
     if (!isValid) {
         return res.status(400).json(errors);
     }
     const _id = req.body._id;
-    User.findOne({ _id }).then(user => {
-        if (user) {
+    Admin.findOne({ _id }).then(admin => {
+        if (admin) {
             if (req.body.password !== '') {
                 bcrypt.genSalt(10, (err, salt) => {
                     bcrypt.hash(req.body.password, salt, (err, hash) => {
                         if (err) throw err;
-                        user.password = hash;
+                        admin.password = hash;
                     });
                 });
             }
-            let update = {'name': req.body.name, 'email': req.body.email, 'password': user.password};
-            User.update({ _id: _id}, {$set: update}, function(err, result) {
+            let update = {'name': req.body.name, 'email': req.body.email, 'password': admin.password};
+            Admin.update({ _id: _id}, {$set: update}, function(err, result) {
                 if (err) {
-                    return res.status(400).json({ message: 'Unable to update user.' });
+                    return res.status(400).json({ message: 'Unable to update admin.' });
                 } else {
-                    return res.status(200).json({ message: 'User updated successfully. Refreshing data...', success: true });
+                    return res.status(200).json({ message: 'Admin updated successfully. Refreshing data...', success: true });
                 }
             });
         } else {
-            return res.status(400).json({ message: 'Now user found to update.' });
+            return res.status(400).json({ message: 'Now admin found to update.' });
         }
     });
 });
@@ -90,15 +101,15 @@ router.post('/login', (req, res) => {
     }
     const email = req.body.email;
     const password = req.body.password;
-    User.findOne({ email }).then(user => {
-        if (!user) {
+    Admin.findOne({ email }).then(admin => {
+        if (!admin) {
             return res.status(404).json({ email: 'Email not found' });
         }
-        bcrypt.compare(password, user.password).then(isMatch => {
+        bcrypt.compare(password, admin.password).then(isMatch => {
             if (isMatch) {
                 const payload = {
-                    id: user.id,
-                    name: user.name
+                    id: admin.id,
+                    name: admin.name
                 };
                 jwt.sign(
                     payload,

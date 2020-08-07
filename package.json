@@ -1,9 +1,9 @@
 {
   "name": "login-registration",
   "version": "1.0.0",
-  "description": "A simple mern application for login-registration system",
+  "description": "Shega Entertaiment",
   "main": "server.js",
-  "author": "Neha Sharma",
+  "author": "Fasile Endalkachew",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -26,5 +26,9 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fasi13/ShegaEntertaiment.git"
   }
 }

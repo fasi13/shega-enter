@@ -1,0 +1,5 @@
+{
+    "mongoURI": "mongodb://localhost:27017/mern",
+    "jwtSecret": "secret",
+    "githubToken": "b8cd2cb0e2c5cc694f734b7a16605b608b4abd31"
+  }

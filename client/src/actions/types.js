@@ -1,6 +1,8 @@
 export const GET_ERRORS = "GET_ERRORS";
-export const USER_LOADING = "USER_LOADING";
-export const SET_CURRENT_USER = "SET_CURRENT_USER";
-
-export const USER_ADD = "USER_ADD";
-export const USER_UPDATE = "USER_UPDATE";
+export const ADMIN_LOADING = "ADMIN_LOADING";
+export const SET_CURRENT_ADMIN = "SET_CURRENT_ADMIN";
+export const SELECTED_JOKE_ADD = "SELECTED_JOKE_ADD"
+export const ADMIN_ADD = "ADMIN_ADD";
+export const ADMIN_UPDATE = "ADMIN_UPDATE";
+export const LOGOUT = 'LOGOUT';
+export const SELECTED_JOKE_UPDATE = 'SELECTED_JOKE_UPDATE';

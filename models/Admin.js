@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const UserSchema = new Schema({
+const AdminSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -19,12 +19,12 @@ const UserSchema = new Schema({
     }
 });
 
-UserSchema.virtual('id').get(function(){
+AdminSchema.virtual('id').get(function(){
     return this._id.toHexString();
 });
 
-UserSchema.set('toJSON', {
+AdminSchema.set('toJSON', {
     virtuals: true
 });
 
-module.exports = User = mongoose.model("users", UserSchema);
+module.exports = Admin = mongoose.model("admins", AdminSchema);

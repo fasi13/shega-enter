@@ -2,93 +2,72 @@ import React from 'react'
 import classnames from "classnames";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { updateUser } from "../../actions/userActions";
+import { addAdmin } from "../../actions/adminActions";
 import { withRouter } from "react-router-dom";
 import { toast } from 'react-toastify';
 import $ from 'jquery';
 
 import 'react-toastify/dist/ReactToastify.css';
 
-class UserUpdateModal extends React.Component {
+class AdminAddModal extends React.Component {
 
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
-            id: this.props.record.id,
-            name: this.props.record.name,
-            email: this.props.record.email,
-            password: '',
+            name: "",
+            email: "",
+            password: "",
+            password2: "",
             errors: {},
         };
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.record) {
-            this.setState({
-                id: nextProps.record.id,
-                name: nextProps.record.name,
-                email: nextProps.record.email,
-            })
-        }
+        console.log('*******************')
         if (nextProps.errors) {
             this.setState({
                 errors: nextProps.errors
             });
         }
         if (nextProps.auth !== undefined
-            && nextProps.auth.user !== undefined
-            && nextProps.auth.user.data !== undefined
-            && nextProps.auth.user.data.message !== undefined
-            && nextProps.auth.user.data.success) {
-            $('#update-user-modal').modal('hide');
-            toast(nextProps.auth.user.data.message, {
+            && nextProps.auth.admin !== undefined
+            && nextProps.auth.admin.data !== undefined
+            && nextProps.auth.admin.data.message !== undefined) {
+            $('#add-admin-modal').modal('hide');
+            toast(nextProps.auth.admin.data.message, {
                 position: toast.POSITION.TOP_CENTER
             });
         }
     }
 
     onChange = e => {
-        if (e.target.id === 'user-update-name') {
-            this.setState({ name: e.target.value });
-        }
-        if (e.target.id === 'user-update-email') {
-            this.setState({ email: e.target.value });
-        }
-        if (e.target.id === 'user-update-password') {
-            this.setState({ password: e.target.value });
-        }
+        this.setState({ [e.target.id]: e.target.value });
     };
 
-    onUserUpdate = e => {
+    onAdminAdd = e => {
         e.preventDefault();
-        const newUser = {
-            _id: this.state.id,
+        const newAdmin = {
             name: this.state.name,
             email: this.state.email,
-            password: this.state.password
+            password: this.state.password,
+            password2: this.state.password2
         };
-        this.props.updateUser(newUser);
+        this.props.addAdmin(newAdmin, this.props.history);
     };
 
     render() {
         const { errors } = this.state;
         return (
             <div>
-                <div className="modal fade" id="update-user-modal">
+                <div className="modal fade" id="add-admin-modal" data-reset="true">
                     <div className="modal-dialog modal-lg">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h4 className="modal-title">Update User</h4>
+                                <h4 className="modal-title">add Admin</h4>
                                 <button type="button" className="close" data-dismiss="modal">&times;</button>
                             </div>
                             <div className="modal-body">
-                                <form noValidate onSubmit={this.onUserUpdate} id="update-user">
-                                    <input
-                                        onChange={this.onChange}
-                                        value={this.state.id}
-                                        id="user-update-id"
-                                        type="text"
-                                        className="d-none"/>
+                                <form noValidate onSubmit={this.onAdminAdd} id="add-admin">
                                     <div className="row mt-2">
                                         <div className="col-md-3">
                                             <label htmlFor="name">Name</label>
@@ -97,7 +76,7 @@ class UserUpdateModal extends React.Component {
                                             <input
                                                 onChange={this.onChange}
                                                 value={this.state.name}
-                                                id="user-update-name"
+                                                id="name"
                                                 type="text"
                                                 error={errors.name}
                                                 className={classnames("form-control", {
@@ -115,7 +94,7 @@ class UserUpdateModal extends React.Component {
                                                 onChange={this.onChange}
                                                 value={this.state.email}
                                                 error={errors.email}
-                                                id="user-update-email"
+                                                id="email"
                                                 type="email"
                                                 className={classnames("form-control", {
                                                     invalid: errors.email
@@ -130,11 +109,11 @@ class UserUpdateModal extends React.Component {
                                         </div>
                                         <div className="col-md-9">
                                             <input
-                                                data-reset-input={true}
                                                 autoComplete={''}
                                                 onChange={this.onChange}
+                                                value={this.state.password}
                                                 error={errors.password}
-                                                id="user-update-password"
+                                                id="password"
                                                 type="password"
                                                 className={classnames("form-control", {
                                                     invalid: errors.password
@@ -143,15 +122,33 @@ class UserUpdateModal extends React.Component {
                                             <span className="text-danger">{errors.password}</span>
                                         </div>
                                     </div>
+                                    <div className="row mt-2">
+                                        <div className="col-md-3">
+                                            <label htmlFor="password2">Confirm Password</label>
+                                        </div>
+                                        <div className="col-md-9">
+                                            <input
+                                                autoComplete={''}
+                                                onChange={this.onChange}
+                                                value={this.state.password2}
+                                                id="password2"
+                                                type="password"
+                                                className={classnames("form-control", {
+                                                    invalid: errors.password2
+                                                })}
+                                            />
+                                            <span className="text-danger">{errors.password2}</span>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
                                 <button
-                                    form="update-user"
+                                    form="add-admin"
                                     type="submit"
                                     className="btn btn-primary">
-                                    Update User
+                                    Add Admin
                                 </button>
                             </div>
                         </div>
@@ -162,8 +159,8 @@ class UserUpdateModal extends React.Component {
     }
 }
 
-UserUpdateModal.propTypes = {
-    updateUser: PropTypes.func.isRequired,
+AdminAddModal.propTypes = {
+    addAdmin: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired
 };
@@ -175,5 +172,5 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    { updateUser }
-)(withRouter(UserUpdateModal));
+    { addAdmin }
+)(withRouter(AdminAddModal));

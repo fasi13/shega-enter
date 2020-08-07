@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { loginUser } from "../../actions/authActions";
+import { loginAdmin } from "../../actions/authActions";
 import classnames from "classnames";
 
 class Login extends Component {
@@ -38,11 +38,11 @@ class Login extends Component {
 
     onSubmit = e => {
         e.preventDefault();
-        const userData = {
+        const adminData = {
             email: this.state.email,
             password: this.state.password
         };
-        this.props.loginUser(userData);
+        this.props.loginAdmin(adminData);
     };
 
     render() {
@@ -96,7 +96,7 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-    loginUser: PropTypes.func.isRequired,
+    loginAdmin: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired
 };
@@ -106,5 +106,5 @@ const mapStateToProps = state => ({
 });
 export default connect(
     mapStateToProps,
-    { loginUser }
+    { loginAdmin }
 )(Login);

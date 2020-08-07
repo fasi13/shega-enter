@@ -3,13 +3,13 @@ import setAuthToken from "../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
 import {
     GET_ERRORS,
-    SET_CURRENT_USER,
-    USER_LOADING
+    SET_CURRENT_ADMIN,
+    ADMIN_LOADING
 } from "./types";
 
-export const registerUser = (userData, history) => dispatch => {
+export const registerAdmin = (adminData, history) => dispatch => {
     axios
-        .post("/api/register", userData)
+        .post("/api/register", adminData)
         .then(res => history.push("/login"))
         .catch(err =>
             dispatch({
@@ -19,15 +19,15 @@ export const registerUser = (userData, history) => dispatch => {
         );
 };
 
-export const loginUser = userData => dispatch => {
+export const loginAdmin = adminData => dispatch => {
     axios
-        .post("/api/login", userData)
+        .post("/api/login", adminData)
         .then(res => {
             const { token } = res.data;
             localStorage.setItem("jwtToken", token);
             setAuthToken(token);
             const decoded = jwt_decode(token);
-            dispatch(setCurrentUser(decoded));
+            dispatch(setCurrentAdmin(decoded));
         })
         .catch(err =>
             dispatch({
@@ -37,21 +37,21 @@ export const loginUser = userData => dispatch => {
         );
 };
 
-export const setCurrentUser = decoded => {
+export const setCurrentAdmin = decoded => {
     return {
-        type: SET_CURRENT_USER,
+        type: SET_CURRENT_ADMIN,
         payload: decoded
     };
 };
 
-export const setUserLoading = () => {
+export const setAdminLoading = () => {
     return {
-        type: USER_LOADING
+        type: ADMIN_LOADING
     };
 };
 
-export const logoutUser = () => dispatch => {
+export const logoutAdmin = () => dispatch => {
     localStorage.removeItem("jwtToken");
     setAuthToken(false);
-    dispatch(setCurrentUser({}));
+    dispatch(setCurrentAdmin({}));
 };

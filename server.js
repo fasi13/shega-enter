@@ -1,13 +1,16 @@
 const express = require('express');
 const path = require('path');
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
-const users = require('./routes/api/users');
+const admins = require('./routes/api/admins');
+const jokes = require('./routes/api/jokes');
+const connectDB = require('./config/db');
 
 require('./config/passport')(passport);
 
 const app = express();
+// connect Database
+connectDB();
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -21,17 +24,11 @@ app.use(bodyParser.json());
 
 app.listen(9000);
 
-const db = require('./config/keys').mongoURI;
-
-mongoose.connect(db, { useNewUrlParser: true })
-    .then(() =>
-        console.log('MongoDB successfully connected.')
-    ).catch(err => console.log(err));
-
 app.use(passport.initialize());
 
-app.use('/api', users);
-
+// define Routes
+app.use('/api', admins);
+app.use('/api/jokes', jokes);
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.get('*', function (req, res) {

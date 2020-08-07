@@ -1,16 +1,16 @@
 import axios from "axios";
 import {
     GET_ERRORS,
-    USER_ADD,
-    USER_UPDATE
+    ADMIN_ADD,
+    ADMIN_UPDATE
 } from "./types";
 
-export const addUser = (userData, history) => dispatch => {
+export const addAdmin = (adminData, history) => dispatch => {
     axios
-        .post("/api/user-add", userData)
+        .post("/api/admin-add", adminData)
         .then(res =>
             dispatch({
-                type: USER_ADD,
+                type: ADMIN_ADD,
                 payload: res,
             })
         ).catch(err =>
@@ -22,12 +22,12 @@ export const addUser = (userData, history) => dispatch => {
 };
 
 
-export const updateUser = (userData) => dispatch => {
+export const updateAdmin = (adminData) => dispatch => {
     axios
-        .post("/api/user-update", userData)
+        .post("/api/admin-update", adminData)
         .then(res =>
             dispatch({
-                type: USER_UPDATE,
+                type: ADMIN_UPDATE,
                 payload: res,
             })
         ).catch(err =>

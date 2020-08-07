@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Dashboard from "./components/pages/Dashboard";
+import Jokes from "./components/pages/JokesPage";
 import React, { Component } from 'react';
 import Login from "./components/auth/Login";
+import Admin from "./components/pages/Admin";
 import NotFound from "./components/layout/NotFound";
 import { Provider } from "react-redux";
 import PrivateRoute from "./components/private-route/PrivateRoute";
@@ -9,7 +11,7 @@ import Register from "./components/auth/Register";
 import store from "./store";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
-import { setCurrentUser, logoutUser } from "./actions/authActions";
+import { setCurrentAdmin, logoutAdmin } from "./actions/authActions";
 
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
@@ -18,16 +20,14 @@ import '../node_modules/font-awesome/css/font-awesome.css';
 import '../node_modules/jquery/dist/jquery.min';
 import '../node_modules/popper.js/dist/popper';
 
-import User from "./components/pages/Users";
-
 if (localStorage.jwtToken) {
     const token = localStorage.jwtToken;
     setAuthToken(token);
     const decoded = jwt_decode(token);
-    store.dispatch(setCurrentUser(decoded));
+    store.dispatch(setCurrentAdmin(decoded));
     const currentTime = Date.now() / 1000;
     if (decoded.exp < currentTime) {
-        store.dispatch(logoutUser());
+        store.dispatch(logoutAdmin());
         window.location.href = "./login";
     }
 }
@@ -39,12 +39,14 @@ class App extends Component {
                 <Router>
                     <div className="App">
                         <Switch>
+                            
                             <Route exact path="/" component={Login} />
                             <Route exact path="/register" component={Register} />
                             <Route exact path="/login" component={Login} />
+                            <Route exact path="/jokes" component={Jokes}/>
                             <Switch>
                                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
-                                <PrivateRoute exact path="/users" component={User} />
+                                <PrivateRoute exact path="/admins" component={Admin} />
                             </Switch>
                             <Route exact path="*" component={NotFound} />
                         </Switch>

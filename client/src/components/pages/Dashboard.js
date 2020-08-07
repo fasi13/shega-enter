@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { logoutUser } from "../../actions/authActions";
+import { logoutAdmin } from "../../actions/authActions";
 import Navbar from "../partials/Navbar";
 import Sidebar from "../partials/Sidebar";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faList} from "@fortawesome/free-solid-svg-icons/faList";
 import {Link} from "react-router-dom";
-import {faUserAlt} from "@fortawesome/free-solid-svg-icons/faUserAlt";
+import {faAdminAlt} from "@fortawesome/free-solid-svg-icons/faUserAlt";
 
 class Dashboard extends Component {
 
@@ -31,40 +31,40 @@ class Dashboard extends Component {
                                 <div className="col-sm-3 p-sm-2">
                                     <div className="card bg-primary text-white shadow-lg">
                                         <div className="card-body">
-                                            <h5 className="card-title">Users</h5>
+                                            <h5 className="card-title">Admins</h5>
                                             <p className="card-text">With supporting text below as a natural lead-in to
                                                 additional content.</p>
-                                            <Link to="/users" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faUserAlt}/> Go to Users</Link>
+                                            <Link to="/admins" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faAdminAlt}/> Go to Admins</Link>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-sm-3 p-sm-2">
                                     <div className="card bg-secondary text-white shadow-lg">
                                         <div className="card-body">
-                                            <h5 className="card-title">Special title treatment</h5>
+                                            <h5 className="card-title">Jokes</h5>
                                             <p className="card-text">With supporting text below as a natural lead-in to
                                                 additional content.</p>
-                                            <a href="#" className="btn btn-light">Go somewhere</a>
+                                            <a href="#pablo" className="btn btn-light">Go to Jokes</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-sm-3 p-sm-2">
                                     <div className="card bg-info text-white shadow-lg">
                                         <div className="card-body">
-                                            <h5 className="card-title">Special title treatment</h5>
+                                            <h5 className="card-title">Languages</h5>
                                             <p className="card-text">With supporting text below as a natural lead-in to
                                                 additional content.</p>
-                                            <a href="#" className="btn btn-light">Go somewhere</a>
+                                            <a href="#pablo" className="btn btn-light">Go to Languages</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-sm-3 p-sm-2">
                                     <div className="card bg-dark text-white shadow-lg">
                                         <div className="card-body">
-                                            <h5 className="card-title">Special title treatment</h5>
+                                            <h5 className="card-title">Driving License</h5>
                                             <p className="card-text">With supporting text below as a natural lead-in to
                                                 additional content.</p>
-                                            <a href="#" className="btn btn-light">Go somewhere</a>
+                                            <a href="#pablo" className="btn btn-light">Go to Driving License</a>
                                         </div>
                                     </div>
                                 </div>
@@ -78,7 +78,7 @@ class Dashboard extends Component {
 }
 
 Dashboard.propTypes = {
-    logoutUser: PropTypes.func.isRequired,
+    logoutAdmin: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired
 };
 
@@ -88,5 +88,5 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    { logoutUser }
+    { logoutAdmin }
 )(Dashboard);
