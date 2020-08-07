@@ -1,4 +1,4 @@
-## MERN-Shega Entertaient Project with Admin-Panel
+## MERN-ሸጋ Entertaient Project with Admin-Panel
 
 ## Features
 * Login-page and Basic layout design done by using Bootstrap
