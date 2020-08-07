@@ -23,3 +23,19 @@ To Build react application
 cd client and run
 
 `npm run build`
+## First thing you d
+
+Since ther is no Registration page, user should be post admin signup schema to the database using
+
+Postman Or somthing. The schema would be
+
+Post: `http://localhost:3000/api/admin-add`
+
+`{
+    "name": "",
+    "email": "",
+    "password": "",
+    "password2":""
+    
+}`
+
