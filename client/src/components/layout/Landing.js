@@ -7,8 +7,7 @@ class Landing extends Component {
                 <div className="row">
                     <div className="col s12 center-align">
                         <p className="flow-text grey-text text-darken-1">
-                            Create a (minimal) full-stack app with Admin authentication via
-                            passport and JWTs
+                            Shega Welcome Page!
                         </p>
                         <br />
                         <div className="col s6">
