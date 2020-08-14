@@ -1,7 +1,7 @@
+mport React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Dashboard from "./components/pages/Dashboard";
 import Jokes from "./components/pages/JokesPage";
-import React, { Component } from 'react';
 import Login from "./components/auth/Login";
 import Admin from "./components/pages/Admin";
 import NotFound from "./components/layout/NotFound";
@@ -13,6 +13,15 @@ import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentAdmin, logoutAdmin } from "./actions/authActions";
 
+//////////////////////////User Components///////////////////////////////////////
+import WelcomePage from "./components/users/welcomePage/WelcomePage";
+import ThanksPage from "./components/users/thanksPage/ThanksPage";
+import HomePage from "./components/users/homePage/HomePage";
+import JokeFront from "./components/users/jokes/JokeFront"
+import LanguageFront from "./components/users/language/LanguageFront";
+import DriveFront from "./components/users/driving/DriveFront";
+
+//////////////////////////Style///////////////////////////////////////
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../node_modules/bootstrap/dist/js/bootstrap';
@@ -39,9 +48,33 @@ class App extends Component {
                 <Router>
                     <div className="App">
                         <Switch>
-                            
-                            <Route exact path="/" component={Login} />
-                            <Route exact path="/register" component={Register} />
+                            {/* <Route exact path="/" component={WelcomePage} /> */}
+                            <Route 
+                                exact
+                                path="/" 
+                                render={(props) => <WelcomePage {...props} />} />
+                            {/* <Route exact path="/" component={Login} /> */}
+                            <Route 
+                                exact
+                                path="/thanks" 
+                                render={(props) => <ThanksPage {...props} />} />
+                            <Route 
+                                exact
+                                path="/home" 
+                                render={(props) => <HomePage {...props} />} />
+                            <Route 
+                                exact
+                                path="/suhbesgcarEbnetdejrotkainment" 
+                                render={(props) => <JokeFront {...props} />} /> 
+                            <Route 
+                                exact
+                                path="/suhbesgcarEbnetdelratnagiunamgeent" 
+                                render={(props) => <LanguageFront {...props} />} /> 
+                            <Route 
+                                exact
+                                path="/suhbesgcarEbnetdedrrtiavinment" 
+                                render={(props) => <DriveFront {...props} />} /> 
+                            <Route exact path="/register" component={Register} /> 
                             <Route exact path="/login" component={Login} />
                             <Route exact path="/jokes" component={Jokes}/>
                             <Switch>

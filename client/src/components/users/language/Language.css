@@ -1,0 +1,846 @@
+/*****HEADERS******************/
+.langHeaderContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(min(300px, 100%)),1fr));
+    place-items: center;
+    color: white;
+    align-content: space-evenly;
+}
+.langHeaderContainer .slogan{
+    font-size: 5vw;
+    font-weight: 600;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background-color: rgba(0, 46, 102, 0.8);
+    border: 1px white solid;
+    padding: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 15vw;
+    margin-bottom: 10vw;
+}
+@media only screen and (max-width: 600px){
+	.langHeaderContainer .slogan{
+        margin-top: 40% !important;
+        padding: 15px !important;
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+        font-size: 20px !important;
+    }
+    }
+.langHeaderContainer .listContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(min(30px, 100%)),1fr)); 
+    width: 90%;
+    text-align: center;
+    grid-column: span 4; 
+    margin-left: 3vw;
+    margin-right: 3vw;
+    margin-bottom: 10vw;
+    margin-top: 100px;
+}
+@media only screen and (max-width: 600px){
+    .langHeaderContainer .listContainer{
+        margin-bottom: 150px !important;
+    }
+    }
+.langHeaderContainer .listContainer .list1, .langHeaderContainer .listContainer .list2, .langHeaderContainer .listContainer .list3{
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background-color: rgba(0, 46, 102, 0.8);
+    border: 1px white solid;
+    font-size: 3.1vw;
+    font-weight: 700;
+    width: auto;
+    padding: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: white;
+}
+.langHeaderContainer .listContainer .list1:hover, .langHeaderContainer .listContainer .list2:hover, .langHeaderContainer .listContainer .list3:hover{
+    text-decoration: none;
+    color: white;
+    opacity: 0.8;
+}
+/**********************************************************/
+.languageContainer{
+    background-color: rgba(0, 46, 102, 0.8);
+}
+
+
+@media only screen and (max-width: 600px){
+    .langHeaderContainer .listContainer a{
+        font-size: 18px !important;
+        padding: 10px !important;
+    }
+    }
+.shegaLangLanding{
+    opacity: 0;
+    margin-bottom: 150px;
+}  
+@media only screen and (max-width: 600px){
+    .shegaLangLanding{
+        opacity: 1;
+        text-align: center;
+        font-size: 25px !important;
+        margin-bottom: 90px;
+    }
+    } 
+
+.prev, .next{
+        color: rgba(0, 46, 102, 0.8);
+        font-size: 20px;
+        font-weight: 600;
+        background-color: white;
+        border: 1px rgba(0, 46, 102, 0.8) solid;
+        border-radius: 50%;
+        cursor: pointer; 
+    }
+@media only screen and (max-width: 600px){
+    .prev, .next{
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 20%;
+        padding: 10px;
+    }
+    } 
+.prev:hover, .next:hover{
+    background-color: rgba(0, 46, 102, 0.8);
+    color: white;
+    opacity: 0.8;
+} 
+
+.prev:active, .prev:focus, .next:active, .next:focus{
+    background-color: white;
+    color: rgba(0, 46, 102, 0.8);
+}
+/*************Vocabulary**************************************/
+.vocabularyContainer{
+    background-color: white;
+    border-radius: 40px;
+}
+.vocabulary{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 290px;
+    place-content: center;
+    height: 30vw;
+    background-color: transparent;  
+}
+@media only screen and (max-width: 600px){
+	.vocabulary{
+        height: 125vw;
+        place-content: start;
+        grid-gap: 0px;
+        padding: 0;
+        margin-top: 25px;
+    }
+    }
+#vocTtl{
+    grid-column: span 1;
+    margin: 0px 0 10px 0;
+    text-align: center;
+    padding: auto;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+.vocTtl{
+    background-color: rgba(0, 46, 102, 0.8);
+    border: 1px white solid;
+    color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 4vw;
+}
+@media only screen and (max-width: 600px){
+    .vocTtl{
+        font-size: 10vw;
+    }
+}
+.vocabulary .prevVoc, .vocabulary .nextVoc{
+    color: rgba(0, 46, 102, 0.8);
+    font-size: 3vw;
+    font-weight: 550;
+    padding: 10px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0;
+    position: relative;
+    top: 40%;
+}
+@media only screen and (max-width: 600px){
+	.vocabulary .prevVoc, .vocabulary .nextVoc{
+        font-size: 7vw;
+        margin-top: 30px !important;
+    }
+    }
+.vocabulary .nextVoc:hover, .vocabulary .prevVoc:hover{
+    background-color: rgba(0, 46, 102, 0.8);
+    color: white;
+}
+.vocabulary .nextVoc:active, .vocabulary .prevVoc:active{
+    background-color: transparent;
+}
+.vocabulary .prevVoc{
+    float: left;
+    margin-left: -820px !important;
+}
+@media only screen and (max-width: 600px){
+    .vocabulary .prevVoc{
+        margin-left: 80px !important;
+    }
+}
+.vocabulary .nextVoc{
+    float: left;
+    margin-left: 0px !important;
+}
+@media only screen and (max-width: 600px){
+    .vocabulary .nextVoc{
+        margin-left: 90px !important;
+    }
+}
+.vocabulary .vocBody{
+    background-color: transparent;
+    text-align: center;
+    align-items: center;
+    grid-column-start: 2;
+    grid-column-end: 9;
+    border: 1px rgba(0, 46, 102, 0.8) solid;
+    border-radius: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-left: 150px !important;
+    width: 60vw;
+}
+@media only screen and (max-width: 600px){
+    .vocabulary .vocBody{
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        margin-top: 20%; 
+        padding-top: 20px;
+        padding-bottom: 20px;
+        grid-column-start: 1;
+        grid-column-end: 6;
+        width: 92vw;
+    }}
+.vocabulary .vocBody .leftSide{
+    float: left;
+    width: 25%;  
+    border-right: 1px rgba(0, 46, 102, 0.8) solid;
+}
+.vocabulary .vocBody .leftSide .vocEnglish{
+    border-bottom: 1px rgba(0, 46, 102, 0.8) solid;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: auto;
+    font-weight: 600; 
+    color: rgba(0, 46, 102, 0.8);
+  } 
+.vocabulary .vocBody .leftSide .vocAmharic{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: auto;
+    font-weight: 600; 
+    color: rgba(0, 46, 102, 0.8);
+  }
+@media only screen and (max-width: 600px){
+	.vocabulary .vocBody .leftSide .vocEnglish, .vocabulary .vocBody .leftSide .vocAmharic{
+        padding-bottom: 30px;
+        padding-top: 30px;
+      } 
+    }
+/* .vocabulary .vocBody .middle{
+    float: left;
+    width: 15%;  
+  } */
+.vocabulary .vocBody .rightSide{
+    float: right;
+    width: 75%;  
+  }
+.vocabulary .vocBody .rightSide h2{
+    font-size: 20px;
+  } 
+@media only screen and (max-width: 600px){
+	.vocabulary .vocBody .leftSide h2{
+        font-size: 20px;
+    }
+    } 
+.vocabulary .vocBody .rightSide .vocEngDisplay{
+    border-bottom: 1px rgba(0, 46, 102, 0.8) solid;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: auto;
+    font-size: 2.5em;
+    font-weight: 500;
+} 
+@media only screen and (max-width: 600px){
+    .vocabulary .vocBody .rightSide .vocEngDisplay{
+        margin-bottom: 0 !important;
+      }
+}  
+.vocabulary .vocBody .rightSide .vocAmDisplay{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: auto;
+    font-size: 2.5em;
+    font-weight: 500;
+} 
+@media only screen and (max-width: 600px){
+    .vocabulary .vocBody .rightSide .vocAmDisplay{
+        margin-bottom: 0 !important;
+      }
+}  
+/* .vocabulary .vocBody .leftSide h2, .vocabulary .vocBody .rightSide h2{
+    border-bottom: 1px #4687b3 solid;
+}   */
+.vocabulary .vocBody .leftSide .off, .vocabulary .vocBody .middle .off, .vocabulary .vocBody .rightSide .off{
+    opacity: 0;
+    
+}
+/* .vocabulary .vocBody h2{
+    text-align: center !important;
+    margin-top: 10px;
+} */
+@media only screen and (max-width: 600px){
+	.vocabulary .vocBody h2{
+        padding-left: 0px;
+    }
+    }
+.vocabulary .vocBody h2 p{
+    font-size: 3vw !important;
+}
+@media only screen and (max-width: 600px){
+    .vocabulary .vocBody h2 p{
+        font-size: 20px !important;
+        font-weight: 550;
+        padding: 5px ;
+    }
+    }
+.vocabulary .vocBody .quoteMsg .imogy{
+    width: 50px;
+    margin: 15px 2px 2px 2px;
+    margin-right: 10px;
+    border-right: 1px gray solid;
+    border-bottom: 1px gray solid;
+    box-shadow: 0 5px 5px 0 grey;
+}
+@media only screen and (max-width: 600px){
+	.vocabulary .vocBody .quoteMsg .imogy{
+        width: 30px;
+        margin: 5px;
+    }
+    }
+/**********************************/
+/*************Tense**************************************/
+.tenseContainer{
+    background-color: white;
+    border-radius: 40px;
+}
+.tense{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 290px;
+    place-content: center;
+    height: 30vw;
+    background-color: transparent;  
+}
+@media only screen and (max-width: 600px){
+	.tense{
+        height: 120vw;
+        place-content: start;
+        grid-gap: 0px;
+        padding: 0;
+        margin-top: 25px;
+    }
+    }
+#tensTtl{
+    grid-column: span 1;
+    margin: 0px 0 10px 0;
+    text-align: center;
+    padding: auto;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+.tensTtl{
+    background-color: rgba(0, 46, 102, 0.8);
+    border: 1px white solid;
+    color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 4vw;
+}
+@media only screen and (max-width: 600px){
+    .tensTtl{
+        font-size: 10vw;
+    }
+}
+.tense .prevTens, .tense .nextTens{
+    color: rgba(0, 46, 102, 0.8);
+    font-size: 3vw;
+    font-weight: 550;
+    padding: 10px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0;
+    position: relative;
+    top: 40%;
+}
+@media only screen and (max-width: 600px){
+	.tense .prevTens, .tense .nextTens{
+        font-size: 7vw;
+        margin-top: 20px !important;
+    }
+    }
+.tense .prevTens:hover, .tense .nextTens:hover{
+    background-color: rgba(0, 46, 102, 0.8);
+    color: white;
+}
+.tense .prevTens:active, .tense .nextTens:active{
+    background-color: transparent;
+}
+.tense .prevTens{
+    float: left;
+    margin-left: -820px !important;
+}
+@media only screen and (max-width: 600px){
+    .tense .prevTens{
+        margin-left: 80px !important;
+    }
+}
+.tense .nextTens{
+    float: left;
+    margin-left: 0px !important;
+}
+@media only screen and (max-width: 600px){
+    .tense .nextTens{
+        margin-left: 90px !important;
+    }
+}
+.tense .tensBody{
+    background-color: transparent;
+    text-align: center;
+    align-items: center;
+    grid-column-start: 2;
+    grid-column-end: 9;
+    border: 1px rgba(0, 46, 102, 0.8) solid;
+    border-radius: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-left: 150px !important;
+    width: 60vw;
+}
+@media only screen and (max-width: 600px){
+    .tense .tensBody{
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        margin-top: 5%; 
+        padding-top: 20px;
+        padding-bottom: 20px;
+        grid-column-start: 1;
+        grid-column-end: 6;
+        width: 92vw;
+    }}
+.tense .tensBody .leftSide{
+  float: left;
+  width: 25%;  
+  border-right: 1px rgba(0, 46, 102, 0.8) solid;
+}
+@media only screen and (max-width: 600px){
+	.tense .tensBody .leftSide{
+        width: 35%; 
+      }
+    } 
+.tense .tensBody .leftSide .tensType{
+    border-bottom: 1px rgba(0, 46, 102, 0.8) solid;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: auto;  
+    font-weight: 600; 
+    color: rgba(0, 46, 102, 0.8);
+  } 
+@media only screen and (max-width: 600px){
+	.tense .tensBody .leftSide .tensType{
+        padding-bottom: 30px;
+        padding-top: 30px;
+      } 
+    } 
+.tense .tensBody .leftSide .structure{
+    border-bottom: 1px rgba(0, 46, 102, 0.8) solid;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: auto;
+    font-weight: 600; 
+    color: rgba(0, 46, 102, 0.8);
+  } 
+  @media only screen and (max-width: 600px){
+	.tense .tensBody .leftSide .structure{
+        padding-bottom: 30px;
+        padding-top: 30px;
+      } 
+    } 
+  .tense .tensBody .leftSide .tensExample{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: auto;  
+    font-weight: 600; 
+    color: rgba(0, 46, 102, 0.8);
+  }
+  @media only screen and (max-width: 600px){
+	.tense .tensBody .leftSide .tensExample{
+        padding-bottom: 30px;
+        padding-top: 30px;
+      } 
+    }  
+/* .tense .tensBody .middle{
+    float: left;
+    width: 15%;  
+  } */
+.tense .tensBody .rightSide{
+    float: right;
+    width: 75%;   
+  }
+@media only screen and (max-width: 600px){
+	.tense .tensBody .rightSide{
+        width: 65%;   
+      } 
+    }
+.tense .tensBody .rightSide h2{
+    font-size: 20px;
+    margin: auto;
+  } 
+@media only screen and (max-width: 600px){
+	.tense .tensBody .leftSide h2{
+        font-size: 20px;
+        margin: auto;
+    }
+    } 
+.tense .tensBody .rightSide .tenstypeDisplay{
+    border-bottom: 1px rgba(0, 46, 102, 0.8) solid;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: auto;
+    font-size: 2.5em;
+    font-weight: 500;
+}
+@media only screen and (max-width: 600px){
+	.tense .tensBody .rightSide .tenstypeDisplay{
+        padding-bottom: 30px;
+        padding-top: 30px;
+        font-size: 20px;
+    }
+    } 
+.tense .tensBody .rightSide .tensStructureDisplay{
+    border-bottom: 1px rgba(0, 46, 102, 0.8) solid;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: auto;
+    font-size: 2.5em;
+    font-weight: 500;
+}
+@media only screen and (max-width: 600px){
+	.tense .tensBody .rightSide .tensStructureDisplay{
+        padding-bottom: 30px;
+        padding-top: 30px;
+        font-size: 20px;
+    }
+    } 
+.tense .tensBody .rightSide .tensEgDisplay{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: auto;
+    font-size: 2.5em;
+    font-weight: 500;
+}
+@media only screen and (max-width: 600px){
+    .tense .tensBody .rightSide .tensEgDisplay{
+        padding-bottom: 30px;
+        padding-top: 30px;
+        font-size: 20px;
+      }
+}  
+/* .tense .tensBody .leftSide h2, .tense .tensBody .rightSide h2{
+    border-bottom: 1px #4687b3 solid;
+}   */
+.tense .tensBody .leftSide .off, .tense .tensBody .middle .off, .tense .tensBody .rightSide .off{
+    opacity: 0;
+    
+}
+/* .tense .tensBody h2{
+    text-align: center !important;
+    margin-top: 10px;
+} */
+@media only screen and (max-width: 600px){
+	.tense .tensBody h2{
+        padding-left: 0px;
+    }
+    }
+.tense .tensBody h2 p{
+    font-size: 3vw !important;
+}
+@media only screen and (max-width: 600px){
+    .tense .tensBody h2 p{
+        font-size: 20px !important;
+        font-weight: 550;
+        padding: 5px ;
+    }
+    }
+.tense .tensBody .quoteMsg .imogy{
+    width: 50px;
+    margin: 15px 2px 2px 2px;
+    margin-right: 10px;
+    border-right: 1px gray solid;
+    border-bottom: 1px gray solid;
+    box-shadow: 0 5px 5px 0 grey;
+}
+@media only screen and (max-width: 600px){
+	.tense .tensBody .quoteMsg .imogy{
+        width: 30px;
+        margin: 5px;
+    }
+    }
+/**********************************/
+/*************Test**************************************/
+.testContainer{
+    background-color: white;
+    border-radius: 40px;
+}
+.test{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 320px;
+    place-content: center;
+    height: 30vw;
+    background-color: transparent;  
+}
+@media only screen and (max-width: 600px){
+	.test{
+        height: 125vw;
+        place-content: start;
+        grid-gap: 0px;
+        padding: 0;
+        margin-top: 25px;
+    }
+    }
+#testTtl{
+    grid-column: span 1;
+    margin: 0px 0 10px 0;
+    text-align: center;
+    padding: auto;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+.testTtl{
+    background-color: rgba(0, 46, 102, 0.8);
+    border: 1px white solid;
+    color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 4vw;
+}
+@media only screen and (max-width: 600px){
+    .testTtl{
+        font-size: 10vw;
+    }
+}
+.test .prevTest, .test .nextTest{
+    color: rgba(0, 46, 102, 0.8);
+    font-size: 3vw;
+    font-weight: 550;
+    padding: 10px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0;
+    position: relative;
+    top: 40%;
+}
+@media only screen and (max-width: 600px){
+	.test .prevTest, .test .nextTest{
+        font-size: 7vw;
+        margin-top: 30px !important;
+    }
+    }
+.test .prevTest:hover, .test .nextTest:hover{
+    background-color: rgba(0, 46, 102, 0.8);
+    color: white;
+}
+.test .prevTest:active, .test .nextTest:active{
+    background-color: transparent;
+}
+.test .prevTest{
+    float: left;
+    margin-left: -820px !important;
+}
+@media only screen and (max-width: 600px){
+    .test .prevTest{
+        margin-left: 80px !important;
+    }
+}
+.test .nextTest{
+    float: left;
+    margin-left: 0px !important;
+}
+@media only screen and (max-width: 600px){
+    .test .nextTest{
+        margin-left: 90px !important;
+    }
+}
+.test .testBody{
+    background-color: transparent;
+    text-align: center;
+    align-items: center;
+    grid-column-start: 2;
+    grid-column-end: 9;
+    border: 1px rgba(0, 46, 102, 0.8) solid;
+    border-radius: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-left: 150px !important;
+    width: 60vw;
+}
+@media only screen and (max-width: 600px){
+    .test .testBody{
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        margin-top: 20%; 
+        padding-top: 20px;
+        padding-bottom: 20px;
+        grid-column-start: 1;
+        grid-column-end: 6;
+        width: 92vw;
+    }}
+.test .testBody .leftSide{
+  float: left;
+  width: 25%;  
+  border-right: 1px rgba(0, 46, 102, 0.8) solid;
+}
+.test .testBody .leftSide .prev{
+    border-bottom: 1px rgba(0, 46, 102, 0.8) solid;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: auto;
+    font-weight: 600; 
+    color: rgba(0, 46, 102, 0.8);
+  } 
+@media only screen and (max-width: 600px){
+	.test .testBody .leftSide .prev{
+        padding-bottom: 30px;
+        padding-top: 30px;
+      } 
+    } 
+.test .testBody .leftSide .next{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: auto;
+    font-weight: 600; 
+    color: rgba(0, 46, 102, 0.8);
+    } 
+@media only screen and (max-width: 600px){
+    .test .testBody .leftSide .next{
+        padding-bottom: 30px;
+        padding-top: 30px;
+        } 
+    }  
+.test .testBody .rightSide{
+    float: right;
+    width: 75%;  
+  }
+.test .testBody .rightSide h2{
+    font-size: 20px;
+  } 
+
+.test .testBody .rightSide .questionDisplay{
+    border-bottom: 1px rgba(0, 46, 102, 0.8) solid;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: auto;
+    font-size: 2.5em;
+    font-weight: 500;
+}
+@media only screen and (max-width: 600px){
+	.test .testBody .rightSide .questionDisplay{
+        padding-bottom: 30px;
+        padding-top: 30px;
+        font-size: 20px;
+    }
+    } 
+.test .testBody .rightSide .answerDisplay{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: auto;
+    font-size: 2.5em;
+    font-weight: 500;
+}
+@media only screen and (max-width: 600px){
+    .test .testBody .rightSide .answerDisplay{
+        padding-bottom: 30px;
+        padding-top: 30px;
+        font-size: 20px;
+      }
+}  
+
+
+/* @media only screen and (max-width: 600px){
+	.test .testBody .rightSide{
+        float: top;
+        height: 75%;  
+        border-left: 0px #4687b3 solid;
+      }
+    } */
+.test .testBody .leftSide .off, .test .testBody .middle .off, .test .testBody .rightSide .off{
+    opacity: 0;  
+}
+
+/* .test .testBody h2{
+    text-align: center !important;
+    margin-top: 10px;
+} */
+@media only screen and (max-width: 600px){
+	.test .testBody h2{
+        padding-left: 0px;
+    }
+    }
+.test .testBody h2 p{
+    font-size: 3vw !important;
+}
+@media only screen and (max-width: 600px){
+    .test .testBody h2 p{
+        font-size: 20px !important;
+        font-weight: 550;
+        padding: 5px ;
+    }
+    }
+.test .testBody .quoteMsg .imogy{
+    width: 50px;
+    margin: 15px 2px 2px 2px;
+    margin-right: 10px;
+    border-right: 1px gray solid;
+    border-bottom: 1px gray solid;
+    box-shadow: 0 5px 5px 0 grey;
+}
+@media only screen and (max-width: 600px){
+	.test .testBody .quoteMsg .imogy{
+        width: 30px;
+        margin: 5px;
+    }
+    }

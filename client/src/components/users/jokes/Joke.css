@@ -1,0 +1,428 @@
+/*****HEADERS******************/
+.jokeHeaderContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(min(300px, 100%)),1fr));
+    place-items: center;
+    color: white;
+    align-content: space-evenly;
+}
+.jokeHeaderContainer .slogan{
+    font-size: 4vw;
+    font-weight: 600;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background-color: rgba(0, 46, 102, 0.8);
+    border: 1px white solid;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 15vw;
+    margin-bottom: 10vw;
+}
+@media only screen and (max-width: 600px){
+	.jokeHeaderContainer .slogan{
+        margin-top: 40% !important;
+        padding: 15px !important;
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+        font-size: 20px !important;
+    }
+    }
+.jokeHeaderContainer .listContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(min(30px, 100%)),1fr)); 
+    width: 90%;
+    text-align: center;
+    grid-column: span 4; 
+    margin-left: 3vw;
+    margin-right: 3vw;
+    margin-bottom: 10vw;
+    margin-top: 100px;
+}
+@media only screen and (max-width: 600px){
+    .jokeHeaderContainer .listContainer{
+        margin-bottom: 150px !important;
+    }
+    }
+.jokeHeaderContainer .listContainer .list1, .jokeHeaderContainer .listContainer .list2, .jokeHeaderContainer .listContainer .list3{
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background-color: rgba(0, 46, 102, 0.8);
+    border: 1px white solid;
+    font-size: 3.1vw;
+    font-weight: 600;
+    width: auto;
+    padding: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: white;
+}
+.jokeHeaderContainer .listContainer .list1:hover, .jokeHeaderContainer .listContainer .list2:hover, .jokeHeaderContainer .listContainer .list3:hover{
+    text-decoration: none;
+    color: white;
+    opacity: 0.8;
+}
+/**********************************************************/
+
+.jokeContainer{
+    background-color: rgba(0, 46, 102, 0.8);
+}
+
+
+
+@media only screen and (max-width: 600px){
+    .headerContainer .listContainer a{
+        font-size: 18px !important;
+        padding: 10px !important;
+    }
+    }
+.landingShegaMob{
+    opacity: 0;
+    margin-bottom: 150px;
+}  
+@media only screen and (max-width: 600px){
+    .landingShegaMob{
+        opacity: 1;
+        text-align: center;
+        font-size: 25px !important;
+        margin-bottom: 90px;
+    }
+    } 
+/*************Selected Jookes**************************************/
+.selectedJokContainer{
+    background-color: white;
+    border-radius: 40px;
+}
+.selectedJokes{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 290px;
+    place-content: center;
+    height: 30vw;
+    background-color: transparent;  
+}
+@media only screen and (max-width: 600px){
+	.selectedJokes{
+        height: 125vw;
+        place-content: start;
+        grid-gap: 0px;
+        padding: 0;
+        margin-top: 25px;
+    }
+    }
+#selectedJokTitle{
+    grid-column: span 1;
+    margin: 0px 0 10px 0;
+    text-align: center;
+    padding: auto;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+.quoteTtl{
+    background-color: rgba(0, 46, 102, 0.8);
+    border: 1px white solid;
+    color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 4vw;
+}
+.selectedJokes .prevSel, .selectedJokes .nextSel{
+    color: rgba(0, 46, 102, 0.8);
+    font-size: 3vw;
+    font-weight: 550;
+    padding: 10px;
+    background-color: white;
+    /* border: 1px #4687b3 solid; */
+    border-radius: 50%;
+    margin: 0;
+    position: relative;
+    top: 40%;
+}
+@media only screen and (max-width: 600px){
+	.selectedJokes .prevSel, .selectedJokes .nextSel{
+        font-size: 5vw;
+    }
+    }
+.selectedJokes .nextSel:hover, .selectedJokes .prevSel:hover{
+    background-color: rgba(0, 46, 102, 0.8);
+    color: white;
+}
+.selectedJokes .nextSel:active, .selectedJokes .prevSel:active{
+    background-color: transparent;
+}
+.selectedJokes .messageBody{
+    background-color: transparent;
+    text-align: center;
+    grid-column-start: 2;
+    grid-column-end: 6;
+    border: 1px rgba(0, 46, 102, 0.8) solid;
+    border-radius: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+@media only screen and (max-width: 600px){
+    .selectedJokes .messageBody{
+        margin-top: 20%; 
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }}
+.selectedJokes .messageBody h2{
+    text-align: start !important;
+    padding-left: 70px;
+    margin-top: 10px;
+}
+@media only screen and (max-width: 600px){
+	.selectedJokes .messageBody h2{
+        padding-left: 0px;
+    }
+    }
+.selectedJokes .messageBody h2 p{
+    font-size: 3vw !important;
+}
+@media only screen and (max-width: 600px){
+    .selectedJokes .messageBody h2 p{
+        font-size: 20px !important;
+        font-weight: 550;
+        padding: 5px ;
+    }
+    }
+.selectedJokes .messageBody .quoteMsg .imogy{
+    width: 50px;
+    margin: 15px 2px 2px 2px;
+    margin-right: 10px;
+    border-right: 1px gray solid;
+    border-bottom: 1px gray solid;
+    box-shadow: 0 5px 5px 0 grey;
+}
+@media only screen and (max-width: 600px){
+	.selectedJokes .messageBody .quoteMsg .imogy{
+        width: 30px;
+        margin: 5px;
+    }
+    }
+/**********************************/
+/*************Family Jookes**************************************/
+.familyJokContainer{
+    background-color: white;
+    border-radius: 40px;
+}
+.familyJokes{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 300px;
+    padding-bottom: 40px;
+    place-content: center;
+    /* height: 30vw; */
+    background-color: transparent;  
+}
+@media only screen and (max-width: 600px){
+	.familyJokes{
+        height: 125vw;
+        place-content: start;
+        grid-gap: 0px;
+        padding: 0;
+        margin-top: 25px;
+    }
+    }
+#familyJokTitle{
+    grid-column: span 1;
+    margin: 0px 0 10px 0;
+    text-align: center;
+    padding: auto;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+.familyJokes .nextFam, .familyJokes .prevFam{
+    color: rgba(0, 46, 102, 0.8);
+    font-size: 3vw;
+    font-weight: 550;
+    padding: 10px;
+    background-color: white;
+    /* border: 1px #4687b3 solid; */
+    border-radius: 50%;
+    margin: 0;
+    position: relative;
+    top: 40%;
+}
+@media only screen and (max-width: 600px){
+	.familyJokes .nextFam, .familyJokes .prevFam{
+        font-size: 5vw;
+    }
+    }
+.familyJokes .nextFam:hover, .familyJokes .prevFam:hover{
+    background-color: rgba(0, 46, 102, 0.8);
+    color: white;
+}
+.familyJokes .nextSel:active, .familyJokes .prevSel:active{
+    background-color: transparent;
+}
+.familyJokes .messageBody{
+    background-color: transparent;
+    text-align: center;
+    grid-column-start: 2;
+    grid-column-end: 6;
+    border: 1px rgba(0, 46, 102, 0.8) solid;
+    border-radius: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+@media only screen and (max-width: 600px){
+.familyJokes .messageBody{
+    margin-top: 20%; 
+    padding-top: 20px;
+    padding-bottom: 20px;
+}}
+.familyJokes .messageBody h2{
+    text-align: start !important;
+    padding-left: 70px;
+    margin-top: 10px;
+}
+@media only screen and (max-width: 600px){
+	.familyJokes .messageBody h2{
+        padding-left: 0px;
+    }
+    }
+.familyJokes .messageBody h2 p{
+    font-size: 3vw !important;
+}
+@media only screen and (max-width: 600px){
+    .familyJokes .messageBody h2 p{
+        font-size: 20px !important;
+        font-weight: 550;
+        padding: 5px ;
+    }
+    }
+.familyJokes .messageBody .quoteMsg .imogy{
+    width: 50px;
+    margin: 15px 2px 2px 2px;
+    margin-right: 10px;
+    border-right: 1px gray solid;
+    border-bottom: 1px gray solid;
+    box-shadow: 0 5px 5px 0 grey;
+}
+@media only screen and (max-width: 600px){
+	.familyJokes .messageBody .quoteMsg .imogy{
+        width: 30px;
+        margin: 5px;
+    }
+    }
+/**********************************/
+/*************Work Jookes**************************************/
+.workJokContainer{
+    background-color: white;
+    border-radius: 40px;
+}
+.workJokes{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 370px;
+    padding-bottom: 40px;
+    place-content: center;
+    /* height: 30vw; */
+    background-color: transparent;  
+}
+@media only screen and (max-width: 600px){
+	.workJokes{
+        height: 125vw;
+        place-content: start;
+        grid-gap: 0px;
+        padding: 0;
+        margin-top: 25px;
+        margin-bottom: 250px;
+    }
+    }
+.workJokes .nextWork, .workJokes .prevWork{
+    color: rgba(0, 46, 102, 0.8);
+    font-size: 3vw;
+    font-weight: 550;
+    padding: 10px;
+    background-color: white;
+    /* border: 1px #4687b3 solid; */
+    border-radius: 50%;
+    margin: 0;
+    position: relative;
+    top: 40%;
+}
+@media only screen and (max-width: 600px){
+	.workJokes .nextWork, .workJokes .prevWork{
+        font-size: 5vw;
+    }
+    }
+#workJokTitle{
+    grid-column: span 1;
+    margin: 0px 0 10px 0;
+    text-align: center;
+    padding: auto;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+.workJokes .nextWork:hover, .workJokes .prevWork:hover{
+    background-color: rgba(0, 46, 102, 0.8);
+    color: white;
+}
+.workJokes .nextWork:active, .workJokes .prevWork:active{
+    background-color: transparent;
+}
+.workJokes .messageBody{
+    background-color: transparent;
+    text-align: center;
+    grid-column-start: 2;
+    grid-column-end: 6;
+    border: 1px rgba(0, 46, 102, 0.8) solid;
+    border-radius: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+@media only screen and (max-width: 600px){
+    .workJokes .messageBody{
+        margin-top: 20%; 
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }}
+.workJokes .messageBody h2{
+    text-align: start !important;
+    padding-left: 70px;
+    margin-top: 10px;
+}
+@media only screen and (max-width: 600px){
+	.workJokes .messageBody h2{
+        padding-left: 0px;
+    }
+    }
+.workJokes .messageBody h2 p{
+    font-size: 3vw !important;
+}
+@media only screen and (max-width: 600px){
+    .workJokes .messageBody h2 p{
+        font-size: 20px !important;
+        font-weight: 550;
+        padding: 5px ;
+    }
+    }
+.workJokes .messageBody .quoteMsg .imogy{
+    width: 50px;
+    margin: 15px 2px 2px 2px;
+    margin-right: 10px;
+    border-right: 1px gray solid;
+    border-bottom: 1px gray solid;
+    box-shadow: 0 5px 5px 0 grey;
+}
+@media only screen and (max-width: 600px){
+	.workJokes .messageBody .quoteMsg .imogy{
+        width: 30px;
+        margin: 5px;
+    }
+    }
