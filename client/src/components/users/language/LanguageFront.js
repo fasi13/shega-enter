@@ -20,7 +20,7 @@ function vocLang(state = -1, action) {
   }
 }
 let vocStore = createStore(vocLang)
-///////////////////////////////////////////
+///////////////////tens////////////////////////
 function tensLang(stateA = -1, action) {
   switch(action.type){
     case 'INCREMENTA':
@@ -32,7 +32,7 @@ function tensLang(stateA = -1, action) {
   }
 }
 let tensStore = createStore(tensLang)
-///////////////////////////////////////////
+///////////////////test////////////////////////
 function testLang(stateW = -1, action) {
   switch(action.type){
     case 'INCREMENTW':
@@ -44,6 +44,19 @@ function testLang(stateW = -1, action) {
   }
 }
 let storeTest = createStore(testLang)
+///////////////////video////////////////////////
+function videoLang(stateW = -1, action) {
+  switch(action.type){
+    case 'INCREMENTW':
+      return stateW + 1
+    case 'DECREMENTW':
+      return stateW - 1
+    default:
+    return stateW
+  }
+}
+let storeVideo = createStore(videoLang)
+///////////////////////////////////////////
 
 class LanguageFront extends React.Component {
   constructor(props){
@@ -61,6 +74,8 @@ class LanguageFront extends React.Component {
         answer: 'መዳረሻ',
         dispQn: 'Click Qn to Start the test',
         dispAns: '',
+        langVideoTitle: 'Tutorial Video',
+        langVideoSrc: 'https://www.youtube.com/embed/tgbNymZ7vqY',
     }
     }
 
@@ -200,11 +215,48 @@ displayQn = () => {
 displayAns = () => {
   this.setState({dispAns: this.state.answer})
 }
-
 /////////////////////////////////////////////////////////////
-  
+/////////////////////Video//////////////////////////////////
+nextlangVideoHandle = () => {
+  fetch('http://localhost:8080/langVideo', {
+      method: 'get',
+      headers: {'Content-Type': 'application/json'},
+      // body: JSON.stringify({
+          
+      // }) 
+  })
+  .then(response => response.json())
+  .then(data => {
+      if(data){
+          this.setState({langVideoSrc: data[storeVideo.getState()].langVideoSrc});         
+      } }
+  )
+if(storeVideo.getState() < 3){
+  storeVideo.dispatch({type: 'INCREMENTW'})
+}
+}
+
+prevlangVideoHandle = () => {
+  fetch('http://localhost:8080/langVideo', {
+      method: 'get',
+      headers: {'Content-Type': 'application/json'},
+  })
+  .then(response => response.json())
+  .then(data => {
+      if(data){
+        this.setState({langVideoSrc: data[storeVideo.getState()].langVideoSrc});                
+      } }
+  )
+if(storeVideo.getState() > 0){
+  storeVideo.dispatch({type: 'DECREMENTW'})
+}
+
+}
+/////////////////////////////////////////////////////////////////////
 
   render(){
+    const {langVideoSrc} = this.state;
+
     return (
     <>
       <LangNavbar />
@@ -213,11 +265,11 @@ displayAns = () => {
           <div className="content-center">
             <h1 className="slogan">Communicate to the World</h1>
             <div className="listContainer">
-              <a className="list1" href="#vocTtl">Vocabulary</a>
-              <a className="list2" href="#tensTtl">Sentences</a>
-              <a className="list3" href="#testTtl">Grammer</a>
+              <a className="list1" href="#vocTtl">English Vocabulary</a>
+              <a className="list2" href="#tensTtl">Types of Tences</a>
+              <a className="list3" href="#testTtl">Self Test</a>
             </div>
-            <h4 className="shegaLangLanding" >Shega Entertainment</h4>
+            <h4 className="shegaLangLang" >Shega Entertainment</h4>
           </div>
         </div> 
 
@@ -233,7 +285,7 @@ displayAns = () => {
                     </div>
                     <div className="leftSide">
                       <h2 className="vocEnglish">English</h2>
-                      <h2 className="vocAmharic">Amharic</h2>
+                      <h2 className="vocAmharic">አማርኛ</h2>
                     </div>
                   </div> 
                   <div>
@@ -269,6 +321,22 @@ displayAns = () => {
               </div>
             </div>
 
+            <div className="tenseContainer">
+              <h2 className="langVideoTitle" id="langVideoTitle">{`${this.state.langVideoTitle}`}</h2>
+              <div className="tense">
+                <div className="langVideoBody">
+                    <iframe title="firstVideo" src={`${langVideoSrc}`}>
+                  </iframe>
+                </div>
+                <div>
+                  <Button className="prevTens" onClick={this.prevlangVideoHandle}><i className="fa fa-backward" aria-hidden='true'></i></Button>
+                </div>
+                <div>
+                  <Button className="nextTens" onClick={this.nextlangVideoHandle}><i className="fa fa-forward" aria-hidden='true'></i></Button>
+                </div>
+              </div>
+            </div>
+
             <div className="testContainer">
               <h2 className="testTtl" id="testTtl">{`${this.state.exc}`}</h2>
               <div className="test">
@@ -278,8 +346,8 @@ displayAns = () => {
                     <h2 className="answerDisplay">{`${this.state.dispAns}`}</h2>
                   </div>
                   <div className="leftSide">
-                    <h2><Button className="prev" onClick={this.displayQn}>Qn</Button></h2>
-                    <Button className="next" onClick={this.displayAns}>Ans</Button>
+                    <h2><Button className="qn" onClick={this.displayQn}>Qn</Button></h2>
+                    <Button className="ans" onClick={this.displayAns}>Ans</Button>
                   </div>
                 </div> 
                  <div>
@@ -290,6 +358,7 @@ displayAns = () => {
                 </div> 
               </div> 
             </div> 
+
           </Container>
         </div>
         <Footer />

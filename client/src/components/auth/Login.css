@@ -1,0 +1,13 @@
+.backToHome h2{
+    font-size: 25px ;
+    opacity: 0.5;
+    float: right;
+    margin-top: -40px;
+}
+.backToHome h2:hover{
+    opacity: 1;
+    background-color: #007bff;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}

@@ -236,21 +236,17 @@ if(storeWork.getState() > 0){
               <a className="list2" href="#familyJokTitle">የቤተሰብ ቀልዶች</a> 
               <a className="list3" href="#workJokTitle">የስራ ቦታ ቀልዶች</a>
             </div>
-            <h4 id="landingShega" className="landingShegaMob" >Shega Entertainment</h4>
+            <h4 id="landingShegajok" className="landingShegaJok" >Shega Entertainment</h4>
           </div>
         </div> 
-        {/* <LandingPageHeader /> */}
+
         <div className="jokeCards">
           <Container >
             <div className="selectedJokContainer">
-              <h2 className="quoteTtl" id="selectedJokTitle">{`${this.state.titleS}`}</h2>
+              <h2 className="selectedJokTitle" id="selectedJokTitle">{`${this.state.titleS}`}</h2>
               <div className="selectedJokes">
-                <div>
-                  <Button className="prevSel" onClick={this.prevSelectHandle}><i className="fa fa-backward" aria-hidden='true'></i></Button>
-                  
-                </div>
-                <div className="messageBody">
-                  <h2 className="quoteMsg">
+                <div className="selectedBody">
+                  <h2 className="selJokMsg">
                     <img src={icon} alt="" className="imogy" align="left" /><p>{`${this.state.jokeSA}`}</p>
                     <img src={men} alt="" className="imogy" align="left" /><p>{`${this.state.jokeSB}`}</p>
                     <img src={icon} alt="" className="imogy" align="left" /> <p>{`${this.state.jokeSC}`}</p>
@@ -258,19 +254,19 @@ if(storeWork.getState() > 0){
                   </h2>
                 </div> 
                 <div>
+                  <Button className="prevSel" onClick={this.prevSelectHandle}><i className="fa fa-backward" aria-hidden='true'></i></Button>  
+                </div>
+                <div>
                   <Button className="nextSel" onClick={this.nextSelectHandle}><i className="fa fa-forward" aria-hidden='true'></i></Button>
                 </div>
               </div>
             </div>
 
             <div className="familyJokContainer">
-              <h2 className="quoteTtl" id="familyJokTitle">{`${this.state.titleF}`}</h2>
+              <h2 className="familyJokTitle" id="familyJokTitle">{`${this.state.titleF}`}</h2>
               <div className="familyJokes">
-                <div>
-                  <Button className="prevFam" onClick={this.prevFamHandle}><i className="fa fa-backward" aria-hidden='true'></i></Button>
-                </div>
-                <div className="messageBody">
-                  <h2 className="quoteMsg">
+                <div className="familyBody">
+                  <h2 className="familyMsg">
                     <img src={icon} alt="" className="imogy" align="left" /><p>{`${this.state.jokeFA}`}</p>
                     <img src={men} alt="" className="imogy" align="left" /><p>{`${this.state.jokeFB}`}</p>
                     <img src={icon} alt="" className="imogy" align="left" /><p>{`${this.state.jokeFC}`}</p>
@@ -278,25 +274,28 @@ if(storeWork.getState() > 0){
                   </h2>
                 </div> 
                 <div>
+                  <Button className="prevFam" onClick={this.prevFamHandle}><i className="fa fa-backward" aria-hidden='true'></i></Button>
+                </div>
+                <div>
                   <Button className="nextFam" onClick={this.nextFamHandle}><i className="fa fa-forward" aria-hidden='true'></i></Button>
                 </div>
               </div>
             </div>
            
             <div className="workJokContainer">
-              <h2 className="quoteTtl" id="workJokTitle">{`${this.state.titleW}`}</h2>
+              <h2 className="workJokTitle" id="workJokTitle">{`${this.state.titleW}`}</h2>
               <div className="workJokes">
-                <div>
-                  <Button className="prevWork" onClick={this.prevWorkHandle}><i className="fa fa-backward" aria-hidden='true'></i></Button>
-                </div>
-                <div className="messageBody">
-                  <h2 className="quoteMsg">
+                <div className="workBody">
+                  <h2 className="workMsg">
                     <img src={icon} alt="" className="imogy" align="left" /><p>{`${this.state.jokeWA}`}</p>
                     <img src={men} alt="" className="imogy" align="left" /><p>{`${this.state.jokeWB}`}</p>
                     <img src={icon} alt="" className="imogy" align="left" /><p>{`${this.state.jokeWC}`}</p>
                     <img src={men} alt="" className="imogy" align="left" /><p>{`${this.state.jokeWD}`}</p>
                   </h2>
                 </div> 
+                <div>
+                  <Button className="prevWork" onClick={this.prevWorkHandle}><i className="fa fa-backward" aria-hidden='true'></i></Button>
+                </div>
                 <div>
                   <Button className="nextWork" onClick={this.nextWorkHandle}><i className="fa fa-forward" aria-hidden='true'></i></Button>
                 </div>

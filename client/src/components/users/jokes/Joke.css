@@ -5,19 +5,20 @@
     place-items: center;
     color: white;
     align-content: space-evenly;
-}
+} 
 .jokeHeaderContainer .slogan{
     font-size: 4vw;
     font-weight: 600;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    background-color: rgba(0, 46, 102, 0.8);
+    /* background-color: rgba(0, 46, 102, 0.8); */
     border: 1px white solid;
     padding: 10px;
     padding-left: 40px;
     padding-right: 40px;
     margin-top: 15vw;
     margin-bottom: 10vw;
+    opacity: 0.8;
 }
 @media only screen and (max-width: 600px){
 	.jokeHeaderContainer .slogan{
@@ -30,21 +31,43 @@
     }
 .jokeHeaderContainer .listContainer{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(calc(min(30px, 100%)),1fr)); 
-    width: 90%;
+    grid-template-columns: repeat(auto-fit, minmax(calc(min(100px, 100%)),1fr)); 
+    width: 100%;
     text-align: center;
     grid-column: span 4; 
-    margin-left: 3vw;
-    margin-right: 3vw;
+    /* margin-left: 3vw;
+    margin-right: 3vw; */
     margin-bottom: 10vw;
     margin-top: 100px;
 }
 @media only screen and (max-width: 600px){
     .jokeHeaderContainer .listContainer{
         margin-bottom: 150px !important;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(calc(min(300px, 100%)),1fr)); 
     }
     }
-.jokeHeaderContainer .listContainer .list1, .jokeHeaderContainer .listContainer .list2, .jokeHeaderContainer .listContainer .list3{
+.jokeHeaderContainer .listContainer a{
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    /* background-color: rgba(0, 46, 102, 0.8); */
+    border: 1px white solid;
+    font-size: 3.1vw;
+    font-weight: 600;
+    width: auto;
+    padding: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: white;
+    opacity: 0.8;
+}
+@media only screen and (max-width: 600px){
+    .jokeHeaderContainer .listContainer a{
+        font-size: 18px !important;
+        padding: 10px !important;
+    }
+    }
+/* .jokeHeaderContainer .listContainer .list1, .jokeHeaderContainer .listContainer .list2, .jokeHeaderContainer .listContainer .list3{
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     background-color: rgba(0, 46, 102, 0.8);
@@ -56,38 +79,30 @@
     margin-left: 5px;
     margin-right: 5px;
     color: white;
-}
-.jokeHeaderContainer .listContainer .list1:hover, .jokeHeaderContainer .listContainer .list2:hover, .jokeHeaderContainer .listContainer .list3:hover{
+} */
+.jokeHeaderContainer .listContainer a:hover{
     text-decoration: none;
     color: white;
-    opacity: 0.8;
-}
-/**********************************************************/
-
-.jokeContainer{
     background-color: rgba(0, 46, 102, 0.8);
+    opacity: 1;
 }
-
-
-
-@media only screen and (max-width: 600px){
-    .headerContainer .listContainer a{
-        font-size: 18px !important;
-        padding: 10px !important;
-    }
-    }
-.landingShegaMob{
+.jokeContainer .jokeHeaderContainer .landingShegaJok{
     opacity: 0;
     margin-bottom: 150px;
 }  
 @media only screen and (max-width: 600px){
-    .landingShegaMob{
+    .jokeContainer .jokeHeaderContainer .landingShegaJok{
         opacity: 1;
         text-align: center;
         font-size: 25px !important;
-        margin-bottom: 90px;
+        margin-bottom: 100px;
     }
     } 
+/**********************************************************/
+.jokeContainer{
+    background-color: rgba(0, 46, 102, 0.8);
+}
+ 
 /*************Selected Jookes**************************************/
 .selectedJokContainer{
     background-color: white;
@@ -96,17 +111,17 @@
 .selectedJokes{
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     text-align: center;
     font-weight: 400;
-    margin-bottom: 290px;
+    margin-bottom: 22vw;
     place-content: center;
     height: 30vw;
     background-color: transparent;  
 }
 @media only screen and (max-width: 600px){
 	.selectedJokes{
-        height: 125vw;
+        height: auto;
         place-content: start;
         grid-gap: 0px;
         padding: 0;
@@ -121,7 +136,7 @@
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
 }
-.quoteTtl{
+.selectedJokTitle{
     background-color: rgba(0, 46, 102, 0.8);
     border: 1px white solid;
     color: white;
@@ -133,21 +148,28 @@
     padding-right: 20px;
     font-size: 4vw;
 }
+@media only screen and (max-width: 600px){
+    .selectedJokTitle{
+        font-size: 10vw;
+    }
+}
 .selectedJokes .prevSel, .selectedJokes .nextSel{
     color: rgba(0, 46, 102, 0.8);
     font-size: 3vw;
     font-weight: 550;
     padding: 10px;
     background-color: white;
-    /* border: 1px #4687b3 solid; */
     border-radius: 50%;
     margin: 0;
+    margin-bottom: 10px;
     position: relative;
     top: 40%;
 }
 @media only screen and (max-width: 600px){
 	.selectedJokes .prevSel, .selectedJokes .nextSel{
-        font-size: 5vw;
+        font-size: 7vw;
+        margin-top: 30px !important;
+        top: 0%;
     }
     }
 .selectedJokes .nextSel:hover, .selectedJokes .prevSel:hover{
@@ -157,43 +179,80 @@
 .selectedJokes .nextSel:active, .selectedJokes .prevSel:active{
     background-color: transparent;
 }
-.selectedJokes .messageBody{
+.selectedJokes .prevSel{
+    float: left;
+    margin-left: -820px !important;
+}
+@media only screen and (max-width: 600px){
+    .selectedJokes .prevSel{
+        margin-left: 80px !important;
+    }
+}
+.selectedJokes .nextSel{
+    float: left;
+    margin-left: 0px !important;
+}
+@media only screen and (max-width: 600px){
+    .selectedJokes .nextSel{
+        margin-left: 90px !important;
+    }
+}
+
+.selectedJokes .selectedBody{
     background-color: transparent;
     text-align: center;
+    align-items: center;
     grid-column-start: 2;
-    grid-column-end: 6;
+    grid-column-end: 9;
     border: 1px rgba(0, 46, 102, 0.8) solid;
     border-radius: 20px;
     margin-top: 0;
     margin-bottom: 10px;
+    padding-bottom: 10px;
+    margin-left: 10.5vw !important;
+    width: 60vw;
 }
 @media only screen and (max-width: 600px){
-    .selectedJokes .messageBody{
-        margin-top: 20%; 
+    .selectedJokes .selectedBody{
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        margin-top: 0%; 
+        margin-bottom: 0%;
         padding-top: 20px;
         padding-bottom: 20px;
+        grid-column-start: 1;
+        grid-column-end: 6;
+        width: 92vw;
     }}
-.selectedJokes .messageBody h2{
+.selectedJokes .selectedBody .selJokMsg{
     text-align: start !important;
-    padding-left: 70px;
-    margin-top: 10px;
+    padding-left: 5vw;
+    margin-top: 0px;
+    float: center;
+    width: 100%; 
 }
 @media only screen and (max-width: 600px){
-	.selectedJokes .messageBody h2{
-        padding-left: 0px;
+	.selectedJokes .selectedBody .selJokMsg{
+        padding-left: 10px;
     }
     }
-.selectedJokes .messageBody h2 p{
+@media only screen and (max-width: 600px){
+    .selectedJokes .selectedBody .selJokMsg img{
+        margin-right: 15px !important ;
+    }
+    }
+.selectedJokes .selectedBody .selJokMsg p{
     font-size: 3vw !important;
+    text-align: start;
 }
 @media only screen and (max-width: 600px){
-    .selectedJokes .messageBody h2 p{
-        font-size: 20px !important;
+    .selectedJokes .selectedBody .selJokMsg p{
+        font-size: 25px !important;
         font-weight: 550;
-        padding: 5px ;
+        padding: 0px ;
     }
     }
-.selectedJokes .messageBody .quoteMsg .imogy{
+.selectedJokes .selectedBody .selJokMsg .imogy{
     width: 50px;
     margin: 15px 2px 2px 2px;
     margin-right: 10px;
@@ -202,7 +261,7 @@
     box-shadow: 0 5px 5px 0 grey;
 }
 @media only screen and (max-width: 600px){
-	.selectedJokes .messageBody .quoteMsg .imogy{
+	.selectedJokes .selectedBody .selJokMsg .imogy{
         width: 30px;
         margin: 5px;
     }
@@ -216,18 +275,17 @@
 .familyJokes{
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     text-align: center;
     font-weight: 400;
-    margin-bottom: 300px;
-    padding-bottom: 40px;
+    margin-bottom: 290px;
     place-content: center;
-    /* height: 30vw; */
+    height: 30vw;
     background-color: transparent;  
 }
 @media only screen and (max-width: 600px){
 	.familyJokes{
-        height: 125vw;
+        height: auto;
         place-content: start;
         grid-gap: 0px;
         padding: 0;
@@ -242,67 +300,123 @@
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
 }
-.familyJokes .nextFam, .familyJokes .prevFam{
+.familyJokTitle{
+    background-color: rgba(0, 46, 102, 0.8);
+    border: 1px white solid;
+    color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 4vw;
+}
+@media only screen and (max-width: 600px){
+    .familyJokTitle{
+        font-size: 10vw;
+    }
+}
+.familyJokes .prevFam, .familyJokes .nextFam{
     color: rgba(0, 46, 102, 0.8);
     font-size: 3vw;
     font-weight: 550;
     padding: 10px;
     background-color: white;
-    /* border: 1px #4687b3 solid; */
     border-radius: 50%;
     margin: 0;
+    margin-bottom: 10px;
     position: relative;
     top: 40%;
 }
 @media only screen and (max-width: 600px){
-	.familyJokes .nextFam, .familyJokes .prevFam{
-        font-size: 5vw;
+	.familyJokes .prevFam, .familyJokes .nextFam{
+        font-size: 7vw;
+        margin-top: 30px !important;
+        top: 0%;
     }
     }
 .familyJokes .nextFam:hover, .familyJokes .prevFam:hover{
     background-color: rgba(0, 46, 102, 0.8);
     color: white;
 }
-.familyJokes .nextSel:active, .familyJokes .prevSel:active{
+.familyJokes .nextFam:active, .familyJokes .prevFam:active{
     background-color: transparent;
 }
-.familyJokes .messageBody{
+.familyJokes .prevFam{
+    float: left;
+    margin-left: -820px !important;
+}
+@media only screen and (max-width: 600px){
+    .familyJokes .prevFam{
+        margin-left: 80px !important;
+    }
+}
+.familyJokes .nextFam{
+    float: left;
+    margin-left: 0px !important;
+}
+@media only screen and (max-width: 600px){
+    .familyJokes .nextFam{
+        margin-left: 90px !important;
+    }
+}
+
+.familyJokes .familyBody{
     background-color: transparent;
     text-align: center;
+    align-items: center;
     grid-column-start: 2;
-    grid-column-end: 6;
+    grid-column-end: 9;
     border: 1px rgba(0, 46, 102, 0.8) solid;
     border-radius: 20px;
     margin-top: 0;
     margin-bottom: 10px;
+    padding-bottom: 10px;
+    margin-left: 10.5vw !important;
+    width: 60vw;
 }
 @media only screen and (max-width: 600px){
-.familyJokes .messageBody{
-    margin-top: 20%; 
-    padding-top: 20px;
-    padding-bottom: 20px;
-}}
-.familyJokes .messageBody h2{
+    .familyJokes .familyBody{
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        margin-top: 0%; 
+        margin-bottom: 0%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        grid-column-start: 1;
+        grid-column-end: 6;
+        width: 92vw;
+    }}
+.familyJokes .familyBody .familyMsg{
     text-align: start !important;
-    padding-left: 70px;
-    margin-top: 10px;
+    padding-left: 5vw;
+    margin-top: 0px;
+    float: center;
+    width: 100%; 
 }
 @media only screen and (max-width: 600px){
-	.familyJokes .messageBody h2{
-        padding-left: 0px;
+	.familyJokes .familyBody .familyMsg{
+        padding-left: 10px;
     }
     }
-.familyJokes .messageBody h2 p{
+@media only screen and (max-width: 600px){
+    .familyJokes .familyBody .familyMsg img{
+        margin-right: 15px !important ;
+    }
+    }
+.familyJokes .familyBody .familyMsg p{
     font-size: 3vw !important;
+    text-align: start;
 }
 @media only screen and (max-width: 600px){
-    .familyJokes .messageBody h2 p{
-        font-size: 20px !important;
+    .familyJokes .familyBody .familyMsg p{
+        font-size: 25px !important;
         font-weight: 550;
-        padding: 5px ;
+        padding: 0px ;
     }
     }
-.familyJokes .messageBody .quoteMsg .imogy{
+.familyJokes .familyBody .familyMsg .imogy{
     width: 50px;
     margin: 15px 2px 2px 2px;
     margin-right: 10px;
@@ -311,7 +425,7 @@
     box-shadow: 0 5px 5px 0 grey;
 }
 @media only screen and (max-width: 600px){
-	.familyJokes .messageBody .quoteMsg .imogy{
+	.familyJokes .familyBody .familyMsg .imogy{
         width: 30px;
         margin: 5px;
     }
@@ -325,40 +439,21 @@
 .workJokes{
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     text-align: center;
     font-weight: 400;
-    margin-bottom: 370px;
-    padding-bottom: 40px;
+    margin-bottom: 290px;
     place-content: center;
-    /* height: 30vw; */
+    height: 30vw;
     background-color: transparent;  
 }
 @media only screen and (max-width: 600px){
 	.workJokes{
-        height: 125vw;
+        height: auto;
         place-content: start;
         grid-gap: 0px;
         padding: 0;
         margin-top: 25px;
-        margin-bottom: 250px;
-    }
-    }
-.workJokes .nextWork, .workJokes .prevWork{
-    color: rgba(0, 46, 102, 0.8);
-    font-size: 3vw;
-    font-weight: 550;
-    padding: 10px;
-    background-color: white;
-    /* border: 1px #4687b3 solid; */
-    border-radius: 50%;
-    margin: 0;
-    position: relative;
-    top: 40%;
-}
-@media only screen and (max-width: 600px){
-	.workJokes .nextWork, .workJokes .prevWork{
-        font-size: 5vw;
     }
     }
 #workJokTitle{
@@ -369,6 +464,42 @@
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
 }
+.workJokTitle{
+    background-color: rgba(0, 46, 102, 0.8);
+    border: 1px white solid;
+    color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 4vw;
+}
+@media only screen and (max-width: 600px){
+    .workJokTitle{
+        font-size: 10vw;
+    }
+}
+.workJokes .prevWork, .workJokes .nextWork{
+    color: rgba(0, 46, 102, 0.8);
+    font-size: 3vw;
+    font-weight: 550;
+    padding: 10px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0;
+    margin-bottom: 10px;
+    position: relative;
+    top: 40%;
+}
+@media only screen and (max-width: 600px){
+	.workJokes .prevWork, .workJokes .nextWork{
+        font-size: 7vw;
+        margin-top: 30px !important;
+        top: 0%;
+    }
+    }
 .workJokes .nextWork:hover, .workJokes .prevWork:hover{
     background-color: rgba(0, 46, 102, 0.8);
     color: white;
@@ -376,43 +507,80 @@
 .workJokes .nextWork:active, .workJokes .prevWork:active{
     background-color: transparent;
 }
-.workJokes .messageBody{
+.workJokes .prevWork{
+    float: left;
+    margin-left: -820px !important;
+}
+@media only screen and (max-width: 600px){
+    .workJokes .prevWork{
+        margin-left: 80px !important;
+    }
+}
+.workJokes .nextWork{
+    float: left;
+    margin-left: 0px !important;
+}
+@media only screen and (max-width: 600px){
+    .workJokes .nextWork{
+        margin-left: 90px !important;
+    }
+}
+
+.workJokes .workBody{
     background-color: transparent;
     text-align: center;
+    align-items: center;
     grid-column-start: 2;
-    grid-column-end: 6;
+    grid-column-end: 9;
     border: 1px rgba(0, 46, 102, 0.8) solid;
     border-radius: 20px;
     margin-top: 0;
     margin-bottom: 10px;
+    padding-bottom: 10px;
+    margin-left: 10.5vw !important;
+    width: 60vw;
 }
 @media only screen and (max-width: 600px){
-    .workJokes .messageBody{
-        margin-top: 20%; 
+    .workJokes .workBody{
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        margin-top: 0%; 
+        margin-bottom: 0%;
         padding-top: 20px;
         padding-bottom: 20px;
+        grid-column-start: 1;
+        grid-column-end: 6;
+        width: 92vw;
     }}
-.workJokes .messageBody h2{
+.workJokes .workBody .workMsg{
     text-align: start !important;
-    padding-left: 70px;
-    margin-top: 10px;
+    padding-left: 5vw;
+    margin-top: 0px;
+    float: center;
+    width: 100%; 
 }
 @media only screen and (max-width: 600px){
-	.workJokes .messageBody h2{
-        padding-left: 0px;
+	.workJokes .workBody .workMsg{
+        padding-left: 10px;
     }
     }
-.workJokes .messageBody h2 p{
+@media only screen and (max-width: 600px){
+    .workJokes .workBody .workMsg img{
+        margin-right: 15px !important ;
+    }
+    }
+.workJokes .workBody .workMsg p{
     font-size: 3vw !important;
+    text-align: start;
 }
 @media only screen and (max-width: 600px){
-    .workJokes .messageBody h2 p{
-        font-size: 20px !important;
+    .workJokes .workBody .workMsg p{
+        font-size: 25px !important;
         font-weight: 550;
-        padding: 5px ;
+        padding: 0px ;
     }
     }
-.workJokes .messageBody .quoteMsg .imogy{
+.workJokes .workBody .workMsg .imogy{
     width: 50px;
     margin: 15px 2px 2px 2px;
     margin-right: 10px;
@@ -421,7 +589,7 @@
     box-shadow: 0 5px 5px 0 grey;
 }
 @media only screen and (max-width: 600px){
-	.workJokes .messageBody .quoteMsg .imogy{
+	.workJokes .workBody .workMsg .imogy{
         width: 30px;
         margin: 5px;
     }
