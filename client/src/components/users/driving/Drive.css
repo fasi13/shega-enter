@@ -1,0 +1,696 @@
+/*****HEADERS******************/
+.driveHeaderContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(min(300px, 100%)),1fr));
+    place-items: center;
+    color: white;
+    align-content: space-evenly;
+}
+.driveHeaderContainer .slogan{
+    font-size: 4vw;
+    font-weight: 600;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border: 1px white solid;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 15vw;
+    margin-bottom: 10vw;
+    opacity: 0.8;
+}
+@media only screen and (max-width: 600px){
+	.driveHeaderContainer .slogan{
+        margin-top: 40% !important;
+        padding: 15px !important;
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+        font-size: 20px !important;
+    }
+    }
+.driveHeaderContainer .listContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(min(100px, 100%)),1fr)); 
+    width: 100%;
+    text-align: center;
+    grid-column: span 4; 
+    margin-bottom: 10vw;
+    margin-top: 100px;
+}
+@media only screen and (max-width: 600px){
+    .driveHeaderContainer .listContainer{
+        margin-bottom: 150px !important;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(calc(min(300px, 100%)),1fr)); 
+    }
+    }
+.driveHeaderContainer .listContainer a{
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border: 1px white solid;
+    font-size: 3.1vw;
+    font-weight: 600;
+    width: auto;
+    padding: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: white;
+    opacity: 0.8;
+}
+@media only screen and (max-width: 600px){
+    .driveHeaderContainer .listContainer a{
+        font-size: 18px !important;
+        padding: 10px !important;
+    }
+    }
+.driveHeaderContainer .listContainer a:hover{
+    text-decoration: none;
+    color: white;
+    background-color: rgba(0, 46, 102, 0.8);
+    opacity: 1;
+}
+.driveContainer .driveHeaderContainer .shegaDriveLanding{
+    opacity: 0;
+    margin-bottom: 150px;
+}  
+@media only screen and (max-width: 600px){
+    .driveContainer .driveHeaderContainer .shegaDriveLanding{
+        opacity: 1;
+        text-align: center;
+        font-size: 25px !important;
+        margin-bottom: 100px;
+    }
+    } 
+/**********************************************************/
+.driveContainer{
+    background-color: rgba(0, 46, 102, 0.8);
+}
+/* .traficRuleContainer .prev, .traficRuleContainer .next{
+        color: rgba(0, 46, 102, 0.8);
+        font-size: 20px;
+        font-weight: 600;
+        background-color: white;
+        border: 1px rgba(0, 46, 102, 0.8)solid;
+        border-radius: 50%;
+        cursor: pointer; 
+    }
+@media only screen and (max-width: 600px){
+    .traficRuleContainer .prev, .traficRuleContainer .next{
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 20%;
+        padding: 10px;
+    }
+    } 
+.traficRuleContainer .prev:hover, .traficRuleContainer .next:hover{
+    background-color: rgba(0, 46, 102, 0.8);
+    color: white;
+    opacity: 0.8;
+} 
+
+.traficRuleContainer .prev:active, .traficRuleContainer .prev:focus, .traficRuleContainer .next:active, .traficRuleContainer .next:focus{
+    background-color: white;
+    color: rgba(0, 46, 102, 0.8);
+} */
+/*************Rules**************************************/
+.traficRuleContainer{
+    background-color: white;
+    border-radius: 40px;
+}
+.traficRule{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 22vw;
+    place-content: center;
+    height: 30vw;
+    background-color: transparent;    
+}
+@media only screen and (max-width: 600px){
+	.traficRule{
+        height: auto;
+        place-content: start;
+        grid-gap: 0px;
+        padding: 0;
+        margin-top: 25px;
+    }
+    }
+#traficRuleTitle, #youtubeVideoTitle{
+    grid-column: span 1;
+    margin: 0px 0 10px 0;
+    text-align: center;
+    padding: auto;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+.traficRuleTitle, .youtubeVideoTitle{
+    background-color: rgba(0, 46, 102, 0.8);
+    border: 1px white solid;
+    color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 4vw;
+}
+@media only screen and (max-width: 600px){
+    .traficRuleTitle, .youtubeVideoTitle{
+        font-size: 10vw;
+    }
+}
+.traficRule .prevRule, .traficRule .nextRule{
+    color: rgba(0, 46, 102, 0.8);
+    font-size: 3vw;
+    font-weight: 550;
+    padding: 10px;
+    background-color: white;
+    border-radius: 50%;
+    border-color: transparent;
+    margin: 0;
+    margin-bottom: 10px;
+    position: relative;
+    top: 40%;
+}
+@media only screen and (max-width: 600px){
+	.traficRule .prevRule, .traficRule .nextRule{
+        font-size: 7vw;
+        margin-top: 30px !important;
+        top: 0%;
+    }
+    }
+.traficRule .nextRule:hover, .traficRule .prevRule:hover{
+    background-color: rgba(0, 46, 102, 0.8);
+    color: white;
+}
+.traficRule .nextRule:active, .traficRule .prevRule:active{
+    background-color: transparent;
+}
+.traficRule .prevRule{
+    float: left;
+    margin-left: -820px !important;
+}
+@media only screen and (max-width: 600px){
+    .traficRule .prevRule{
+        margin-left: 80px !important;
+    }
+}
+.traficRule .nextRule{
+    float: left;
+    margin-left: 0px !important;
+}
+@media only screen and (max-width: 600px){
+    .traficRule .nextRule{
+        margin-left: 90px !important;
+    }
+}
+.traficRule .ruleBody{
+    background-color: transparent;
+    text-align: center;
+    align-items: center;
+    grid-column-start: 2;
+    grid-column-end: 9;
+    border: 1px rgba(0, 46, 102, 0.8) solid;
+    border-radius: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-bottom: 0px;
+    margin-left: 10.5vw !important;
+    width: 60vw;
+}
+@media only screen and (max-width: 600px){
+    .traficRule .ruleBody{
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        margin-top: 0%; 
+        margin-bottom: 0%;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        grid-column-start: 1;
+        grid-column-end: 6;
+        width: 92vw;
+    }}
+.traficRule .ruleBody .leftSide{
+    float: left;
+    width: 25%;  
+    border-right: 1px rgba(0, 46, 102, 0.8) solid;
+}
+.traficRule .ruleBody .leftSide .rule, .traficRule .ruleBody .leftSide .meaning{
+    border-bottom: 1px rgba(0, 46, 102, 0.8) solid;
+  } 
+.traficRule .ruleBody .leftSide .rule, .traficRule .ruleBody .leftSide .meaning, .traficRule .ruleBody .leftSide .pictorial{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 600; 
+    color: rgba(0, 46, 102, 0.8);
+  }
+@media only screen and (max-width: 600px){
+	.traficRule .ruleBody .leftSide .rule, .traficRule .ruleBody .leftSide .meaning, .traficRule .ruleBody .leftSide .pictorial{
+        padding-bottom: 30px;
+        padding-top: 30px;
+        font-size: 20px;
+      } 
+    }
+.traficRule .ruleBody .rightSide{
+    float: right;
+    width: 75%;  
+  }
+.traficRule .ruleBody .rightSide .ruleDisplay, .traficRule .ruleBody .rightSide .ruleMeaningDisplay{
+    border-bottom: 1px rgba(0, 46, 102, 0.8) solid;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 600;
+}  
+@media only screen and (max-width: 600px){
+    .traficRule .ruleBody .rightSide .ruleMeaningDisplay, .traficRule .ruleBody .rightSide .ruleDisplay{
+        padding-bottom: 30px;
+        padding-top: 30px;
+        font-size: 20px;
+      }
+}  
+.traficRule .ruleBody .rulePictorial img{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 250px;
+    max-height: 88px;
+}
+@media only screen and (max-width: 600px){
+    .traficRule .ruleBody .rulePictorial img{
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        width: 200px;
+        max-height: 85px;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    }
+/**********************************/
+/*************Symbol**************************************/
+.traficSymbolContainer{
+    background-color: white;
+    border-radius: 40px;
+}
+.traficSymbol{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 22vw;
+    place-content: center;
+    height: 30vw;
+    background-color: transparent;    
+}
+@media only screen and (max-width: 600px){
+	.traficSymbol{
+        height: auto;
+        place-content: start;
+        grid-gap: 0px;
+        padding: 0;
+        margin-top: 25px;
+    }
+    }
+#traficSymbolTitle{
+    grid-column: span 1;
+    margin: 0px 0 10px 0;
+    text-align: center;
+    padding: auto;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+.traficSymbolTitle{
+    background-color: rgba(0, 46, 102, 0.8);
+    border: 1px white solid;
+    color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 4vw;
+}
+@media only screen and (max-width: 600px){
+    .traficSymbolTitle{
+        font-size: 10vw;
+    }
+}
+.traficSymbol .prevSymbol, .traficSymbol .nextSymbol{
+    color: rgba(0, 46, 102, 0.8);
+    font-size: 3vw;
+    font-weight: 550;
+    padding: 10px;
+    background-color: white;
+    border-radius: 50%;
+    border-color: transparent;
+    margin: 0;
+    margin-bottom: 10px;
+    position: relative;
+    top: 40%;
+}
+@media only screen and (max-width: 600px){
+	.traficSymbol .prevSymbol, .traficSymbol .nextSymbol{
+        font-size: 7vw;
+        margin-top: 30px !important;
+        top: 0%;
+    }
+    }
+.traficSymbol .prevSymbol:hover, .traficSymbol .nextSymbol:hover{
+    background-color: rgba(0, 46, 102, 0.8);
+    color: white;
+}
+.traficSymbol .prevSymbol:active, .traficSymbol .nextSymbol:active{
+    background-color: transparent;
+}
+.traficSymbol .prevSymbol{
+    float: left;
+    margin-left: -820px !important;
+}
+@media only screen and (max-width: 600px){
+    .traficSymbol .prevSymbol{
+        margin-left: 80px !important;
+    }
+}
+.traficSymbol .nextSymbol{
+    float: left;
+    margin-left: 0px !important;
+}
+@media only screen and (max-width: 600px){
+    .traficSymbol .nextSymbol{
+        margin-left: 90px !important;
+    }
+}
+.traficSymbol .symbolBody{
+    background-color: transparent;
+    text-align: center;
+    align-items: center;
+    grid-column-start: 2;
+    grid-column-end: 9;
+    border: 1px rgba(0, 46, 102, 0.8) solid;
+    border-radius: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-bottom: 0px;
+    margin-left: 10.5vw !important;
+    width: 60vw;
+}
+@media only screen and (max-width: 600px){
+    .traficSymbol .symbolBody{
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        margin-top: 0%; 
+        margin-bottom: 0%;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        grid-column-start: 1;
+        grid-column-end: 6;
+        width: 92vw;
+    }}
+.traficSymbol .symbolBody .leftSide{
+    float: left;
+    width: 25%;  
+    border-right: 1px rgba(0, 46, 102, 0.8) solid;
+}
+.traficSymbol .symbolBody .leftSide .symbol, .traficSymbol .symbolBody .leftSide .symbolMeaning{
+    border-bottom: 1px rgba(0, 46, 102, 0.8) solid;
+  } 
+.traficSymbol .symbolBody .leftSide .symbol, .traficSymbol .symbolBody .leftSide .symbolMeaning, .traficSymbol .symbolBody .leftSide .symbolPictorial{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 600; 
+    color: rgba(0, 46, 102, 0.8);
+  }
+@media only screen and (max-width: 600px){
+	.traficSymbol .symbolBody .leftSide .symbol, .traficSymbol .symbolBody .leftSide .symbolMeaning, .traficSymbol .symbolBody .leftSide .symbolPictorial{
+        padding-bottom: 30px;
+        padding-top: 30px;
+        font-size: 20px;
+      } 
+    }
+.traficSymbol .symbolBody .rightSide{
+    float: right;
+    width: 75%;  
+  }
+.traficSymbol .symbolBody .rightSide .symbolDisplay, .traficSymbol .symbolBody .rightSide .symbolMeaningDisplay{
+    border-bottom: 1px rgba(0, 46, 102, 0.8) solid;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 600;
+}  
+@media only screen and (max-width: 600px){
+    .traficSymbol .symbolBody .rightSide .symbolDisplay, .traficSymbol .symbolBody .rightSide .symbolMeaningDisplay{
+        padding-bottom: 30px;
+        padding-top: 30px;
+        font-size: 20px;
+      }
+}  
+.traficSymbol .symbolBody .symbolPictorial img{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 250px;
+    max-height: 88px;
+}
+@media only screen and (max-width: 600px){
+    .traficSymbol .symbolBody .symbolPictorial img{
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        width: 200px;
+        max-height: 85px;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    }
+/**********************************/
+/*************Part**************************************/
+.partContainer{
+    background-color: white;
+    border-radius: 40px;
+}
+.part{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 22vw;
+    place-content: center;
+    height: 30vw;
+    background-color: transparent;    
+}
+@media only screen and (max-width: 600px){
+	.part{
+        height: auto;
+        place-content: start;
+        grid-gap: 0px;
+        padding: 0;
+        margin-top: 25px;
+    }
+    }
+#traficPartTitle{
+    grid-column: span 1;
+    margin: 0px 0 10px 0;
+    text-align: center;
+    padding: auto;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+.partTitle{
+    background-color: rgba(0, 46, 102, 0.8);
+    border: 1px white solid;
+    color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 4vw;
+}
+@media only screen and (max-width: 600px){
+    .partTitle{
+        font-size: 10vw;
+    }
+}
+.part .prevPart, .part .nextPart{
+    color: rgba(0, 46, 102, 0.8);
+    font-size: 3vw;
+    font-weight: 550;
+    padding: 10px;
+    background-color: white;
+    border-radius: 50%;
+    border-color: transparent;
+    margin: 0;
+    margin-bottom: 10px;
+    position: relative;
+    top: 40%;
+}
+@media only screen and (max-width: 600px){
+	.part .prevPart, .part .nextPart{
+        font-size: 7vw;
+        margin-top: 30px !important;
+        top: 0%;
+    }
+    }
+.part .prevPart:hover, .part .nextPart:hover{
+    background-color: rgba(0, 46, 102, 0.8);
+    color: white;
+}
+.part .prevPart:active, .part .nextPart:active{
+    background-color: transparent;
+}
+.part .prevPart{
+    float: left;
+    margin-left: -820px !important;
+}
+@media only screen and (max-width: 600px){
+    .part .prevPart{
+        margin-left: 80px !important;
+    }
+}
+.part .nextPart{
+    float: left;
+    margin-left: 0px !important;
+}
+@media only screen and (max-width: 600px){
+    .part .nextPart{
+        margin-left: 90px !important;
+    }
+}
+.part .partBody{
+    background-color: transparent;
+    text-align: center;
+    align-items: center;
+    grid-column-start: 2;
+    grid-column-end: 9;
+    border: 1px rgba(0, 46, 102, 0.8) solid;
+    border-radius: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-bottom: 0px;
+    margin-left: 10.5vw !important;
+    width: 60vw;
+}
+@media only screen and (max-width: 600px){
+    .part .partBody{
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        margin-top: 0%; 
+        margin-bottom: 0%;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        grid-column-start: 1;
+        grid-column-end: 6;
+        width: 92vw;
+    }}
+.part .partBody .leftSide{
+    float: left;
+    width: 25%;  
+    border-right: 1px rgba(0, 46, 102, 0.8) solid;
+}
+.part .partBody .leftSide .part, .part .partBody .leftSide .partMeaning{
+    border-bottom: 1px rgba(0, 46, 102, 0.8) solid;
+  } 
+.part .partBody .leftSide .part, .part .partBody .leftSide .partMeaning, .part .partBody .leftSide .partPictorialMeaning{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 600; 
+    color: rgba(0, 46, 102, 0.8);
+  }
+@media only screen and (max-width: 600px){
+	.part .partBody .leftSide .part, .part .partBody .leftSide .partMeaning, .traficSymbol .symbolBody .leftSide .partPictorialMeaning{
+        padding-bottom: 30px;
+        padding-top: 30px;
+        font-size: 20px;
+      } 
+    }
+.part .partBody .rightSide{
+    float: right;
+    width: 75%;  
+  }
+  .part .partBody .rightSide .partDisplay, .part .partBody .rightSide .partMeaningDisplay{
+    border-bottom: 1px rgba(0, 46, 102, 0.8) solid;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 600;
+}  
+@media only screen and (max-width: 600px){
+    .part .partBody .rightSide .partDisplay, .part .partBody .rightSide .partMeaningDisplay{
+        padding-bottom: 30px;
+        padding-top: 30px;
+        font-size: 20px;
+      }
+}  
+.part .partBody .partPictorial img{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 250px;
+    max-height: 88px;
+}
+@media only screen and (max-width: 600px){
+    .part .partBody .partPictorial img{
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        width: 200px;
+        max-height: 85px;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    }
+
+
+/**********Video*****************************/
+ .traficSymbolContainer .traficSymbol .videoBody iframe{
+    width: 60vw;
+    height: 25vw;
+    border-radius: 20px;
+    margin: 0;
+    padding: 0;
+}
+@media only screen and (max-width: 600px){
+    .traficSymbolContainer .traficSymbol .videoBody iframe{
+        width: 92vw;
+        height: 80vw;
+    }
+}
+
+.traficSymbol .videoBody{
+    background-color: transparent;
+    text-align: center;
+    align-items: center;
+    grid-column-start: 2;
+    grid-column-end: 9;
+    border-radius: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-bottom: 0px;
+    margin-left: 10.5vw !important;
+    width: 60vw;
+}
+@media only screen and (max-width: 600px){
+    .traficSymbol .videoBody{
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        margin-top: 0%; 
+        margin-bottom: 0%;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        grid-column-start: 1;
+        grid-column-end: 6;
+        width: 92vw;
+    }
+}

@@ -1,8 +1,11 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginAdmin } from "../../actions/authActions";
 import classnames from "classnames";
+
+import './Login.css';
 
 class Login extends Component {
     constructor() {
@@ -53,6 +56,7 @@ class Login extends Component {
                     <div className="col-md-4 mx-auto mt-5 card shadow-lg">
                         <div className="card-body p-1">
                             <h2 className="text-center text-primary mt-3">Login</h2>
+                            <a className="backToHome" href="/home" tag={Link}><h2>Home</h2></a>
                             <form noValidate onSubmit={this.onSubmit} className="white">
                                 <label htmlFor="email">Email</label>
                                 <input
@@ -85,7 +89,7 @@ class Login extends Component {
                                         className="btn btn-large btn-primary mt-2 px-5">
                                         Login
                                     </button>
-                                </p>
+                                </p>                                
                             </form>
                         </div>
                     </div>
