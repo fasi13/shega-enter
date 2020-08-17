@@ -1,15 +1,19 @@
 const Validator = require('validator');
 const isEmpty = require('is-empty');
+
+// In this case atleast the first 
+// two input should be field 
 module.exports = function checkValidation(data){
     let errors = {};
-    data.title = !isEmpty(data.title)? data.title: "";
-    data.JokesBody = !isEmpty(data.JokesBody)? data.JokesBody:"";
+    data.body_A = !isEmpty(data.body_A)? data.body_A: "";
+    data.body_B = !isEmpty(data.body_A)? data.body_B: "";
 
-    if(Validator.isEmpty(data.title)){
-        errors.title = "Title Field is required";
+    if(Validator.isEmpty(data.body_A)){
+        errors.body_A = "Body Field A is required";
     }
-    if(Validator.isEmpty(data.JokesBody)){
-        errors.JokesBody = "Body Field is required";
+
+    if(Validator.isEmpty(data.body_B)){
+        errors.body_B = "Body Field B is required";
     }
 
     return {

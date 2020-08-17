@@ -14,6 +14,10 @@
 
 Install Mongoos DB and run into your Machine First 
 
+To start server and client simultaneously
+
+`npm run dev` or if you want to run concurrently `npm run dev` 
+
 Since ther is no Registration page, You should be post admin signup schema to the database using
 
 Postman Or somthing. The schema would be
@@ -21,10 +25,6 @@ Postman Or somthing. The schema would be
 Post: `http://localhost:3000/api/admin-add`
 
 `{"name": "","email": "","password": "","password2":""}`
-
-To start server and client simultaneously
-
-`npm run dev` or if you want to run concurrently `npm run dev` 
 
 To Build react application
 
