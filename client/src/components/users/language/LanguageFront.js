@@ -1,5 +1,6 @@
 import React from "react";
 import './Language.css';
+import Audio1 from '../../../assets/mp3/sound1.mp3';
  
 // reactstrap components
 import { Button, Container, } from "reactstrap";
@@ -282,10 +283,14 @@ if(storeVideo.getState() > 0){
                     <div className="rightSide">
                       <h2 className="vocEngDisplay">{`${this.state.english}`}</h2>
                       <h2 className="vocAmDisplay">{`${this.state.amharic}`}</h2>
+                      <audio controls>
+                        <source src={Audio1} type="audio/mpeg" />
+                      </audio>
                     </div>
                     <div className="leftSide">
                       <h2 className="vocEnglish">English</h2>
                       <h2 className="vocAmharic">አማርኛ</h2>
+                      <h2 className="pronounce">Pronounce</h2>
                     </div>
                   </div> 
                   <div>
