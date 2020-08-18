@@ -6,11 +6,67 @@ const JokesSchema = new mongoose.Schema({
       },   
     SelectedJokes:[
         {
-            title :{
+            photo_A: {
                 type : String,
-                require : true
+                default:""
             },
-            JokesBody: {
+            photo_B: {
+                type : String,
+                default:""
+            },
+            photo_A_: {
+                type : String,
+                default:""
+            },
+            photo_B_: {
+                type : String,
+                default:""
+            },
+            photo_A__: {
+                type : String,
+                default:""
+            },
+            photo_B__: {
+                type : String,
+                default:""
+            },
+            photo_A___: {
+                type : String,
+                default:""
+            },
+            photo_B___: {
+                type : String,
+                default:""
+            },
+            body_A: {
+                type : String,
+                require: true
+            },
+            body_B: {
+                type : String,
+                require: true
+            },
+            body_A_: {
+                type : String,
+                require: true
+            },
+            body_B_: {
+                type : String,
+                require: true
+            },
+            body_A__: {
+                type : String,
+                require: true
+            },
+            body_B__: {
+                type : String,
+                require: true
+            },
+            body_A___: {
+                type : String,
+                require: true
+            },
+            body_B___: {
                 type : String,
                 require: true
             }
@@ -18,26 +74,138 @@ const JokesSchema = new mongoose.Schema({
     ],
     FamilyJokes: [
         {
-            title: {
+            photo_A: {
+                type : String,
+                default:""
+            },
+            photo_B: {
+                type : String,
+                default:""
+            },
+            photo_A_: {
+                type : String,
+                default:""
+            },
+            photo_B_: {
+                type : String,
+                default:""
+            },
+            photo_A__: {
+                type : String,
+                default:""
+            },
+            photo_B__: {
+                type : String,
+                default:""
+            },
+            photo_A___: {
+                type : String,
+                default:""
+            },
+            photo_B___: {
+                type : String,
+                default:""
+            },
+            body_A: {
                 type : String,
                 require: true
             },
-            JokesBody: {
+            body_B: {
                 type : String,
-                require:true
+                require: true
+            },
+            body_A_: {
+                type : String,
+                require: true
+            },
+            body_B_: {
+                type : String,
+                require: true
+            },
+            body_A__: {
+                type : String,
+                require: true
+            },
+            body_B__: {
+                type : String,
+                require: true
+            },
+            body_A___: {
+                type : String,
+                require: true
+            },
+            body_B___: {
+                type : String,
+                require: true
             }
 
         }
     ],
     OfficeJokes : [
         {
-            title : {
+            photo_A: {
                 type : String,
-                require : true
+                default:""
             },
-            JokesBody : {
+            photo_B: {
                 type : String,
-                require : true
+                default:""
+            },
+            photo_A_: {
+                type : String,
+                default:""
+            },
+            photo_B_: {
+                type : String,
+                default:""
+            },
+            photo_A__: {
+                type : String,
+                default:""
+            },
+            photo_B__: {
+                type : String,
+                default:""
+            },
+            photo_A___: {
+                type : String,
+                default:""
+            },
+            photo_B___: {
+                type : String,
+                default:""
+            },
+            body_A: {
+                type : String,
+                require: true
+            },
+            body_B: {
+                type : String,
+                require: true
+            },
+            body_A_: {
+                type : String,
+                require: true
+            },
+            body_B_: {
+                type : String,
+                require: true
+            },
+            body_A__: {
+                type : String,
+                require: true
+            },
+            body_B__: {
+                type : String,
+                require: true
+            },
+            body_A___: {
+                type : String,
+                require: true
+            },
+            body_B___: {
+                type : String,
+                require: true
             }
         }
     ],
