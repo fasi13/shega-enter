@@ -2,6 +2,8 @@ import React from "react";
 import './Welcome.css';
 import video from '../../../assets/mp4/bg.mp4';
 import { Button, Collapse, } from "reactstrap";
+import { useDispatch } from 'react-redux';
+import { increment } from "../../../actions/subCountAction"
 // import {Link} from "react-router-dom";
 
 function WelcomePage( {onRoutChange, subscriptionHandler} ) {
@@ -14,6 +16,9 @@ function WelcomePage( {onRoutChange, subscriptionHandler} ) {
       setCollapses([...collapses, collapse]);
     }
   };
+
+  // const coutSubscribers = useSelector(state => state.subCounterReducer);
+  const dispatch = useDispatch();
   return (
         <div className="welcomeContainer">  
             <div class="overlay"></div>
@@ -34,6 +39,7 @@ function WelcomePage( {onRoutChange, subscriptionHandler} ) {
                       <Button
                         className="btn subPhoneBtn"
                         href="/thanks"
+                        onClick={() => dispatch(increment)}
                       >
                         SUBSCRIBE 
                       </Button>
@@ -132,7 +138,7 @@ function WelcomePage( {onRoutChange, subscriptionHandler} ) {
           <div class="social-icons">
             <ul class="list-unstyled text-center mb-0">
               <li class="list-unstyled-item">
-                <a href="sms:6764" target="_blank" rel="noopener noreferrer">
+                <a href="sms:0944336661" target="_blank" rel="noopener noreferrer">
                   <i class="fas fa-sms"></i>
                 </a>
               </li>

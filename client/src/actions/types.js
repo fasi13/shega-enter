@@ -6,3 +6,5 @@ export const ADMIN_ADD = "ADMIN_ADD";
 export const ADMIN_UPDATE = "ADMIN_UPDATE";
 export const LOGOUT = 'LOGOUT';
 export const SELECTED_JOKE_UPDATE = 'SELECTED_JOKE_UPDATE';
+export const INCREMENT = 'INCREMENT';
+export const DECREMENT = 'DECREMENT';

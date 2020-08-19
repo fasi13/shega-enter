@@ -140,7 +140,7 @@
 }
 @media only screen and (max-width: 600px){
 	.vocabulary{
-        height: 110vw;
+        height: 115vw;
         place-content: start;
         grid-gap: 0px;
         padding: 0;
@@ -231,7 +231,7 @@
     .vocabulary .vocBody{
         margin-left: 0 !important;
         padding-left: 0 !important;
-        margin-top: 10%; 
+        margin-top: 0%; 
         padding-top: 0px;
         padding-bottom: 0px;
         grid-column-start: 1;
@@ -243,10 +243,10 @@
     width: 30%;  
     border-right: 1px rgba(0, 46, 102, 0.8) solid;
 }
-.vocabulary .vocBody .leftSide .vocEnglish{
-    border-bottom: 1px rgba(0, 46, 102, 0.8) solid;
-  } 
 .vocabulary .vocBody .leftSide .vocEnglish, .vocabulary .vocBody .leftSide .vocAmharic {
+    border-bottom: 1px rgba(0, 46, 102, 0.8) solid;
+  }
+  .vocabulary .vocBody .leftSide .vocEnglish, .vocabulary .vocBody .leftSide .vocAmharic, .vocabulary .vocBody .leftSide .pronounce {
     padding-bottom: 20px;
     padding-top: 20px;
     margin: 0;
@@ -255,10 +255,10 @@
     font-size: 2.5em;
   }
 @media only screen and (max-width: 600px){
-	.vocabulary .vocBody .leftSide .vocEnglish, .vocabulary .vocBody .leftSide .vocAmharic{
+	.vocabulary .vocBody .leftSide .vocEnglish, .vocabulary .vocBody .leftSide .vocAmharic, .vocabulary .vocBody .leftSide .pronounce{
         padding-bottom: 40px;
         padding-top: 40px;
-        font-size: 25px;
+        font-size: 20px;
       } 
     }
 .vocabulary .vocBody .rightSide{
@@ -275,17 +275,24 @@
     margin: 0;
     font-size: 2.5em;
     font-weight: 600;
+    border-bottom: 1px rgba(0, 46, 102, 0.8) solid;
 } 
 @media only screen and (max-width: 600px){
     .vocabulary .vocBody .rightSide .vocAmDisplay, .vocabulary .vocBody .rightSide .vocEngDisplay{
         padding-bottom: 40px;
         padding-top: 40px;
-        font-size: 25px;   
+        font-size: 20px;   
       }
 }  
-.vocabulary .vocBody .leftSide .off, .vocabulary .vocBody .middle .off, .vocabulary .vocBody .rightSide .off{
-    opacity: 0; 
-}
+.vocabulary .vocBody .rightSide audio{
+    margin-top: 15px;
+} 
+@media only screen and (max-width: 600px){
+    .vocabulary .vocBody .rightSide audio{
+        width: 190px;
+        margin-top: 20px;
+    }
+} 
 
 /**********************************/
 /*************Tense**************************************/
