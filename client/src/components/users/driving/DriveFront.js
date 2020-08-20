@@ -76,8 +76,8 @@ class DriveFront extends React.Component {
       part: 'ስፖኪዮ',
       partMeaning: 'የመኪና መስታወት',
       partImg: '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', 
-      videoTitle: 'Tutorial Video',
-      drvVideoSrc: 'https://www.youtube.com/embed/tgbNymZ7vqY',
+      videoTitle: 'ቪዲዮ መርጃ',
+      drvVideoSrc: 'https://www.youtube.com/embed/tSTlv5Tqc54',
     }
     }
 
@@ -269,6 +269,7 @@ arrayBufferToBase64(buffer) {
 /////////////////////////////////////////////////////////////
 
 
+
   render(){
     const {img1, symbolImg, partImg, drvVideoSrc} = this.state;
     var base64Flag = 'data:image/jpeg;base64,';
@@ -300,9 +301,9 @@ arrayBufferToBase64(buffer) {
                       <div className="rulePictorial"><img src={base64Flag + `${img1}`} alt="" /></div>
                     </div>
                     <div className="leftSide">
-                      <h2 className="rule">Rule</h2>
-                      <h2 className="meaning">Meaning</h2>   
-                      <h2 className="pictorial">Pictorial</h2>                 
+                      <h2 className="rule">ህጎች</h2>
+                      <h2 className="meaning">ትርጉም</h2>   
+                      <h2 className="pictorial">ምስል</h2>                 
                     </div> 
                   </div> 
                   <div>
@@ -324,9 +325,9 @@ arrayBufferToBase64(buffer) {
                       <div className="symbolPictorial"><img src={base64Flag + `${symbolImg}`} alt="" /></div>
                     </div>
                     <div className="leftSide">
-                      <h2 className="symbol">Symbol</h2>
-                      <h2 className="symbolMeaning">Meaning</h2>     
-                      <h2 className="symbolPictorial">Pictorial</h2>              
+                      <h2 className="symbol">ምልክቶች</h2>
+                      <h2 className="symbolMeaning">ትርጉም</h2>     
+                      <h2 className="symbolPictorial">ምስል</h2>              
                     </div>
                   </div> 
                   <div>
@@ -348,9 +349,9 @@ arrayBufferToBase64(buffer) {
                       <div className="symbolPictorial"><img src={base64Flag + `${partImg}`} alt="" /></div>
                     </div>
                     <div className="leftSide">
-                      <h2 className="symbol">Part</h2>
-                      <h2 className="symbolMeaning">Description</h2>     
-                      <h2 className="symbolPictorial">Pictorial</h2>              
+                      <h2 className="symbol">ክፍሎች</h2>
+                      <h2 className="symbolMeaning">ትርጉም</h2>     
+                      <h2 className="symbolPictorial">ምስል</h2>              
                     </div>
                   </div> 
                   <div>
@@ -366,7 +367,9 @@ arrayBufferToBase64(buffer) {
               <h2 className="youtubeVideoTitle" id="youtubeVideoTitle">{`${this.state.videoTitle}`}</h2>
               <div className="traficSymbol">
                 <div className="videoBody">
-                    <iframe title="firstVideo" src={`${drvVideoSrc}`}>
+                    <iframe title="firstVideo" src={`${drvVideoSrc}`} 
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                    >
                   </iframe>
                 </div>
                 <div>

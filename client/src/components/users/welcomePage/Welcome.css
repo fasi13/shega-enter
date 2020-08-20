@@ -261,12 +261,28 @@ video {
 .termsAndConditionsContaint{
   padding: 15px;
 }
-.termsAndConditions a {
+.termsAndConditionsMob a, .termsAndConditionsDesk a {
   color: tomato !important;
 }
-.termsAndConditions i{
+.termsAndConditionsMob i, .termsAndConditionsDesk i{
   color: tomato !important;
   font-size: 20px !important;
+}
+@media only screen and (max-width: 768px){
+  .termsAndConditionsDesk{
+    display: none;
+  }
+}
+.termsAndConditionsMob{
+  display: none;
+}
+@media only screen and (max-width: 768px){
+  .termsAndConditionsMob{
+    display: block;
+    padding-top: 90px;
+    margin-bottom: 0;
+    text-align: center;
+  }
 }
 [data-toggle="collapse"][aria-expanded="true"] > .rotate-if-collapsed{
     -webkit-transform: rotate(180deg);
@@ -277,5 +293,4 @@ video {
 }
 .termsAndConditionsContaint p{
   font-size: 14px;
-  
 }
