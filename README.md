@@ -32,6 +32,21 @@ cd client and run
 
 `npm run build`
 
+## deploying the project
+After installation and creation of heroku account,
+
+need to install heroku cli
+
+`heroku login`
+
+and then from the existing account coppy heroku git 
+`heroku git:remote -a vast-taiga-35599` and
+
+push to heroku
+
+`git push heroku master`
+
+
 
 #### መልካም Codding! ;)
 
