@@ -1,0 +1,80 @@
+/**************************************************/
+.jokeCatagory {
+  border: solid 1px grey;
+  padding: 10px;
+  margin: 20px;
+}
+.langAddContainer {
+  outline: 1px grey solid;
+  text-align: end;
+  margin: 5vw;
+  margin-top: 3vw;
+  margin-bottom: 0vw;
+}
+.langAddContainer {
+  padding: 1vw;
+  padding-bottom: 3vw;
+  margin-bottom: 2vw;
+}
+.langAddContainer button {
+  margin-right: 22%;
+  margin-top: 1rem;
+  min-width: 35vw;
+}
+.langAddContainer button i {
+  margin-left: 20vw;
+}
+
+.fileContainer {
+  width: 50% !important;
+  padding: 0;
+}
+.chooseFileButton {
+  min-width: auto !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+}
+
+.fileContainer .uploadIcon {
+  height: 40px;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.langAddContainer .closeAdd {
+  min-width: auto;
+  margin-right: 26%;
+  margin-bottom: 4vw;
+  margin-top: 0vw;
+}
+
+.langAddContainer .dialogInput {
+  width: 30vw !important;
+}
+.langAddContainer .videoInput {
+  min-width: 40vw !important;
+  margin: auto;
+  margin-bottom: 4vw;
+  text-align: center;
+  margin-top: 2vw;
+}
+.langAddContainer .videoLable {
+  margin: auto;
+  margin-top: 2vw;
+  margin-right: 1vw;
+}
+.form-inline {
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+}
+
+.dropSelect {
+  padding: 10px !important;
+  width: auto !important;
+}
+
+#as-react-datatable-container select {
+  width: auto !important;
+}

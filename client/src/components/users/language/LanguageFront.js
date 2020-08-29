@@ -76,7 +76,8 @@ class LanguageFront extends React.Component {
         dispQn: 'Click Qn to Start the test',
         dispAns: '',
         langVideoTitle: 'Tutorial Video',
-        langVideoSrc: 'https://www.youtube.com/embed/tgbNymZ7vqY',
+        langVideoSrc: 'https://www.youtube.com/embed/ZmUm29fc6nI',
+
     }
     }
 
@@ -330,7 +331,9 @@ if(storeVideo.getState() > 0){
               <h2 className="langVideoTitle" id="langVideoTitle">{`${this.state.langVideoTitle}`}</h2>
               <div className="tense">
                 <div className="langVideoBody">
-                    <iframe title="firstVideo" src={`${langVideoSrc}`}>
+                    <iframe title="firstVideo" src={`${langVideoSrc}`}
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
                   </iframe>
                 </div>
                 <div>

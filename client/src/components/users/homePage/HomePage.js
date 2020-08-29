@@ -1,9 +1,10 @@
 import React from "react";
-import {Link} from "react-router-dom";
-import './HomePage.css';
+import { Link } from "react-router-dom";
+import { Row, Col } from "reactstrap";
+import "./HomePage.css";
 
 // import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
-import { Button, } from "reactstrap";
+import { Button } from "reactstrap";
 
 function HomePage() {
   React.useEffect(() => {
@@ -21,34 +22,56 @@ function HomePage() {
     <>
       {/* <ExamplesNavbar /> */}
       <div className="homeContainer">
-          <p className="homeLogo" style={{fontSize: '45px',  }}>ሸጋ</p>
-          <div className="homeHeading">
-            <h1>Welcome to Shega Entertainment</h1>
-            <h4>You can get Jokes, Language and Driving License</h4>
-          </div>
-          <div className="homeButtons">
-            <Button
-                className="btn btn-outline-secondary"
-                href="/suhbesgcarEbnetdejrotkainment"
-            >
-                Joke 
-            </Button> 
-            <Button
-                className="btn btn-outline-secondary"
-                href="/suhbesgcarEbnetdelratnagiunamgeent"
-            >
-                Language 
-            </Button> 
-            <Button
-                className="btn btn-outline-secondary "
-                href="/suhbesgcarEbnetdedrrtiavinment"
-            >
-                Driving License 
-            </Button> 
+        <p className="homeLogo" style={{ fontSize: "45px" }}>
+          ሸጋ
+        </p>
+        <div className="homeHeading">
+          <h1>Welcome to Shega Entertainment</h1>
+          <h4>You can get Language and Driving License here</h4>
         </div>
-        <Link to="/login" className="homeAdminBtn">Admin</Link>
-        <div className="main">
+        <div className="homeButtons">
+          {/* <Button
+            className="btn btn-outline-secondary"
+            href="/suhbesgcarEbnetdejrotkainment"
+          >
+            Joke
+          </Button> */}
+          {/* <Button
+            className="btn btn-outline-secondary"
+            href="/suhbesgcarEbnetdelratnagiunamgeent"
+          >
+            Language
+          </Button> */}
+          <Row>
+            <Col md="2"></Col>
+            <Col md="5">
+              <Link
+                to="/lang-land"
+                className="list-group-item list-group-item-action btn btn-outline-secondary"
+                style={{
+                  backgroundColor: "white",
+                  color: "rgba(0, 46, 102, 0.8)",
+                }}
+              >
+                Language
+              </Link>
+            </Col>
+            <Col md="5">
+              <Link
+                className="list-group-item list-group-item-action btn btn-outline-secondary "
+                to="/suhbesgcarEbnetdedrrtiavinment"
+                style={{
+                  backgroundColor: "white",
+                  color: "rgba(0, 46, 102, 0.8)",
+                }}
+              >
+                Driving License
+              </Link>
+            </Col>
+          </Row>
         </div>
+        {/* <Link to="/login" className="homeAdminBtn">Admin</Link> */}
+        <div className="main"></div>
       </div>
     </>
   );

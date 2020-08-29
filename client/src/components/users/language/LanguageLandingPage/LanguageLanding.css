@@ -1,0 +1,86 @@
+.languageLanding {
+  height: 100%;
+  /* background-color: rgba(0, 46, 102, 0.8); */
+  text-align: center;
+  color: white;
+  position: relative;
+  font-family: "Source Sans Pro";
+  font-weight: 300;
+  padding: 1vw;
+  color: violet;
+}
+
+.languageLanding .homeLogo {
+  text-align: start;
+  margin: auto;
+  color: white;
+}
+.languageLanding .langLandText,
+h1,
+.languageLanding .langLandText,
+h4 {
+  color: white !important;
+  margin: 1vw;
+  margin-bottom: 1vw;
+}
+
+.languageLanding h1,
+.languageLanding h2,
+.languageLanding h3,
+.languageLanding h4,
+.languageLanding h5,
+.languageLanding h6 {
+  color: black;
+}
+
+.languageLanding .row img {
+  width: 100%;
+}
+
+.languageLanding .row {
+  /* margin-bottom: 1.35vw; */
+  /* margin-top: 1vw; */
+  padding: 10px;
+}
+.languageLanding .card {
+  margin-top: 30px;
+}
+.languageLanding .card .begBody {
+  background-image: url(../../../../assets/img/beg.jpeg);
+  background-size: cover;
+}
+.languageLanding .card .intBody {
+  background-image: url(../../../../assets/img/int.jpeg);
+  background-size: cover;
+}
+.languageLanding .card .advBody {
+  background-image: url(../../../../assets/img/adv.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.languageLanding .card .card-footer,
+.languageLanding .card .card-header {
+  background-color: white;
+}
+.languageLanding .card .card-footer h2 .cardFoot,
+.languageLanding .card .card-header h3 {
+  color: rgba(0, 46, 102, 0.8);
+}
+.languageLanding .card .card-footer h2 .cardFoot {
+  border: rgba(0, 46, 102, 0.8) 1px solid;
+  border-radius: 5px;
+  box-shadow: rgba(0, 46, 102, 0.8) 1px 1px 1px 1px;
+  background-color: rgb(202, 195, 195);
+}
+/* .languageLanding .card .card-footer:hover {
+  background-color: rgba(0, 46, 102, 0.8);
+} */
+.languageLanding .card .card-footer h2 .cardFoot:hover,
+.languageLanding .card .card-footer h2 .cardFoot:focus {
+  background-color: rgba(0, 46, 102, 0.8) !important;
+  color: white !important;
+  border: white 1px solid;
+}
+.languageLanding .langLandText {
+  margin-bottom: 12vw;
+}

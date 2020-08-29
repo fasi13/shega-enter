@@ -1,0 +1,153 @@
+[data-toggle="collapse"][aria-expanded="true"] > .rotate-if-collapsed {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+/**************************************************/
+.jokeCatagory {
+  border: solid 1px grey;
+  padding: 10px;
+  margin: 20px;
+}
+.jokeCatagory .adminSelectedJokes,
+.jokeCatagory .adminFamilyJokes,
+.jokeCatagory .adminOfficsJokes,
+.jokeAddContainer {
+  outline: 1px grey solid;
+  text-align: end;
+  margin: 5vw;
+  margin-top: 3vw;
+  margin-bottom: 0vw;
+}
+.adminSelectedJokes a,
+.adminFamilyJokes a,
+.adminOfficsJokes a {
+  font-size: 3vw;
+}
+.adminSelectedJokes a:hover,
+.adminFamilyJokes a:hover,
+.adminOfficsJokes a:hover {
+  text-decoration: none;
+}
+.adminSelectedJokes i,
+.adminFamilyJokes i,
+.adminOfficsJokes i {
+  padding: 0;
+  padding-right: 1vw;
+  padding-left: 25vw;
+  font-size: 3vw;
+  left: 0;
+}
+
+/* .jokeCatagory .adminSelectedJokes .input-group > .form-control,
+.adminFamilyJokes .input-group > .form-control,
+.jokeCatagory .adminOfficsJokes .input-group > .form-control {
+  margin-right: 0vw;
+  margin-bottom: 0vw;
+} */
+.jokeCatagory .btn {
+  background-color: transparent;
+  color: black;
+  left: 0;
+  display: inline-flex;
+  float: right;
+  text-align: end;
+}
+
+.jokeAddContainer {
+  padding: 1vw;
+  padding-bottom: 3vw;
+  margin-bottom: 2vw;
+}
+.jokeAddContainer button {
+  margin-right: 22%;
+  margin-top: 1rem;
+  min-width: 35vw;
+}
+.jokeAddContainer button i {
+  margin-left: 20vw;
+}
+
+.fileContainer {
+  width: 50% !important;
+  padding: 0;
+}
+.chooseFileButton {
+  min-width: auto !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+}
+
+.fileContainer .uploadIcon {
+  height: 40px;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.jokeAddContainer .closeAdd {
+  min-width: auto;
+  margin-right: 26%;
+  margin-bottom: 4vw;
+  margin-top: 0vw;
+}
+
+.jokeAddContainer .dialogInput {
+  width: 30vw !important;
+}
+
+.form-inline {
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+}
+
+#as-react-datatable-container select {
+  width: auto;
+  padding: 5px;
+  /* border: 10px; */
+}
+/**************************************************/
+/* .adminFamilyJokes{
+    outline: 1px grey solid;
+    text-align: end;
+    margin: 5vw;
+    margin-top: 3vw;
+    margin-bottom: 0vw;
+}
+.adminFamilyJokes a{
+    font-size: 3vw;
+}
+.adminFamilyJokes a:hover{
+    text-decoration: none;
+}
+.adminFamilyJokes i{
+    padding-right: 1vw;
+    padding-left: 25vw;
+    font-size: 3vw;
+    left: 0;
+} */
+
+/**************************************************/
+/* .adminOfficsJokes{
+    outline: 1px grey solid;
+    text-align: end;
+    margin: 5vw;
+    margin-top: 3vw;
+    margin-bottom: 0vw;
+}
+.adminOfficsJokes a{
+    font-size: 3vw;
+}
+.adminOfficsJokes a:hover{
+    text-decoration: none;
+}
+.adminOfficsJokes i{
+    padding-right: 1vw;
+    padding-left: 25vw;
+    font-size: 3vw;
+    left: 0;
+} */

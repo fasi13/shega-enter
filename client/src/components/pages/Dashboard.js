@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { connect, useSelector } from "react-redux";
+import { connect } from "react-redux";
 // import { increment } from "../../actions/subCountAction"
 import { logoutAdmin } from "../../actions/authActions";
 import Navbar from "../partials/Navbar";

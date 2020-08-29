@@ -1,10 +1,16 @@
 export const GET_ERRORS = "GET_ERRORS";
 export const ADMIN_LOADING = "ADMIN_LOADING";
 export const SET_CURRENT_ADMIN = "SET_CURRENT_ADMIN";
-export const SELECTED_JOKE_ADD = "SELECTED_JOKE_ADD"
 export const ADMIN_ADD = "ADMIN_ADD";
 export const ADMIN_UPDATE = "ADMIN_UPDATE";
-export const LOGOUT = 'LOGOUT';
-export const SELECTED_JOKE_UPDATE = 'SELECTED_JOKE_UPDATE';
-export const INCREMENT = 'INCREMENT';
-export const DECREMENT = 'DECREMENT';
+export const LOGOUT = "LOGOUT";
+
+export const SLECTED_JOKE_ADD = "SLECTED_JOKE_ADD";
+export const SLECTED_JOKE_UPDATE = "SLECTED_JOKE_UPDATE";
+export const FAMILY_JOKE_ADD = "FAMILY_JOKE_ADD";
+export const FAMILY_JOKE_UPDATE = "FAMILY_JOKE_UPDATE";
+export const OFFICE_JOKE_ADD = "OFFICE_JOKE_ADD";
+export const OFFICE_JOKE_UPDATE = "OFFICE_JOKE_UPDATE";
+
+export const INCREMENT = "INCREMENT";
+export const DECREMENT = "DECREMENT";

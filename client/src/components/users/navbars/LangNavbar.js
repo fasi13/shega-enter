@@ -1,11 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // reactstrap components
-import {
-  Navbar,
-  Container,
-} from "reactstrap";
-import './Navbar.css';
+import { Navbar, Container } from "reactstrap";
+import "./Navbar.css";
 
 function LangNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
@@ -42,8 +39,10 @@ function LangNavbar() {
       ) : null}
       <Navbar className={"fixed-top " + navbarColor}>
         <Container>
-         <h2 style={{fontSize: '45px'}}>ሸጋ</h2>
-         <a  href="/home" tag={Link}><h2>Home</h2></a>
+          <h2 style={{ fontSize: "35px", color: "white" }}>ሸጋ</h2>
+          <a href="/home" tag={Link}>
+            <h2>Home</h2>
+          </a>
         </Container>
       </Navbar>
     </>
