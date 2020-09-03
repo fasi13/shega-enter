@@ -3,18 +3,18 @@ import React from "react";
 
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
-import './Footer.css';
+import "./Footer.css";
 // core components
 
 function FooterBlackSocial() {
   return (
     <>
-      <footer className="footer" >
+      <footer className="footer">
         <Container>
           <div className="content">
             <Row>
               <Col md="4">
-                <h5>About Us</h5>
+                <h6>About Us</h6>
                 <ul className="links-vertical">
                   <li>
                     <a
@@ -28,7 +28,7 @@ function FooterBlackSocial() {
                   <li>
                     <a
                       className="text-muted footerContents"
-                      target="blank" 
+                      target="blank"
                       href="https://www.google.com/maps/search/Addis+Ababa,+Ethiopia+Kirkos+Sub-City,+Woreda+01,+On+AB-Zone+Business+Center+5th+floor,+Office+No.+182%2F183%2FF-5%2F110/@9.0094253,38.7730714,17z/data=!3m1!4b1"
                     >
                       Our Office
@@ -36,16 +36,12 @@ function FooterBlackSocial() {
                   </li>
                 </ul>
               </Col>
-              <Col  md="4">
-                <h5>Contact Us</h5>
+              <Col md="4">
+                <h6>Contact Us</h6>
                 <ul className="links-vertical">
                   <li>
-                    <a
-                      className="text-muted footerPhone"
-                      href="tel:0944336661"
-                    >
+                    <a className="text-muted footerPhone" href="tel:0944336661">
                       +251 944 336 661
-                      
                     </a>
                   </li>
                   <li>
@@ -59,7 +55,7 @@ function FooterBlackSocial() {
                 </ul>
               </Col>
               <Col md="4">
-                <h5>Follow Us</h5>
+                <h6>Follow Us</h6>
                 <ul className="social-buttons">
                   <li>
                     <Button
@@ -92,7 +88,7 @@ function FooterBlackSocial() {
                     >
                       <i class="fab fa-telegram-plane"></i>
                     </Button>
-                  </li>             
+                  </li>
                 </ul>
               </Col>
             </Row>
@@ -107,7 +103,7 @@ function FooterBlackSocial() {
               ePana Technologies
             </a>
             .
-          </div>        
+          </div>
         </Container>
       </footer>
     </>

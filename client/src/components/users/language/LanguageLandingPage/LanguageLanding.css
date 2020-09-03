@@ -44,6 +44,7 @@ h4 {
 }
 .languageLanding .card {
   margin-top: 30px;
+  box-shadow: rgba(9, 37, 71, 0.8) 3px 3px 1px 1px;
 }
 .languageLanding .card .begBody {
   background-image: url(../../../../assets/img/beg.jpeg);
@@ -69,7 +70,7 @@ h4 {
 .languageLanding .card .card-footer h2 .cardFoot {
   border: rgba(0, 46, 102, 0.8) 1px solid;
   border-radius: 5px;
-  box-shadow: rgba(0, 46, 102, 0.8) 1px 1px 1px 1px;
+  box-shadow: rgba(9, 37, 71, 0.8) 3px 3px 1px 1px;
   background-color: rgb(202, 195, 195);
 }
 /* .languageLanding .card .card-footer:hover {

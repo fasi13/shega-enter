@@ -35,24 +35,27 @@
 }
 @media only screen and (max-width: 600px) {
   .homeContainer .homeButtons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 }
 
 .homeContainer .homeButtons .btn {
-  background-color: transparent;
-  margin: 10px;
   font-size: 30px;
   font-weight: 600;
   width: 250px;
   color: white;
   outline: white;
+  border: rgba(0, 46, 102, 0.8) 1px solid;
+  border-radius: 5px;
+  box-shadow: rgba(9, 37, 71, 0.8) 3px 3px 1px 1px;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
 }
-.homeContainer .homeButtons .btn:hover {
-  background-color: white;
-  color: rgba(0, 46, 102, 0.8);
+.homeContainer .homeButtons .btn:hover,
+.homeContainer .homeButtons .btn:focus {
+  color: white !important;
+  background-color: rgba(8, 37, 73, 0.8) !important;
+  box-shadow: rgba(0, 46, 102, 0.8) 3px 3px 3px 3px;
 }
 @media only screen and (max-width: 600px) {
   .homeHeading h1 {

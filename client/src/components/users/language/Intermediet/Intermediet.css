@@ -1,0 +1,38 @@
+.vocabularyContainer .vocBody .vocTop {
+  /* border-bottom: grey 1px solid; */
+}
+.vocabularyContainer .vocBody .vocTop .lSide {
+  float: left;
+  width: 30%;
+}
+.vocabularyContainer .vocBody .vocTop .rSide {
+  float: right;
+  width: 70%;
+  border-left: grey 1px solid;
+}
+
+.vocabularyContainer .vocMid {
+  /* border-bottom: grey 1px solid; */
+}
+.vocabularyContainer .vocMid .lSide {
+  float: left;
+  width: 30%;
+}
+.vocabularyContainer .vocMid .rSide {
+  float: right;
+  width: 70%;
+  border-left: grey 1px solid;
+}
+
+.vocabularyContainer .vocBottom {
+  /* border-bottom: grey 1px solid; */
+}
+.vocabularyContainer .vocBottom .lSide {
+  float: left;
+  width: 30%;
+}
+.vocabularyContainer .vocBottom .rSide {
+  float: right;
+  width: 70%;
+  border-left: grey 1px solid;
+}

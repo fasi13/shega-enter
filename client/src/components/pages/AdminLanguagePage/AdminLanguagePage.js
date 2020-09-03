@@ -8,9 +8,9 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 // import axios from "axios";
 // import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import AddSelectedJokes from "../../partials/AddSelectedJokes";
-import AddFamilyJokes from "../../partials/AddFamilyJokes";
-import AddOfficeJoke from "../../partials/AddOfficeJoke";
+// import AddSelectedJokes from "../../partials/AddSelectedJokes";
+// import AddFamilyJokes from "../../partials/AddFamilyJokes";
+// import AddOfficeJoke from "../../partials/AddOfficeJoke";
 // import AdminUpdateModal from "../../partials/AdminUpdateModal";
 import { ToastContainer } from "react-toastify";
 import {
@@ -23,7 +23,7 @@ import {
   Input,
   Label,
 } from "reactstrap";
-import ImageUploader from "react-images-upload";
+// import ImageUploader from "react-images-upload";
 import "./AdminLanguagePage.css";
 
 class AdminLanguagePage extends Component {

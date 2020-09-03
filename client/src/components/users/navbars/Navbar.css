@@ -1,3 +1,6 @@
+.navbar .navbar-toggler-icon {
+  color: white !important;
+}
 .navbar {
   /* background-color: linear-gradient(to left, rgb(27, 28, 14), rgb(135, 143, 31)) !important;  */
   background-color: rgba(0, 46, 102, 0.8);
@@ -18,4 +21,8 @@
   .navbar a > h2 {
     font-size: 25px;
   }
+}
+
+.navbar .nav2Content {
+  margin-left: 350%;
 }

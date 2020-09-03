@@ -249,6 +249,10 @@ function WelcomePage({ onRoutChange, subscriptionHandler }) {
           </li>
         </ul>
         <div className="termsAndConditionsMob">
+          <p>
+            {" "}
+            © Copyright <b>Shega.et.</b> All Rights Reserved
+          </p>
           <a
             aria-expanded={collapses.includes(3)}
             data-parent="#accordion"

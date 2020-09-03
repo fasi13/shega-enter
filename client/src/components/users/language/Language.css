@@ -6,57 +6,86 @@
 }
 @media only screen and (max-width: 600px) {
   .languageContainer .languageTitle {
-    padding-top: 15vw;
-    margin-left: 0%;
-    align-items: center;
+    padding-top: 20vw;
+    margin-left: 10%;
+    /* margin-right: -4.1vw; */
+    margin-bottom: 15%;
   }
 }
 .languageContainer .languageTitle .frontList {
-  background-color: white;
+  background-color: rgba(5, 43, 90, 0.8);
+  border: white 1px solid;
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 40vw !important;
+  margin-bottom: 10vw !important;
   padding: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  box-shadow: rgba(9, 37, 71, 0.8) 3px 3px 1px 1px;
 }
 @media only screen and (max-width: 600px) {
   .languageContainer .languageTitle .frontList {
-    padding: 5px;
-    margin-bottom: 25vw;
+    padding: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin: 0;
+    margin-bottom: 25vw !important;
+    margin-top: 20vw !important;
+    margin-left: 5vw;
   }
 }
 .languageContainer .languageTitle .frontList .list,
 .languageContainer .languageTitle .frontList .list1,
 .languageContainer .languageTitle .frontList .list2 {
   color: rgba(0, 46, 102, 0.8);
+  background-color: white;
   font-size: 3vw;
   font-weight: 600;
+  padding: 10px;
+  border-radius: 5px;
 }
 @media only screen and (max-width: 600px) {
-  .languageContainer .languageTitle .frontList .list {
-    color: rgba(0, 46, 102, 0.8);
-    font-size: 8vw;
-    padding: 4vw;
-    /* margin-left: 12%; */
-    background-color: violet;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .languageContainer .languageTitle .frontList .list1 {
-    color: rgba(0, 46, 102, 0.8);
-    font-size: 8vw;
-    padding: 4vw;
-    /* margin-left: 18%; */
-    background-color: aqua !important;
-  }
-}
-@media only screen and (max-width: 600px) {
+  .languageContainer .languageTitle .frontList .list,
+  .languageContainer .languageTitle .frontList .list1,
   .languageContainer .languageTitle .frontList .list2 {
+    font-size: 5vw;
+  }
+}
+.languageContainer .languageTitle .frontList .list:hover,
+.languageContainer .languageTitle .frontList .list:focus,
+.languageContainer .languageTitle .frontList .list1:hover,
+.languageContainer .languageTitle .frontList .list1:focus,
+.languageContainer .languageTitle .frontList .list2:hover,
+.languageContainer .languageTitle .frontList .list2:focus {
+  text-decoration: none;
+  opacity: 0.5;
+}
+@media only screen and (max-width: 600px) {
+  /* .languageContainer .languageTitle .frontList .list {
     color: rgba(0, 46, 102, 0.8);
     font-size: 8vw;
     padding: 4vw;
-    /* margin-left: 30%; */
+    background-color: violet;
+  } */
+}
+@media only screen and (max-width: 600px) {
+  /* .languageContainer .languageTitle .frontList .list1 {
+    color: rgba(0, 46, 102, 0.8);
+    font-size: 8vw;
+    padding: 4vw;
+    background-color: aqua !important;
+  } */
+}
+@media only screen and (max-width: 600px) {
+  /* .languageContainer .languageTitle .frontList .list2 {
+    color: rgba(0, 46, 102, 0.8);
+    font-size: 8vw;
+    padding: 4vw;
     background-color: tomato !important;
-  }
+  } */
 }
 .languageContainer .languageTitle h1 {
   color: rgba(0, 46, 102, 0.8) !important;
@@ -65,8 +94,8 @@
 }
 @media only screen and (max-width: 600px) {
   .languageContainer .languageTitle h1 {
-    text-align: center;
-    margin-top: 5vw;
+    padding: 5px;
+    padding-left: 0;
   }
 }
 .languageContainer .languageTitle .levelInd h1 {
@@ -77,15 +106,51 @@
   font-size: 6vw;
 }
 @media only screen and (max-width: 600px) {
-  .languageContainer .languageTitle .levelInd h1 {
+  /* .languageContainer .languageTitle .levelInd h1 {
     margin: 0;
     margin-bottom: 0px;
     border-radius: 0 !important;
     text-align: center;
     font-weight: 600;
     margin-top: 15vw !important;
+  } */
+}
+.languageContainer .languageTitle .levelInd .begginerLevel {
+  font-size: 5.5vw;
+  margin-top: 3.5vw !important;
+}
+@media only screen and (max-width: 600px) {
+  .languageContainer .languageTitle .levelInd .begginerLevel {
+    font-size: 10vw;
+    margin-top: 35vw !important;
+    margin-left: -5vw !important;
   }
 }
+.languageContainer .languageTitle .levelInd .interLevel {
+  margin-left: -7vw !important;
+  margin-top: 3.5vw !important;
+  font-size: 5.5vw;
+}
+@media only screen and (max-width: 600px) {
+  .languageContainer .languageTitle .levelInd .interLevel {
+    font-size: 9.5vw;
+    margin-top: 35vw !important;
+    margin-left: -9.5vw !important;
+  }
+}
+.languageContainer .languageTitle .levelInd .advancedLevel {
+  margin-left: -1vw !important;
+  margin-top: 3.5vw !important;
+  font-size: 5.5vw;
+}
+@media only screen and (max-width: 600px) {
+  .languageContainer .languageTitle .levelInd .advancedLevel {
+    font-size: 10vw;
+    margin-top: 35vw !important;
+    margin-left: -6vw !important;
+  }
+}
+
 .langHeaderContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(calc(min(300px, 100%)), 1fr));
@@ -180,7 +245,7 @@
     opacity: 1;
     text-align: center;
     font-size: 25px !important;
-    margin-bottom: 100px;
+    margin-bottom: 120px;
   }
 }
 /**********************************************************/
@@ -225,14 +290,7 @@
   display: inline-grid;
   grid-template-columns: auto auto;
 }
-.topSide {
-  border-right: 1px grey solid;
-  text-align: center;
-}
-.leftSideN {
-}
-.rightSideN {
-}
+
 .vocabularyContainer {
   background-color: white;
   border-radius: 40px;
@@ -307,9 +365,10 @@
   background-color: rgba(0, 46, 102, 0.8);
   color: white;
 }
-.vocabulary .nextVoc:active,
-.vocabulary .prevVoc:active {
-  background-color: transparent;
+.vocabulary .nextVoc:focus,
+.vocabulary .prevVoc:focus {
+  background-color: white;
+  color: rgba(0, 46, 102, 0.8);
 }
 .vocabulary .prevVoc {
   float: left;
@@ -357,7 +416,7 @@
 .vocabulary .vocBody .leftSide {
   float: left;
   width: 30%;
-  border-right: 1px rgba(0, 46, 102, 0.8) solid;
+  /* border-right: 1px rgba(0, 46, 102, 0.8) solid; */
 }
 .vocabulary .vocBody .leftSide .vocEnglish,
 .vocabulary .vocBody .leftSide .vocAmharic {
@@ -365,18 +424,18 @@
 }
 .vocabulary .vocBody .leftSide .vocEnglish,
 .vocabulary .vocBody .leftSide .vocAmharic,
-.vocabulary .vocBody .leftSide .pronounce {
+.vocabulary .vocBody .leftSide .sound {
   padding-bottom: 20px;
   padding-top: 20px;
   margin: 0;
-  font-weight: 600;
+  font-weight: 500;
   color: rgba(0, 46, 102, 0.8);
-  font-size: 2.5em;
+  font-size: 2em;
 }
 @media only screen and (max-width: 600px) {
   .vocabulary .vocBody .leftSide .vocEnglish,
   .vocabulary .vocBody .leftSide .vocAmharic,
-  .vocabulary .vocBody .leftSide .pronounce {
+  .vocabulary .vocBody .leftSide .sound {
     padding-bottom: 40px;
     padding-top: 40px;
     font-size: 20px;
@@ -385,6 +444,7 @@
 .vocabulary .vocBody .rightSide {
   float: right;
   width: 70%;
+  border-left: 0px rgba(0, 46, 102, 0.8) solid;
 }
 
 .vocabulary .vocBody .rightSide .vocEngDisplay {
@@ -395,8 +455,8 @@
   padding-bottom: 20px;
   padding-top: 20px;
   margin: 0;
-  font-size: 2.5em;
-  font-weight: 600;
+  font-size: 2em;
+  font-weight: 500;
   border-bottom: 1px rgba(0, 46, 102, 0.8) solid;
 }
 @media only screen and (max-width: 600px) {
@@ -437,7 +497,7 @@
 }
 @media only screen and (max-width: 600px) {
   .tense {
-    height: 110vw;
+    height: 115vw;
     place-content: start;
     grid-gap: 0px;
     padding: 0;
@@ -544,7 +604,7 @@
 .tense .tensBody .leftSide {
   float: left;
   width: 25%;
-  border-right: 1px rgba(0, 46, 102, 0.8) solid;
+  /* border-right: 1px rgba(0, 46, 102, 0.8) solid; */
 }
 @media only screen and (max-width: 600px) {
   .tense .tensBody .leftSide {
@@ -562,9 +622,9 @@
   padding-bottom: 20px;
   padding-top: 20px;
   margin: 0;
-  font-weight: 600;
+  font-weight: 500;
   color: rgba(0, 46, 102, 0.8);
-  font-size: 2.5em;
+  font-size: 2em;
 }
 @media only screen and (max-width: 600px) {
   .tense .tensBody .leftSide .tensType,
@@ -578,6 +638,7 @@
 .tense .tensBody .rightSide {
   float: right;
   width: 75%;
+  border-left: 1px rgba(0, 46, 102, 0.8) solid;
 }
 @media only screen and (max-width: 600px) {
   .tense .tensBody .rightSide {
@@ -599,8 +660,8 @@
   padding-bottom: 20px;
   padding-top: 20px;
   margin: 0;
-  font-size: 2.5em;
-  font-weight: 600;
+  font-size: 2em;
+  font-weight: 500;
 }
 @media only screen and (max-width: 600px) {
   .tense .tensBody .rightSide .tenstypeDisplay {
@@ -614,8 +675,8 @@
   padding-bottom: 20px;
   padding-top: 20px;
   margin: 0;
-  font-size: 2.5em;
-  font-weight: 600;
+  font-size: 2em;
+  font-weight: 500;
 }
 @media only screen and (max-width: 600px) {
   .tense .tensBody .rightSide .tensStructureDisplay {
@@ -628,8 +689,8 @@
   padding-bottom: 20px;
   padding-top: 20px;
   margin: 0;
-  font-size: 2.5em;
-  font-weight: 600;
+  font-size: 2em;
+  font-weight: 500;
 }
 @media only screen and (max-width: 600px) {
   .tense .tensBody .rightSide .tensEgDisplay {
@@ -683,11 +744,12 @@
 }
 @media only screen and (max-width: 600px) {
   .test {
-    height: 110vw;
+    height: 125vw;
     place-content: start;
     grid-gap: 0px;
     padding: 0;
-    margin-top: 25px;
+    margin-top: 0px;
+    width: 100% !important;
   }
 }
 #testTtl,
@@ -782,18 +844,18 @@
   .test .testBody {
     margin-left: 0 !important;
     padding-left: 0 !important;
-    margin-top: 15%;
+    margin-top: 5%;
     padding-top: 0px;
     padding-bottom: 0px;
     grid-column-start: 1;
     grid-column-end: 6;
-    width: 92vw;
+    width: 100%;
   }
 }
 .test .testBody .leftSide {
   float: left;
   width: 25%;
-  border-right: 1px rgba(0, 46, 102, 0.8) solid;
+  /* border-right: 1px rgba(0, 46, 102, 0.8) solid; */
 }
 .test .testBody .leftSide .qn {
   border-bottom: 1px rgba(0, 46, 102, 0.8) solid;
@@ -802,7 +864,7 @@
   border-radius: 50%;
   margin: 0;
   font-size: 2vw;
-  font-weight: 600;
+  font-weight: 500;
   color: rgba(0, 46, 102, 0.8);
   background-color: transparent;
 }
@@ -821,46 +883,59 @@
   margin: 0;
   margin-top: 10px;
   font-size: 2vw;
-  font-weight: 600;
+  font-weight: 500;
   color: rgba(0, 46, 102, 0.8);
   background-color: transparent;
 }
 @media only screen and (max-width: 600px) {
   .test .testBody .leftSide .ans {
     padding-bottom: 30px;
-    padding-top: 30px;
+    padding-top: 20px;
     font-size: 5vw;
   }
 }
 .test .testBody .rightSide {
   float: right;
   width: 75%;
+  border-left: 1px rgba(0, 46, 102, 0.8) solid;
 }
 .test .testBody .rightSide h2 {
   font-size: 20px;
 }
 
-.test .testBody .rightSide .questionDisplay {
-  border-bottom: 1px rgba(0, 46, 102, 0.8) solid;
+.test .testBody .rightSide .alternativesDisplay {
+  /* border-bottom: 1px rgba(0, 46, 102, 0.8) solid; */
+  /* border-left: 1px rgba(0, 46, 102, 0.8) solid; */
   padding-bottom: 20px;
   padding-top: 20px;
   margin: 0;
-  font-size: 2.5em;
-  font-weight: 600;
+  font-size: 2em;
+  font-weight: 500;
+}
+.test .testBody .rightSide .questionDisplay {
+  /* border-bottom: 1px rgba(0, 46, 102, 0.8) solid; */
+  /* border-left: 1px rgba(0, 46, 102, 0.8) solid; */
+  padding-bottom: 20px;
+  padding-top: 20px;
+  margin: 0;
+  font-size: 2em;
+  font-weight: 500;
 }
 @media only screen and (max-width: 600px) {
-  .test .testBody .rightSide .questionDisplay {
+  .test .testBody .rightSide .questionDisplay,
+  .test .testBody .rightSide .alternativesDisplay {
     padding-bottom: 30px;
     padding-top: 30px;
     font-size: 20px;
   }
 }
 .test .testBody .rightSide .answerDisplay {
+  /* border-left: 1px rgba(0, 46, 102, 0.8) solid; */
   padding-bottom: 0px;
   padding-top: 0px;
   margin: 0;
-  font-size: 2.5em;
-  font-weight: 600;
+  font-size: 2em;
+  font-weight: 500;
 }
 @media only screen and (max-width: 600px) {
   .test .testBody .rightSide .answerDisplay {
@@ -881,7 +956,7 @@
 @media only screen and (max-width: 600px) {
   .test .testBody h2 p {
     font-size: 20px !important;
-    font-weight: 550;
+    font-weight: 500;
     padding: 5px;
   }
 }

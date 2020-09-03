@@ -1,49 +1,42 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 // reactstrap components
-import { Navbar, Container } from "reactstrap";
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+} from "reactstrap";
 import "./Navbar.css";
 
 function LangNavbar() {
-  const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
-  const [collapseOpen, setCollapseOpen] = React.useState(false);
-  React.useEffect(() => {
-    const updateNavbarColor = () => {
-      if (
-        document.documentElement.scrollTop > 199 ||
-        document.body.scrollTop > 199
-      ) {
-        setNavbarColor("");
-      } else if (
-        document.documentElement.scrollTop < 200 ||
-        document.body.scrollTop < 200
-      ) {
-        setNavbarColor("navbar-transparent");
-      }
-    };
-    window.addEventListener("scroll", updateNavbarColor);
-    return function cleanup() {
-      window.removeEventListener("scroll", updateNavbarColor);
-    };
-  });
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
   return (
     <>
-      {collapseOpen ? (
-        <div
-          id="bodyClick"
-          onClick={() => {
-            document.documentElement.classList.toggle("nav-open");
-            setCollapseOpen(false);
-          }}
-        />
-      ) : null}
-      <Navbar className={"fixed-top " + navbarColor}>
-        <Container>
-          <h2 style={{ fontSize: "35px", color: "white" }}>ሸጋ</h2>
-          <a href="/home" tag={Link}>
-            <h2>Home</h2>
-          </a>
-        </Container>
+      <Navbar
+        // color="white"
+        backgroundColor="rgba(0, 46, 102, 0.8)"
+        light
+        expand="md"
+        className={"fixed-top "}
+      >
+        <NavbarBrand style={{ color: "white" }} href="/">
+          <h1>ሸጋ</h1>
+        </NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="ml-auto" navbar>
+            <NavItem>
+              <NavLink style={{ color: "white" }} href="/home/">
+                <h2>Home</h2>
+              </NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
       </Navbar>
     </>
   );
