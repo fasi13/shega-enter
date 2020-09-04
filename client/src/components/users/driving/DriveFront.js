@@ -26,7 +26,15 @@ import part1 from "../../../assets/img/part/full.jpg";
 import part2 from "../../../assets/img/part/gearbox-min.jpg";
 import part3 from "../../../assets/img/part/filter.jpg";
 import part4 from "../../../assets/img/part/gearbox.png";
-import part5 from "../../../assets/img/part/engine.jpg";
+import part5 from "../../../assets/img/part/moter.png";
+import part6 from "../../../assets/img/part/pestata.png";
+import part7 from "../../../assets/img/part/fuelPump.png";
+import part8 from "../../../assets/img/part/injectionPump.png";
+import part9 from "../../../assets/img/part/kamShaft.png";
+import part10 from "../../../assets/img/part/filtro.png";
+import part11 from "../../../assets/img/part/engine.jpg";
+import part12 from "../../../assets/img/part/chansis.png";
+import part13 from "../../../assets/img/part/dashBoard.png";
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
 import { createStore } from "redux";
@@ -208,6 +216,46 @@ const drivBox = {
         "One of the most important components of a vehicle includes the engine. This is the most important component of an automobile by all accords. The performance of a vehicle depends on its engine and it is the heart of every car.",
       partD: "Engine",
       partImgD: part5,
+    },
+    {
+      partD: "Testata",
+      meaningPrtD: " ",
+      partImgD: part6,
+    },
+    {
+      partD: "Fuel pump ",
+      meaningPrtD: " ",
+      partImgD: part7,
+    },
+    {
+      partD: "Injection pump",
+      meaningPrtD: " ",
+      partImgD: part8,
+    },
+    {
+      partD: "Camshaft",
+      meaningPrtD: " ",
+      partImgD: part9,
+    },
+    {
+      partD: "Filtro ",
+      meaningPrtD: " ",
+      partImgD: part10,
+    },
+    {
+      partD: "Engine",
+      meaningPrtD: " ",
+      partImgD: part11,
+    },
+    {
+      partD: "Chances ",
+      meaningPrtD: " ",
+      partImgD: part12,
+    },
+    {
+      partD: "Dash Board",
+      meaningPrtD: " ",
+      partImgD: part13,
     },
   ],
   drvVid: [
