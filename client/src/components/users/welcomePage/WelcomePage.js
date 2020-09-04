@@ -49,7 +49,10 @@ function WelcomePage({ onRoutChange, subscriptionHandler }) {
                   SUBSCRIBE
                 </Button>
                 <p>To Unsubscribe, Send 'STOP' to 6764</p>
-                <h4 class="mt-5"> Language & Driving License</h4>
+                <h4 className="mt-5 text-center">
+                  {" "}
+                  Language & Driving License
+                </h4>
               </div>
               <div className="termsAndConditionsDesk">
                 <a

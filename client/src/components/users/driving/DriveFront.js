@@ -32,9 +32,22 @@ import part7 from "../../../assets/img/part/fuelPump.png";
 import part8 from "../../../assets/img/part/injectionPump.png";
 import part9 from "../../../assets/img/part/kamShaft.png";
 import part10 from "../../../assets/img/part/filtro.png";
-import part11 from "../../../assets/img/part/engine.jpg";
+import part11 from "../../../assets/img/part/moter.png";
 import part12 from "../../../assets/img/part/chansis.png";
 import part13 from "../../../assets/img/part/dashBoard.png";
+import part14 from "../../../assets/img/part/bela.png";
+import part15 from "../../../assets/img/part/chisMawucha.png";
+import part16 from "../../../assets/img/part/debrater.png";
+import part17 from "../../../assets/img/part/electric.png";
+import part18 from "../../../assets/img/part/fan.png";
+import part19 from "../../../assets/img/part/karborator.png";
+import part20 from "../../../assets/img/part/kolo.png";
+import part21 from "../../../assets/img/part/manikoto.png";
+import part22 from "../../../assets/img/part/manoBlock.png";
+import part23 from "../../../assets/img/part/piston.png";
+import part24 from "../../../assets/img/part/pistonPin.png";
+import part25 from "../../../assets/img/part/radiator.png";
+import part26 from "../../../assets/img/part/salvatiyo.png";
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
 import { createStore } from "redux";
@@ -188,74 +201,145 @@ const drivBox = {
     },
   ],
   traficPart: [
+    // {
+    //   partD: "ሞተር （ኢንጅን）",
+    //   meaningPrtD: " Exploded view",
+    //   partImgD: part1,
+    // },
+    // {
+    //   partD: "Gear Box (Transmission)",
+    //   meaningPrtD:
+    //     "The Gear Box, or transmission, comes in at a close second to the engine and is what commonly needs attention when vehicles fail.      The transmission is what contains the different gears that the vehicle needs to shift into depending on speed. These gears transfer the engine’s power to the wheels of the vehicle. There are many types of gearbox parts in different cars.",
+    //   partImgD: part2,
+    // },
+    // {
+    //   partD: "Oil Filter",
+    //   meaningPrtD:
+    //     "Filters are essential in removing dust and abrasive particles from the engine oil. Such particles can harm the engine and prevent proper functioning. Oil filters are mainly used to segregate the engine oil from unwanted debris and dust particles. Most of the oil filters are classified as high-efficiency filters as it segregates abrasive materials from the engine oil.",
+    //   partImgD: part3,
+    // },
+    // {
+    //   partD: "Gear Box parts and oil filter",
+    //   meaningPrtD:
+    //     "There are quite a variety of gearbox parts included in the transmission. Most of these parts can be purchased from the online stores for replacement but that’s less than half the battle, you’ll need technical expertise to fix a transmission. Some of the parts include the gearbox cover, the shifter fork, the shifter rod, gearbox fork, and synchronizer rings or hubs.",
+    //   partImgD: part4,
+    // },
+    // {
+    //   meaningPrtD:
+    //     "One of the most important components of a vehicle includes the engine. This is the most important component of an automobile by all accords. The performance of a vehicle depends on its engine and it is the heart of every car.",
+    //   partD: "ሞተር （ኢንጅን）",
+    //   partImgD: part5,
+    // },
     {
-      partD: "Engine",
-      meaningPrtD: " Exploded view",
-      partImgD: part1,
-    },
-    {
-      partD: "Gear Box (Transmission)",
-      meaningPrtD:
-        "The Gear Box, or transmission, comes in at a close second to the engine and is what commonly needs attention when vehicles fail.      The transmission is what contains the different gears that the vehicle needs to shift into depending on speed. These gears transfer the engine’s power to the wheels of the vehicle. There are many types of gearbox parts in different cars.",
-      partImgD: part2,
-    },
-    {
-      partD: "Oil Filter",
-      meaningPrtD:
-        "Filters are essential in removing dust and abrasive particles from the engine oil. Such particles can harm the engine and prevent proper functioning. Oil filters are mainly used to segregate the engine oil from unwanted debris and dust particles. Most of the oil filters are classified as high-efficiency filters as it segregates abrasive materials from the engine oil.",
-      partImgD: part3,
-    },
-    {
-      partD: "Gear Box parts and oil filter",
-      meaningPrtD:
-        "There are quite a variety of gearbox parts included in the transmission. Most of these parts can be purchased from the online stores for replacement but that’s less than half the battle, you’ll need technical expertise to fix a transmission. Some of the parts include the gearbox cover, the shifter fork, the shifter rod, gearbox fork, and synchronizer rings or hubs.",
-      partImgD: part4,
-    },
-    {
-      meaningPrtD:
-        "One of the most important components of a vehicle includes the engine. This is the most important component of an automobile by all accords. The performance of a vehicle depends on its engine and it is the heart of every car.",
-      partD: "Engine",
-      partImgD: part5,
-    },
-    {
-      partD: "Testata",
+      partD: "ቴስታታ （ሲሊንደር ሄድ）",
       meaningPrtD: " ",
       partImgD: part6,
     },
     {
-      partD: "Fuel pump ",
+      partD: "የነዳጅ ፓምፕ （ፊዩል ፓምፕ) ",
       meaningPrtD: " ",
       partImgD: part7,
     },
     {
-      partD: "Injection pump",
+      partD: "ኢንጀክሽን ፐምፕ",
       meaningPrtD: " ",
       partImgD: part8,
     },
     {
-      partD: "Camshaft",
+      partD: "ካም ሻፍት",
       meaningPrtD: " ",
       partImgD: part9,
     },
     {
-      partD: "Filtro ",
+      partD: "የነዳጅ ማጣሪያ （ፊልትሮ ） ",
       meaningPrtD: " ",
       partImgD: part10,
     },
+    // {
+    //   partD: "ሞተር （ኢንጅን）",
+    //   meaningPrtD: " ",
+    //   partImgD: part11,
+    // },
     {
-      partD: "Engine",
-      meaningPrtD: " ",
-      partImgD: part11,
-    },
-    {
-      partD: "Chances ",
+      partD: "ቻንሲስ ",
       meaningPrtD: " ",
       partImgD: part12,
     },
     {
-      partD: "Dash Board",
+      partD: "ዳሽቦርድ",
       meaningPrtD: " ",
       partImgD: part13,
+    },
+    {
+      partD: "ቤላ（ኮኔክቲን ሮድ",
+      meaningPrtD: " ",
+      partImgD: part14,
+    },
+    {
+      partD: "ደብራተር （የአየር ማጣሪያ）",
+      meaningPrtD: " ",
+      partImgD: part15,
+    },
+    {
+      partD: "ጭስ መውጭ",
+      meaningPrtD: " ",
+      partImgD: part15,
+    },
+    {
+      partD: "ደብራተር （የአየር ማጣሪያ）",
+      meaningPrtD: " ",
+      partImgD: part16,
+    },
+    {
+      partD: "የኤለትሪክ ክፍሎች",
+      meaningPrtD: " ",
+      partImgD: part17,
+    },
+    {
+      partD: "ፋን （ቬንትሌተር)",
+      meaningPrtD: " ",
+      partImgD: part18,
+    },
+    {
+      partD: "ካርቦሬተር",
+      meaningPrtD: " ",
+      partImgD: part19,
+    },
+    {
+      partD: "ኮሎ （ክራንክ ሻፍት）",
+      meaningPrtD: " ",
+      partImgD: part20,
+    },
+    {
+      partD: "ማኒኮቶ （ራዲያተር ሆዝ）",
+      meaningPrtD: " ",
+      partImgD: part21,
+    },
+    {
+      partD: "ማኖ ብሎክ （ሲሊንደር ብሎክ）",
+      meaningPrtD: " ",
+      partImgD: part22,
+    },
+
+    {
+      partD: "ቫልቭ",
+      meaningPrtD: " ",
+      partImgD: part23,
+    },
+    {
+      partD: "ፒስተን ፒን",
+      meaningPrtD: " ",
+      partImgD: part24,
+    },
+    {
+      partD: "ራዲያተር",
+      meaningPrtD: " ",
+      partImgD: part25,
+    },
+    {
+      partD: "ሰልቫቲዮ （የነዳጅ ጋን）",
+      meaningPrtD: " ",
+      partImgD: part26,
     },
   ],
   drvVid: [
@@ -282,7 +366,7 @@ class DriveFront extends React.Component {
       symbol: "30",
       symbolMeaning: "No pass",
       symbolImg: sym9,
-      part: "Engine",
+      part: "ሞተር （ኢንጅን）",
       partMeaning:
         "One of the most important components of a vehicle includes the engine. This is the most important component of an automobile by all accords. The performance of a vehicle depends on its engine and it is the heart of every car.",
       partImg: part5,
@@ -552,11 +636,11 @@ class DriveFront extends React.Component {
                           borderRight: "1px rgba(0, 46, 102, 0.8) solid",
                         }}
                       >
-                        <h2 className="symbolDisplay">{`${this.state.part}`}</h2>
-                        <h6
+                        <h2 className="ruleMeaningDisplay">{`${this.state.part}`}</h2>
+                        {/* <h6
                           className="ruleMeaningDisplay"
                           style={{ marginTop: "0" }}
-                        >{`${this.state.partMeaning}`}</h6>
+                        >{`${this.state.partMeaning}`}</h6> */}
                       </Col>
                       <Col md="6">
                         <div className="rulePictorial">

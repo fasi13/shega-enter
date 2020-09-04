@@ -315,13 +315,16 @@
   }
 }
 .traficRule .ruleBody .rulePictorial {
-  border-left: 0px rgba(0, 46, 102, 0.8) solid;
+  border-left: 0px rgba(139, 148, 160, 0.8) solid;
 }
 .traficRule .ruleBody .rulePictorial img {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   width: 250px;
-  min-height: 12vw;
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 20vw;
+  max-height: 20vw;
   padding-top: 10px;
 }
 @media only screen and (max-width: 600px) {
