@@ -116,36 +116,36 @@
   } */
 }
 .languageContainer .languageTitle .levelInd .begginerLevel {
-  font-size: 5.5vw;
+  font-size: 4.5vw;
   margin-top: 3.5vw !important;
 }
 @media only screen and (max-width: 600px) {
   .languageContainer .languageTitle .levelInd .begginerLevel {
-    font-size: 10vw;
+    font-size: 9vw;
     margin-top: 35vw !important;
-    margin-left: -5vw !important;
+    margin-left: -6vw !important;
   }
 }
 .languageContainer .languageTitle .levelInd .interLevel {
-  margin-left: -7vw !important;
+  margin-left: -11vw !important;
   margin-top: 3.5vw !important;
   font-size: 5.5vw;
 }
 @media only screen and (max-width: 600px) {
   .languageContainer .languageTitle .levelInd .interLevel {
-    font-size: 9.5vw;
+    font-size: 7.5vw;
     margin-top: 35vw !important;
     margin-left: -9.5vw !important;
   }
 }
 .languageContainer .languageTitle .levelInd .advancedLevel {
-  margin-left: -1vw !important;
+  margin-left: -4.5vw !important;
   margin-top: 3.5vw !important;
   font-size: 5.5vw;
 }
 @media only screen and (max-width: 600px) {
   .languageContainer .languageTitle .levelInd .advancedLevel {
-    font-size: 10vw;
+    font-size: 8.5vw;
     margin-top: 35vw !important;
     margin-left: -6vw !important;
   }
