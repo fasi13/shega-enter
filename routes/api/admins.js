@@ -14,8 +14,8 @@ router.post('/admin-add', async (req, res) => {
 
     // add joke schema for the first time 
     const doesJokeExist = await Joke.exists({});
-    if(!doesJokeExist){
-        let joke = new Joke({JokesID:1});
+    if (!doesJokeExist) {
+        let joke = new Joke({ JokesID: 1 });
         joke.save();
     }
 
@@ -39,13 +39,13 @@ router.post('/admin-add', async (req, res) => {
                     newAdmin
                         .save()
                         .then(admin => {
-                            return res.status(200).json({message: 'Admin added successfully. Refreshing data...'})
+                            return res.status(200).json({ message: 'Admin added successfully. Refreshing data...' })
                         }).catch(err => console.log(err));
                 });
             });
         }
     });
-    
+
 });
 
 router.post('/admin-data', (req, res) => {
@@ -57,9 +57,9 @@ router.post('/admin-data', (req, res) => {
 });
 
 router.post('/admin-delete', (req, res) => {
-    Admin.deleteOne({ _id: req.body._id}).then(admin => {
+    Admin.deleteOne({ _id: req.body._id }).then(admin => {
         if (admin) {
-            return res.status(200).json({message: 'Admin deleted successfully. Refreshing data...', success: true})
+            return res.status(200).json({ message: 'Admin deleted successfully. Refreshing data...', success: true })
         }
     });
 });
@@ -80,8 +80,8 @@ router.post('/admin-update', (req, res) => {
                     });
                 });
             }
-            let update = {'name': req.body.name, 'email': req.body.email, 'password': admin.password};
-            Admin.update({ _id: _id}, {$set: update}, function(err, result) {
+            let update = { 'name': req.body.name, 'email': req.body.email, 'password': admin.password };
+            Admin.update({ _id: _id }, { $set: update }, function (err, result) {
                 if (err) {
                     return res.status(400).json({ message: 'Unable to update admin.' });
                 } else {
