@@ -5,6 +5,9 @@
   "main": "server.js",
   "author": "Fasile Endalkachew",
   "license": "MIT",
+  "engines": {
+    "node": "12.x"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
