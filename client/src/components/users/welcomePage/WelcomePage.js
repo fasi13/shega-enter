@@ -4,7 +4,7 @@ import video from "../../../assets/mp4/bg.mp4";
 import { Button, Collapse } from "reactstrap";
 import { useDispatch } from "react-redux";
 import { increment } from "../../../actions/subCountAction";
-// import {Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 function WelcomePage({ onRoutChange, subscriptionHandler }) {
   // collapse states and functions
@@ -36,7 +36,7 @@ function WelcomePage({ onRoutChange, subscriptionHandler }) {
           <div class="row h-100">
             <div class="col-12 my-auto">
               {/* <a href="/login" className="homeAdminBtn">Admin</a> */}
-              {/* <Link to="/login" className="homeAdminBtn">Admin</Link> */}
+              {<Link to="/login" className="homeAdminBtn">Admin</Link> }
               <div class="masthead-content text-white py-5 py-md-0">
                 <h1 class="mb-5">Shega Entertainment</h1>
                 <p class="mb-3">First 3 Days Free, Then 2 Birrs Per day</p>

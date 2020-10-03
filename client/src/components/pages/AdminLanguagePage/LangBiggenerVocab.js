@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
-import Navbar from "../partials/Navbar";
-import Sidebar from "../partials/Sidebar";
+import Navbar from "../../partials/Navbar";
+import Sidebar from "../../partials/Sidebar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList } from "@fortawesome/free-solid-svg-icons/faList";
 import ReactDatatable from "@ashvin27/react-datatable";
@@ -8,12 +8,13 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import axios from "axios";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import AdminAddModal from "../partials/AdminAddModal";
-import AdminUpdateModal from "../partials/AdminUpdateModal";
+import VocabularyAddModal from "../../partials/VocabularyAddModal";
+import VocabularyUpdateModal from "../../partials/VocabularyUpdateModal";
+import { deleteVocabulary } from "../../../actions/vocabAction";
 import { toast, ToastContainer } from "react-toastify";
-import spinner from "../users/layout/Spinner2.gif";
+import spinner from "../../users/layout/Spinner2.gif";
 
-class Admins extends Component {
+class LangBiggenerVocab extends Component {
   constructor(props) {
     super(props);
 
@@ -26,22 +27,22 @@ class Admins extends Component {
         sortable: true,
       },
       {
-        key: "name",
-        text: "Name",
+        key: "english",
+        text: "English",
         className: "name",
         align: "left",
         sortable: true,
       },
       {
-        key: "email",
-        text: "Email",
+        key: "amaharic",
+        text: "Amaharic",
         className: "email",
         align: "left",
         sortable: true,
       },
       {
-        key: "date",
-        text: "Date",
+        key: "sound",
+        text: "Sound",
         className: "date",
         align: "left",
         sortable: true,
@@ -58,7 +59,7 @@ class Admins extends Component {
             <Fragment>
               <button
                 data-toggle="modal"
-                data-target="#update-admin-modal"
+                data-target="#update-vocab-modal"
                 className="btn btn-primary btn-sm"
                 onClick={() => this.editRecord(record)}
                 style={{ marginRight: "5px" }}
@@ -67,7 +68,7 @@ class Admins extends Component {
               </button>
               <button
                 className="btn btn-danger btn-sm"
-                onClick={() => this.deleteRecord(record)}
+                onClick={() => this.onDeleteRecord(record)}
               >
                 <i className="fa fa-trash"></i>
               </button>
@@ -112,10 +113,9 @@ class Admins extends Component {
     this.state = {
       currentRecord: {
         id: "",
-        name: "",
-        email: "",
-        password: "",
-        password2: "",
+        english: "",
+        amaharic: "",
+        sound: "",
       },
     };
 
@@ -133,9 +133,9 @@ class Admins extends Component {
 
   getData() {
     axios
-      .post("/api/admin-data")
+      .get("/api/languages/beginner")
       .then((res) => {
-        this.setState({ records: res.data, isLoadding: false });
+        this.setState({ records: res.data[0].vocabulary, isLoadding: false });
       })
       .catch();
   }
@@ -144,18 +144,8 @@ class Admins extends Component {
     this.setState({ currentRecord: record });
   }
 
-  deleteRecord(record) {
-    axios
-      .post("/api/admin-delete", { _id: record._id })
-      .then((res) => {
-        if (res.status === 200) {
-          toast(res.data.message, {
-            position: toast.POSITION.TOP_CENTER,
-          });
-        }
-      })
-      .catch();
-    this.getData();
+  onDeleteRecord(record) {
+    this.props.deleteVocabulary(record);
   }
 
   pageChange(pageData) {
@@ -172,8 +162,8 @@ class Admins extends Component {
           style={{ backgroundColor: "white" }}
         >
           <Sidebar />
-          <AdminAddModal />
-          <AdminUpdateModal record={this.state.currentRecord} />
+          <VocabularyAddModal />
+          <VocabularyUpdateModal record={this.state.currentRecord} />
           <div id="page-content-wrapper">
             <div className="container-fluid">
               <button className="btn btn-link mt-3" id="menu-toggle">
@@ -182,11 +172,13 @@ class Admins extends Component {
               <button
                 className="btn btn-outline-primary float-right mt-3 mr-2"
                 data-toggle="modal"
-                data-target="#add-admin-modal"
+                data-target="#add-vocabulary-modal"
               >
-                <FontAwesomeIcon icon={faPlus} /> Add Admin
+                <FontAwesomeIcon icon={faPlus} /> Add Vocabulary
               </button>
-              <h1 className="mt-2 text-primary">Admin List</h1>
+              <h1 className="mt-2 text-primary">
+                Biggener Level <br /> Vocabulary List
+              </h1>
               {this.state.isLoadding ? (
                 <img
                   src={spinner}
@@ -216,13 +208,16 @@ class Admins extends Component {
   }
 }
 
-Admins.propTypes = {
-  auth: PropTypes.object.isRequired,
+LangBiggenerVocab.propTypes = {
+  deleteVocabulary: PropTypes.func.isRequired,
+  langVoc: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  auth: state.auth,
   records: state.records,
+  langVoc: state.langVoc,
 });
 
-export default connect(mapStateToProps)(Admins);
+export default connect(mapStateToProps, { deleteVocabulary })(
+  LangBiggenerVocab
+);

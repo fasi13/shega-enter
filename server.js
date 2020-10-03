@@ -1,21 +1,26 @@
-const express = require('express');
-const path = require('path');
-const bodyParser = require('body-parser');
-const passport = require('passport');
-const admins = require('./routes/api/admins');
-const jokes = require('./routes/api/jokes');
-const connectDB = require('./config/db');
+const express = require("express");
+const path = require("path");
+const bodyParser = require("body-parser");
+const passport = require("passport");
+const admins = require("./routes/api/admins");
+const jokes = require("./routes/api/jokes");
+const connectDB = require("./config/db");
+const languages = require("./routes/api/languages");
+const langGram = require("./routes/api/lang_grammar");
 
-require('./config/passport')(passport);
+require("./config/passport")(passport);
 
 const app = express();
 // connect Database
 connectDB();
 
 app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
 });
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -25,16 +30,18 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 
 // define Routes
-app.use('/api', admins);
-app.use('/api/jokes', jokes);
+app.use("/api", admins);
+app.use("/api/jokes", jokes);
+app.use("/api/languages", languages);
+app.use("/api/langGrammar", langGram);
 
 // server static assets if in production
-if (process.env.NODE_ENV === 'production') {
-    //set static folder
-    app.use(express.static('client/build'));
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-    });
+if (process.env.NODE_ENV === "production") {
+  //set static folder
+  app.use(express.static("client/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
 }
 
 const port = process.env.PORT || 5000;

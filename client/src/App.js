@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Dashboard from "./components/pages/Dashboard";
 // import Jokes from "./components/pages/JokesPage";
 import Jokes from "./components/pages/AdminJokePage/AdminJokePage";
-import Languages from "./components/pages/AdminLanguagePage/AdminLanguagePage";
+import LangBiggenerVocab from "./components/pages/AdminLanguagePage/LangBiggenerVocab";
 import Login from "./components/auth/Login";
 import Admin from "./components/pages/Admin";
 import NotFound from "./components/layout/NotFound";
@@ -22,6 +22,7 @@ import HomePage from "./components/users/homePage/HomePage";
 import JokeFront from "./components/users/jokes/JokeFront";
 import LanguageFront from "./components/users/language/LanguageFront";
 import LanguageLanding from "./components/users/language/LanguageLandingPage/LanguageLanding";
+import LangBiggenerGrammar from "./components/pages/AdminLanguagePage/LangBiggenerGrammar";
 import Begginer from "./components/users/language/Biggner/Beginner";
 import Intermediet from "./components/users/language/Intermediet/Intermediet";
 import Advanced from "./components/users/language/Advanced/Advanced";
@@ -108,7 +109,16 @@ class App extends Component {
               />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-              <Route exact path="/languages" component={Languages} />
+              <Route
+                exact
+                path="/biggenerVocab"
+                component={LangBiggenerVocab}
+              />
+              <Route
+                exact
+                path="/biggenerGra"
+                component={LangBiggenerGrammar}
+              ></Route>
               <Route exact path="/jokes" component={Jokes} />
               <Switch>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />

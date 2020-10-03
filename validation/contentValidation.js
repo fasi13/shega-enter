@@ -21,3 +21,7 @@ module.exports = function checkValidation(data){
         isValid: isEmpty(errors)
     };
 };
+
+module.exports = function checkVlidationLang(data){
+    console.log(data);
+}

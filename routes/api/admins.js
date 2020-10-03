@@ -7,16 +7,21 @@ const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 const validateUpdateAdminInput = require('../../validation/updateAdmin');
 const Admin = require('../../models/Admin');
-const Joke = require('../../models/Jokes');
+const B_Lang = require('../../models/Languages/BeginnerLang')
+const I_Lang = require('../../models/Languages/IntermediteLang')
+const A_Lang = require('../../models/Languages/AdvancedLang')
 const { useReducer } = require('react');
 
 router.post('/admin-add', async (req, res) => {
 
-    // add joke schema for the first time 
-    const doesJokeExist = await Joke.exists({});
-    if (!doesJokeExist) {
-        let joke = new Joke({ JokesID: 1 });
-        joke.save();
+    const doesLangExist = await B_Lang.exists({});
+    if (!doesLangExist) {
+        let B_La = new B_Lang({ LangsID: 2 });
+        let I_La = new I_Lang({ LangsID: 3 });
+        let A_La = new A_Lang({ LangsID: 4 });
+        B_La.save();
+        I_La.save();
+        A_La.save();
     }
 
     const { errors, isValid } = validateRegisterInput(req.body);

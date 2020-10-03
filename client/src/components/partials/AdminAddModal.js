@@ -22,7 +22,6 @@ class AdminAddModal extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("*******************");
     if (nextProps.errors) {
       this.setState({
         errors: nextProps.errors,
