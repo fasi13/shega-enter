@@ -18,6 +18,7 @@ function Beginner({
 }) {
   const [count, setCount] = useState(0);
   const [countGram, setCountGram] = useState(0);
+  const [countVedioLink, setVedioLink] = useState(0);
 
   useEffect(() => {
     getVocabulary();
@@ -167,30 +168,40 @@ function Beginner({
                 Tutorial Vedio
               </h2>
               <div className="tense">
-                {/* <div className="langVideoBody">
+                <div className="langVideoBody">
                   <iframe
                     title="firstVideo"
-                    src={`${langVideoSrc}`}
+                    src={langVocs[0].tutorialVedio[0].vedioLink}
                     frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen
                   ></iframe>
-                </div> */}
-                <div>
-                  {/* <Button
-                    className="prevTens"
-                    onClick={this.prevlangVideoHandle}
-                  >
-                    <i className="fa fa-backward" aria-hidden="true"></i>
-                  </Button> */}
                 </div>
                 <div>
-                  {/* <Button
-                    className="nextTens"
-                    onClick={this.nextlangVideoHandle}
-                  >
-                    <i className="fa fa-forward" aria-hidden="true"></i>
-                  </Button> */}
+                  <div>
+                    <Button
+                      className="prevVoc"
+                      onClick={() =>
+                        countVedioLink
+                          ? setVedioLink(countVedioLink - 1)
+                          : setVedioLink(0)
+                      }
+                    >
+                      <i className="fa fa-backward" aria-hidden="true"></i>
+                    </Button>
+                  </div>
+                  <div>
+                    <Button
+                      className="nextVoc"
+                      onClick={() =>
+                        countVedioLink >= langVocs[0].tutorialVedio.length - 1
+                          ? setVedioLink(0)
+                          : setVedioLink(countVedioLink + 1)
+                      }
+                    >
+                      <i className="fa fa-forward" aria-hidden="true"></i>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -241,6 +252,7 @@ Beginner.propTypes = {
   getgrammar: PropTypes.func.isRequired,
   langVoc: PropTypes.object.isRequired,
   langGrams: PropTypes.object.isRequired,
+  langVedioLink: PropTypes.object.isRequired,
   loading: PropTypes.bool.isRequired,
 };
 const mapStateToProps = (state) => ({
@@ -248,6 +260,7 @@ const mapStateToProps = (state) => ({
   langVoc: state.langVoc,
   langGrams: state.langGrams,
   loading: state.loading,
+  langVedioLink: state.langVedioLink,
 });
 export default connect(mapStateToProps, { getVocabulary, getgrammar })(
   Beginner

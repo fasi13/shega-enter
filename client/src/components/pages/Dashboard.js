@@ -169,7 +169,8 @@ class Dashboard extends Component {
                           {/* <h5 style={{ color: "white" }}>
                           Number of Uploads: <strong>{totalLangUpload}</strong>
                         </h5> */}
-                          <a href="#pablo" className="btn btn-light">
+
+                          <a href="/biggenerVocab" className="btn btn-light">
                             Go to Languages
                           </a>
                         </div>
@@ -194,7 +195,7 @@ class Dashboard extends Component {
                           {/* <h5 style={{ color: "white" }}>
                           Number of Uploads: <strong>{totalDrivUpload}</strong>
                         </h5> */}
-                          <a href="#pablo" className="btn btn-light">
+                          <a href="/driveLicense" className="btn btn-light">
                             Go to Driving License
                           </a>
                         </div>

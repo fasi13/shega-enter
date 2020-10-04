@@ -8,8 +8,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import axios from "axios";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import VocabularyAddModal from "../../partials/VocabularyAddModal";
-import VocabularyUpdateModal from "../../partials/VocabularyUpdateModal";
+import LanguageAddModal from "../../partials/LanguageAddModal";
+import LanguageUpdateModal from "../../partials/LanguageUpdateModal";
 import { deleteVocabulary } from "../../../actions/vocabAction";
 import { toast, ToastContainer } from "react-toastify";
 import spinner from "../../users/layout/Spinner2.gif";
@@ -162,8 +162,8 @@ class LangBiggenerVocab extends Component {
           style={{ backgroundColor: "white" }}
         >
           <Sidebar />
-          <VocabularyAddModal />
-          <VocabularyUpdateModal record={this.state.currentRecord} />
+          <LanguageAddModal />
+          <LanguageUpdateModal record={this.state.currentRecord} />
           <div id="page-content-wrapper">
             <div className="container-fluid">
               <button className="btn btn-link mt-3" id="menu-toggle">

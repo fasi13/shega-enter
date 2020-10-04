@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Dashboard from "./components/pages/Dashboard";
-// import Jokes from "./components/pages/JokesPage";
-import Jokes from "./components/pages/AdminJokePage/AdminJokePage";
 import LangBiggenerVocab from "./components/pages/AdminLanguagePage/LangBiggenerVocab";
 import Login from "./components/auth/Login";
 import Admin from "./components/pages/Admin";
@@ -19,10 +17,10 @@ import { setCurrentAdmin, logoutAdmin } from "./actions/authActions";
 import WelcomePage from "./components/users/welcomePage/WelcomePage";
 import ThanksPage from "./components/users/thanksPage/ThanksPage";
 import HomePage from "./components/users/homePage/HomePage";
-import JokeFront from "./components/users/jokes/JokeFront";
 import LanguageFront from "./components/users/language/LanguageFront";
 import LanguageLanding from "./components/users/language/LanguageLandingPage/LanguageLanding";
 import LangBiggenerGrammar from "./components/pages/AdminLanguagePage/LangBiggenerGrammar";
+import LangBiggenerTutorial from "./components/pages/AdminLanguagePage/LangBiggenerTutorial";
 import Begginer from "./components/users/language/Biggner/Beginner";
 import Intermediet from "./components/users/language/Intermediet/Intermediet";
 import Advanced from "./components/users/language/Advanced/Advanced";
@@ -74,11 +72,6 @@ class App extends Component {
               />
               <Route
                 exact
-                path="/suhbesgcarEbnetdejrotkainment"
-                render={(props) => <JokeFront {...props} />}
-              />
-              <Route
-                exact
                 path="/lang-land"
                 render={(props) => <LanguageLanding {...props} />}
               />
@@ -119,7 +112,11 @@ class App extends Component {
                 path="/biggenerGra"
                 component={LangBiggenerGrammar}
               ></Route>
-              <Route exact path="/jokes" component={Jokes} />
+              <Route
+                exact
+                path="/biggenerTutorVedio"
+                component={LangBiggenerTutorial}
+              ></Route>
               <Switch>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 <PrivateRoute exact path="/admins" component={Admin} />

@@ -10,11 +10,11 @@ import axios from "axios";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import LanguageAddModal from "../../partials/LanguageAddModal";
 import LanguageUpdateModal from "../../partials/LanguageUpdateModal";
-import { deleteGrammar } from "../../../actions/gramAction";
+import { deleteTutorialVid } from "../../../actions/tutorialVedio";
 import { toast, ToastContainer } from "react-toastify";
 import spinner from "../../users/layout/Spinner2.gif";
 
-class LangBiggenerGrammar extends Component {
+class LangBiggenerTutorial extends Component {
   constructor(props) {
     super(props);
 
@@ -27,23 +27,9 @@ class LangBiggenerGrammar extends Component {
         sortable: true,
       },
       {
-        key: "grammer",
-        text: "Grammar",
+        key: "vedioLink",
+        text: "Vedio Link",
         className: "name",
-        align: "left",
-        sortable: true,
-      },
-      {
-        key: "form",
-        text: "Form",
-        className: "email",
-        align: "left",
-        sortable: true,
-      },
-      {
-        key: "example",
-        text: "Example",
-        className: "date",
         align: "left",
         sortable: true,
       },
@@ -59,7 +45,7 @@ class LangBiggenerGrammar extends Component {
             <Fragment>
               <button
                 data-toggle="modal"
-                data-target="#update-grammar-modal"
+                data-target="#update-vedioLink-modal"
                 className="btn btn-primary btn-sm"
                 onClick={() => this.editRecord(record)}
                 style={{ marginRight: "5px" }}
@@ -81,8 +67,8 @@ class LangBiggenerGrammar extends Component {
     this.config = {
       page_size: 10,
       length_menu: [10, 20, 50],
-      filename: "grammar",
-      no_data_text: "No Grammar found!",
+      filename: "Tutorial Vedio Links",
+      no_data_text: "No Vids Found!",
       button: {
         excel: true,
         print: true,
@@ -113,9 +99,7 @@ class LangBiggenerGrammar extends Component {
     this.state = {
       currentRecord: {
         id: "",
-        grammer: "",
-        form: "",
-        example: "",
+        vedioLink: "",
       },
     };
 
@@ -133,9 +117,13 @@ class LangBiggenerGrammar extends Component {
 
   getData() {
     axios
-      .get("/api/langGrammar/beginner-grammar")
+      .get("/api/languages/beginner")
       .then((res) => {
-        this.setState({ records: res.data[0].grammer_, isLoadding: false });
+        this.setState({
+          records: res.data[0].tutorialVedio,
+          isLoadding: false,
+        });
+        console.log(this.state.records);
       })
       .catch();
   }
@@ -145,7 +133,7 @@ class LangBiggenerGrammar extends Component {
   }
 
   onDeleteRecord(record) {
-    this.props.deleteGrammar(record);
+    this.props.deleteTutorialVid(record);
   }
 
   pageChange(pageData) {
@@ -172,13 +160,12 @@ class LangBiggenerGrammar extends Component {
               <button
                 className="btn btn-outline-primary float-right mt-3 mr-2"
                 data-toggle="modal"
-                data-target="#add-grammar-modal"
+                data-target="#add-vedioLink-modal"
               >
-                <FontAwesomeIcon icon={faPlus} /> Add Grammar
+                <FontAwesomeIcon icon={faPlus} /> Add Vedio Link
               </button>
               <h1 className="mt-2 text-primary">
-                Biggener Level <br />
-                Grammar List
+                Biggener Level <br /> Tutorial Vedio List
               </h1>
               {this.state.isLoadding ? (
                 <img
@@ -209,14 +196,16 @@ class LangBiggenerGrammar extends Component {
   }
 }
 
-LangBiggenerGrammar.propTypes = {
-  deleteGrammar: PropTypes.func.isRequired,
-  langGram: PropTypes.object.isRequired,
+LangBiggenerTutorial.propTypes = {
+  deleteTutorialVid: PropTypes.func.isRequired,
+  langVedioLink: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   records: state.records,
-  langGram: state.langGram,
+  langVedioLink: state.langVedioLink,
 });
 
-export default connect(mapStateToProps, { deleteGrammar })(LangBiggenerGrammar);
+export default connect(mapStateToProps, { deleteTutorialVid })(
+  LangBiggenerTutorial
+);

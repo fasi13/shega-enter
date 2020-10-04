@@ -7,6 +7,7 @@ const jokes = require("./routes/api/jokes");
 const connectDB = require("./config/db");
 const languages = require("./routes/api/languages");
 const langGram = require("./routes/api/lang_grammar");
+const TutorVedio = require("./routes/api/lang_tutorial");
 
 require("./config/passport")(passport);
 
@@ -34,6 +35,7 @@ app.use("/api", admins);
 app.use("/api/jokes", jokes);
 app.use("/api/languages", languages);
 app.use("/api/langGrammar", langGram);
+app.use("/api/langTutorVedio", TutorVedio);
 
 // server static assets if in production
 if (process.env.NODE_ENV === "production") {

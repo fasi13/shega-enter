@@ -6,12 +6,6 @@ import Sidebar from "../../partials/Sidebar";
 import ReactDatatable from "@ashvin27/react-datatable";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-// import axios from "axios";
-// import { faPlus } from "@fortawesome/free-solid-svg-icons";
-// import AddSelectedJokes from "../../partials/AddSelectedJokes";
-// import AddFamilyJokes from "../../partials/AddFamilyJokes";
-// import AddOfficeJoke from "../../partials/AddOfficeJoke";
-// import AdminUpdateModal from "../../partials/AdminUpdateModal";
 import { ToastContainer } from "react-toastify";
 import {
   UncontrolledCollapse,
@@ -122,8 +116,8 @@ class AdminLanguagePage extends Component {
     this.config = {
       page_size: 10,
       length_menu: [10, 20, 50],
-      filename: "Jokes",
-      no_data_text: "No jokes found!",
+      filename: "Grammar List",
+      no_data_text: "No Grammar List found!",
       button: {
         excel: false,
         print: false,
@@ -161,10 +155,6 @@ class AdminLanguagePage extends Component {
         <Navbar />
         <div className="d-flex" id="wrapper">
           <Sidebar />
-          {/* <AddSelectedJokes />
-          <AddFamilyJokes />
-          <AddOfficeJoke /> */}
-          {/* <AdminUpdateModal record={this.state.currentRecord} /> */}
           <div id="page-content-wrapper">
             <div className="container-fluid">
               <div className="langAddContainer">
