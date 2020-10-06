@@ -585,17 +585,14 @@ class DriveFront extends React.Component {
                           borderRight: "1px rgba(0, 46, 102, 0.8) solid",
                         }}
                       >
-                        <h2
-                          className="ruleMeaningDisplay"
-                          style={{ fontWeight: "bold" }}
-                        >
+                        <h2 style={{ paddingTop: "30px", fontWeight: "bold" }}>
                           {`${this.state.meaning}`}
                         </h2>
                       </Col>
                       <Col md="6" style={{ paddingTop: "10px" }}>
-                        <h2 className="ruleMeaningDisplay">
-                          {`${this.state.ruleImg}`}
-                        </h2>
+                        <p
+                          style={{ paddingTop: "10px" }}
+                        >{`${this.state.ruleImg}`}</p>
                       </Col>
                       {/* <Col md="6">
                         <div className="rulePictorial">
@@ -645,7 +642,10 @@ class DriveFront extends React.Component {
                           borderRight: "1px rgba(0, 46, 102, 0.8) solid",
                         }}
                       >
-                        <h3 className="ruleMeaningDisplay">{`${this.state.symbolMeaning}`}</h3>
+                        <h3
+                          className="ruleMeaningDisplay"
+                          style={{ fontWeight: "bold" }}
+                        >{`${this.state.symbolMeaning}`}</h3>
                         <p>{`${this.state.contentRule}`}</p>
                       </Col>
                       <Col md="6">
