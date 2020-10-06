@@ -332,7 +332,7 @@
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     width: 200px;
-    /* min-height: 185px; */
+    min-height: 185px;
     margin: 0 !important;
     padding: 0 !important;
   }

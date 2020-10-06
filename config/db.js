@@ -1,22 +1,20 @@
-const mongoose = require('mongoose');
-const db = require('../config/keys').mongoURI;
+const mongoose = require("mongoose");
+const db = require("../config/keys").mongoURI;
 
 const connectDB = async () => {
-     try{
+  try {
+    await mongoose.connect(db, {
+      useNewUrlParser: true,
+      useCreateIndex: true,
+      useFindAndModify: false,
+      useUnifiedTopology: true,
+    });
 
-        await mongoose.connect(db, {
-            useNewUrlParser: true,
-            useCreateIndex:true,
-            useFindAndModify:false,
-            useUnifiedTopology:true
-        });
-
-        console.log('MongoDB Connected...');
-        
-     } catch (err) {
-        console.error(err.message);
-		// Exit process with failure
-		process.exit(1);
-     }
+    console.log("MongoDB Connected...");
+  } catch (err) {
+    console.error(err.message);
+    // Exit process with failure
+    process.exit(1);
+  }
 };
 module.exports = connectDB;

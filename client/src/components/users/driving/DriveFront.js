@@ -3,13 +3,18 @@ import "./Drive.css";
 
 //images
 import image1 from "../../../assets/img/rule/1.png";
-import image2 from "../../../assets/img//rule/2.png";
-import image3 from "../../../assets/img//rule/3.png";
-import image5 from "../../../assets/img//rule/5.png";
-import image6 from "../../../assets/img//rule/6.png";
-import image7 from "../../../assets/img//rule/7.png";
-import image8 from "../../../assets/img//rule/8.png";
-import image9 from "../../../assets/img//rule/15.png";
+import image2 from "../../../assets/img//rule/22.jpg";
+import image3 from "../../../assets/img//rule/33.png";
+import image5 from "../../../assets/img//rule/55.png";
+import image6 from "../../../assets/img//rule/66.png";
+import image7 from "../../../assets/img//rule/77.png";
+import image8 from "../../../assets/img//rule/88.jpeg";
+import image9 from "../../../assets/img//rule/99.jpg";
+import image10 from "../../../assets/img//rule/100.png";
+import image11 from "../../../assets/img//rule/111.png";
+import image12 from "../../../assets/img//rule/112.png";
+import image13 from "../../../assets/img//rule/113.png";
+import image14 from "../../../assets/img//rule/114.png";
 
 import sym1 from "../../../assets/img//rule/4.png";
 import sym2 from "../../../assets/img//rule/10.png";
@@ -108,96 +113,141 @@ const drivBox = {
   traficRule: [
     {
       ruleD: "",
-      meaningD: "Closed to motor vehicles on more than two wheels",
-      ruleImgD: image1,
+      meaningD: "ስነ- ምግባር",
+      ruleImgD:
+        "መልካሙንና መጥፎዉን ለመለየት የሚያስችልና መጥፎዉን በመተዉ መልካሙን  እንድንከተል የሚያበረታታ እሴት ነዉ፡፡ከሌሎች ጋር አብሮ ለመስራትና ለመኖር  አስፈላጊ ነዉ፡፡",
     },
     {
       ruleD: "",
-      meaningD: "Closed to bicycle",
-      ruleImgD: image2,
-    },
-    {
-      ruleD: "",
-      meaningD: "Closed to motor vehicles",
-      ruleImgD: image3,
+      meaningD: "የሙያ ስነ-ምግባር",
+      ruleImgD:
+        "ባለሞያዉ በተሰማራበት ሙያ የሚሰራዉን ስራ ጤናማና ዉጤታማ እንዲሆን ሞያዉ የሚጠይቀዉን፡-እዉቀት፣ ክህሎት፣ መርህና ስነ-ስርዓት በማካተት ስራዉን በጥራትና በብቃት መተግበር የሚያስችለን ነዉ፡፡",
     },
 
     {
       ruleD: "",
-      meaningD: "Maximum allowable speed is 35 rpm",
-      ruleImgD: image5,
+      meaningD: "መገንዘብ(sensation)",
+      ruleImgD:
+        "መረጃን ከአካባቢያችን በስሜት ህዋሳቶቻችን የመቀበል፣የመለወጥ እና አምርኣችን የመላክ ሂደት ነዉ፡፡ ዝግጁነት፡-የብስለት ፣የችሎታ፣ የትምህረትና የመነሳሳት የጋራ ዉጤት ነዉ፡፡",
     },
     {
       ruleD: "",
-      meaningD: "Stop",
-      ruleImgD: image6,
+      meaningD: "መነቃቃት",
+      ruleImgD:
+        "በሰዎች ዉስጥ ያለ ሁኔታ ሆኖ ባህሪን ወደ ግብ የሚያንቀሳቅስ ሂደት ነዉ፡፡ በመነቃቃት የሚያሽከርክር  አሽከርካሪ በትራፊክ እቅስቃሴ ዉስጥ የሚገጥሙትን ነገሮች እንደት ማለፍ እደሚችል ለማየት ፣ ለማገናዘብ እና ለማተኮር ይችላል፡፡",
     },
     {
       ruleD: "",
-      meaningD: "Closed to motorcycles",
-      ruleImgD: image7,
+      meaningD: "መረጃን የመሰብሰብና የመተርጎም ሂደት",
+      ruleImgD:
+        "መረጃን የመሰብሰብና የመተርጎ ሂደት በ3 ንዑስ ክፍል ይከፈላል፡፡  መረጃን ከአካባቢያችን መሰብሰብ የምችለዉ  በማየት፣በመስማት፣በማሽተት እና በመዳሰስ ሲሆን ከ80-90% አካባቢን ለማወቅ  እና መረጃን ለመሰብሰብ የሚያስችለን በማየት ነዉ፡፡",
     },
     {
       ruleD: "",
-      meaningD: "Closed to motor vehicles",
-      ruleImgD: image8,
+      meaningD: "ትኩረት(attention ):",
+      ruleImgD:
+        "በስሜት ህዋሳቶቻችን አማካኝነት ከሚደረሱ መረጃወች መካከል ዋናዉን ተፈላጊዉን የመምረጥ ሂደት ነዉ፡፡ለማሽከርከር የሚረዳንን መረጃ /ዋነኛ ነጥብ/  ላያ ትኩረት  መስጠት ያስፈልጋል፡፡",
     },
     {
       ruleD: "",
-      meaningD: "Closed to bicycles",
-      ruleImgD: image9,
+      meaningD: "ማስተዋል(perception)",
+      ruleImgD:
+        "በስሜት ህዋሳቶቻችን አማካኝነት ከሚደረሱ መረጃዎችን  የመምረጥ ፣የማቀናበርና ትርጉም የመስጠት ሂደት ነዉ፡፡ አሽከርካሪወች ትርጉም የሚሰጡ መረጃዎችን በጊዜዉ መተግበር አለባቸዉ፡፡",
+    },
+    {
+      ruleD: "",
+      meaningD: "የስሜት ባህሪ",
+      ruleImgD: "ፍላጎትን፣አመለካከትን፣እሴትን፣ መነሳሳትንና ማንኛውንም ግብ ያለመ የሰወችን ድርጊት ያጠቃልላል፡፡",
+    },
+    {
+      ruleD: "",
+      meaningD: "የመገንዘብ /አእምሮዊ/ ባህሪ",
+      ruleImgD: "መረዳትን፣ ማሰብን፣ምክንያት መስጠትን፣ዉሳኔ መስጠትን የሰዎችን ድርጊት ማጤንን ያካትታል፡፡",
+    },
+    {
+      ruleD: "",
+      meaningD: "የክህሎት ባህሪ፡",
+      ruleImgD:
+        " በአእምሮ አዛዥነትና በአካል እንቅስቃሴ የሚፈጸሙ ማንኛዉም እንቅስቃሴ የክህሎት ባህሪያት ያካተተ ነው፡፡",
     },
   ],
   traficSymbol: [
     {
       symbolD: "Symbol",
-      meaningSymbD: "Closed to vehicle a total weight above 6 tons",
-      eymImgD: sym1,
+      meaningSymbD: "የሚከለክሉ የመንገድ ዳር ምልክቶች / prohibitory sign /",
+      contentRuleMeaning:
+        "ቅርፃቸዉ ክብ ፣ ጠርዛቸዉ ቀይ እና መደባቸዉ ነጭ ሲሆን የሚያስተላለፉት መልዕክት በጥቁር ቀለም በተሰራ በምስል፣ በቀስት ወይም በቁጥር ሊሆን ይችላል፡፡",
+      eymImgD: image2,
     },
     {
       symbolD: "Symbol2",
-      meaningSymbD: "No Left turn",
-      eymImgD: sym2,
+      meaningSymbD: "የሚያስገድዱ የመንገድ ዳር ምልክቶች/ Mandatory sign/ ",
+      contentRuleMeaning:
+        "ቅርፃቸዉ ክብ  እና መደባቸዉ ነጭ ሲሆን የሚያስተላለፉት መልዕክት በነጭ  ቀለም በተሰራ በምስል፣ በቀስት ወይም በቁጥር ሊሆን ይችላል፡፡",
+      eymImgD: image3,
     },
     {
       symbolD: "Symbol3",
-      meaningSymbD: "Closed to vehicles of total height exceeding 3 Meter",
-      eymImgD: sym3,
+      meaningSymbD: "ቅድሚያ  የሚያሰጡ የመንገድ  ዳር  ምልክቶች / Give way sign/",
+      contentRuleMeaning: "ቅርፃቸዉ የተለያየ ሆኖ  የሚያስተላለፉት መልዕክት ቅድሚያ ስጥ የሚል ነዉ፡፡",
+      eymImgD: image5,
     },
     {
       symbolD: "Symbol4",
-      meaningSymbD: "Closed to vehicles of total width exceeding 18 Meter",
-      eymImgD: sym4,
+      meaningSymbD: "መረጃ ሰጭ የመንገድ ዳር ምልክቶች / Information sign/",
+      contentRuleMeaning:
+        "ቅርፃቸው አራት ማዕዘን  መደባቸው ሰማያዊ መልዕክታቸው የሚተላለፍ በነጭ ወይም በጥቁር ቀለም ሲሆን  በፅሁፍ ፣ በቀስት ፣በስዕል እና በቁጥር  ሊሆን ይችላል፡፡",
+      eymImgD: image6,
     },
     {
       symbolD: "",
-      meaningSymbD: "Closed to handcarts",
-      eymImgD: sym5,
+      meaningSymbD: "የእግረኞች  ማስተላለፊያ  መብራት",
+      contentRuleMeaning:
+        "እግረኞች ከአደጋ ነፃ ሆነዉ መንገዱን ባጭር ርቀት እንዲያቋርጡ የሚረዱ ሲሆኑ  በቀለም ብዛትና አይነት ከላይ ወደታች  ቀይ ና አረንጓደ  በመበል  በ2 ይከፈላሉ ፡፡  በተጨማሪም በዉስጣቸዉ  የእግረኛ  ምስል አላቸዉ፡፡",
+      eymImgD: image7,
+    },
+
+    {
+      symbolD: "",
+      meaningSymbD: "የተሸከርካሪ ማስተላለፊያ መብራቶች",
+      contentRuleMeaning:
+        "ተሸከርካሪዎች ተራቸዉን ጠብቀዉ እድተላለፉ የሚረዱ ሲሆኑ  በቀለም ብዛትና አይነት  በ3 ይከፈላሉ ፡፡",
+      eymImgD: image8,
     },
     {
       symbolD: "",
-      meaningSymbD: "Closed to pedestrians ",
-      eymImgD: sym6,
+      meaningSymbD: "የባቡር ማስተላለፊያ መብራቶች",
+      contentRuleMeaning:
+        "በከተማ ዉስጥ የሚገኙ የባቡር ሃዲድ ማቋረጫ  መብራቶች ተጨማሪ መዝጊያ ያላቸዉ ሲሆን በቀለማቸዉም ይሁን ባበራራቸዉ በ2 ይከፈላሉ፡፡",
+      eymImgD: image9,
     },
     {
       symbolD: "",
-      meaningSymbD: "Prohibition of use of audible warning appliances",
-      eymImgD: sym7,
+      meaningSymbD: "የትራፊክ ፖሊስ የእጅ ምልክቶች",
+      contentRuleMeaning:
+        "ይህ የትራፊክ የእጅ ምልክት ከትራፊክ ፖሊስ በስተኃላና ከፊት ለፊት የሚመጡ ተሸከርካሪዎች ለማስቆም የሚሰጥ ተእዛዝ ነው፡፡",
+      eymImgD: image11,
     },
     {
       symbolD: "",
-      meaningSymbD: "Closed to animal drawn vehicles and animals ",
-      eymImgD: sym8,
+      meaningSymbD: "የትራፊክ ፖሊስ የእጅ ምልክቶች",
+      contentRuleMeaning:
+        "ይህ የትራፊክ ፖሊስ የእጅ ምልክት ከትራፊክ ፓሊስ በስተቀኝ ቆመው የነበሩ ተሸከርካሪዎች ቀጥታ ወደፊት እና ወደግራ ታጥፈው እንዲሂዱ ትዕዛዝ ያስተላልፋል",
+      eymImgD: image12,
     },
     {
       symbolD: "",
-      meaningSymbD: "No pass",
-      eymImgD: sym9,
+      meaningSymbD: "የትራፊክ ፖሊስ የእጅ ምልክቶች",
+      contentRuleMeaning:
+        "ይህ  የትራፊክ የእጅ ምልክት ከትራፊክ ፖሊስ የቀኝ ረድፋቸውን ይዘው ከፊት ለፊት የሚመጡትን ተሸከርካሪዎች ወደፊትና ወደቀኝ ጉዞ እንዲቀጥሉ የሚሰጥ የእጅ  ምልክት ነው፡፡    ",
+      eymImgD: image13,
     },
     {
       symbolD: "",
-      meaningSymbD: "No overtaking to motor vehicle on more than two wheel",
-      eymImgD: sym10,
+      meaningSymbD: "የትራፊክ ፖሊስ የእጅ ምልክቶች",
+      contentRuleMeaning:
+        "ይህ የትራፊክ የእጅ ምልክት  ከትራፊክ ፖሊስ በስተኃላ የሚመጡትን ተሸከርካሪዎች ለማሰቆም የሚሰጥ ትእዛዝ ነው፡፡   ",
+      eymImgD: image14,
     },
   ],
   traficPart: [
@@ -354,18 +404,21 @@ class DriveFront extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      ruleTitle: "Traffic Rules",
-      partTitle: "Vehicle Body",
-      symbolTitle: "Traffic Symbols",
+      ruleTitle: "የማሽከርከር ስነ-ባህሪ ትምህርት",
+      partTitle: "የተሽከርካሪ የቴክኒክ ትምህርት",
+      symbolTitle: "የማሽከርከር ህግና ስነ-ስርዓት ትምህርት",
       qnA: "የትራፊክ መብራት ምልክቶችን ትርጉም ያብራሩ",
       qnB: "",
       rule: "የትራፊክ መብራት ቀይ ሲበራ",
-      meaning: "Closed to bicycles",
-      ruleImg: image9,
+      meaning: "ሙያ",
+      ruleImg:
+        "በህብረተሰቡ የተከበረና የተወደደ የስራ መስክ ሲሆን በትምህርት፣ በስልጠና እና በልምድ የሚገኝ ነዉ፡፡",
       img2: "",
       symbol: "30",
-      symbolMeaning: "No pass",
-      symbolImg: sym9,
+      symbolMeaning: "የሚያስጠነቅቁ መንገድ ዳር ምልክቶች  /warning signs/",
+      contentRule:
+        "አሽከርካሪዎች በሚያሽከረክሩበት መንገድ ላይ ስለሚያጋጥማቸው አደገኛ ሁኔታ አስቀድመው እንዲያውቁና ጥንቃቄ እንዲያደርጉ የሚረዱ ምልክቶች ሲሆኑ ቅርፃቸዉ ሶስት ማዕዘን ፣ ጠርዛቸዉ ቀይ እና መደባቸዉ ነጭ ሲሆን የሚያስተላለፉት መልክት በጥቁር ቀለም በተሰራ በምስል፣ በቀስት ወይም በቁጥር ሊሆን ይችላል፡፡",
+      symbolImg: image1,
       part: "ሞተር （ኢንጅን）",
       partMeaning:
         "One of the most important components of a vehicle includes the engine. This is the most important component of an automobile by all accords. The performance of a vehicle depends on its engine and it is the heart of every car.",
@@ -409,6 +462,8 @@ class DriveFront extends React.Component {
     });
     this.setState({
       symbolMeaning: drivBox.traficSymbol[symbolStore.getState()].meaningSymbD,
+      contentRule:
+        drivBox.traficSymbol[symbolStore.getState()].contentRuleMeaning,
     });
     this.setState({
       symbolImg: drivBox.traficSymbol[symbolStore.getState()].eymImgD,
@@ -530,15 +585,23 @@ class DriveFront extends React.Component {
                           borderRight: "1px rgba(0, 46, 102, 0.8) solid",
                         }}
                       >
-                        <h2 className="ruleMeaningDisplay">
+                        <h2
+                          className="ruleMeaningDisplay"
+                          style={{ fontWeight: "bold" }}
+                        >
                           {`${this.state.meaning}`}
                         </h2>
                       </Col>
-                      <Col md="6">
+                      <Col md="6" style={{ paddingTop: "10px" }}>
+                        <h2 className="ruleMeaningDisplay">
+                          {`${this.state.ruleImg}`}
+                        </h2>
+                      </Col>
+                      {/* <Col md="6">
                         <div className="rulePictorial">
                           <img src={ruleImg} alt="" />
                         </div>
-                      </Col>
+                      </Col> */}
                     </Row>
                     {/* <div className="rightSide">
                       <h2 className="ruleDisplay">{`${this.state.rule}`}</h2>
@@ -582,7 +645,8 @@ class DriveFront extends React.Component {
                           borderRight: "1px rgba(0, 46, 102, 0.8) solid",
                         }}
                       >
-                        <h2 className="ruleMeaningDisplay">{`${this.state.symbolMeaning}`}</h2>
+                        <h3 className="ruleMeaningDisplay">{`${this.state.symbolMeaning}`}</h3>
+                        <p>{`${this.state.contentRule}`}</p>
                       </Col>
                       <Col md="6">
                         <div className="rulePictorial">
