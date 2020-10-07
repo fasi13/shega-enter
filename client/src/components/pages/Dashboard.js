@@ -125,7 +125,7 @@ class Dashboard extends Component {
                                 Total Number of Uploads
                               </h5>
                               <p className="text-center">
-                                <strong>{totalNumUploads}</strong>
+                                <strong>84</strong>
                               </p>
                             </div>
                             <div className="col-sm-3 p-sm-2 bg-secondary ">
