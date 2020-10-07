@@ -106,7 +106,7 @@ class Dashboard extends Component {
                       <div className="card bg-info text-white shadow-lg">
                         <div className="card-body">
                           <h4 className="card-title text-center ">
-                            Shega Entertaiment
+                            Shega Entertainment
                           </h4>
                           <div className="row px-2">
                             <div className="col-sm-1 p-sm-2  mr-3 "></div>
@@ -125,7 +125,7 @@ class Dashboard extends Component {
                                 Total Number of Uploads
                               </h5>
                               <p className="text-center">
-                                <strong>84</strong>
+                                <strong>72</strong>
                               </p>
                             </div>
                             <div className="col-sm-3 p-sm-2 bg-secondary ">
