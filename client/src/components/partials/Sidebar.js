@@ -30,7 +30,7 @@ class Sidebar extends Component {
             id="togglerlang"
             className="list-group-item list-group-item-action"
           >
-            Languages <i className="fa fa-caret-down rotate-if-collapsed"></i>{" "}
+            language <i className="fa fa-caret-down rotate-if-collapsed"></i>{" "}
           </Link>
           <UncontrolledCollapse toggler="#togglerlang">
             <Link
@@ -42,7 +42,7 @@ class Sidebar extends Component {
               }}
               className="list-group-item list-group-item-action"
             >
-              Biggeners <i className="fa fa-caret-down rotate-if-collapsed"></i>
+              Beginner <i className="fa fa-caret-down rotate-if-collapsed"></i>
             </Link>
             <UncontrolledCollapse toggler="#togglerBegineer">
               <Link
@@ -65,7 +65,7 @@ class Sidebar extends Component {
                 }}
                 className="list-group-item list-group-item-action"
               >
-                Grammer
+                Grammar
               </Link>
               <Link
                 to="/biggenerTutorVedio"

@@ -87,61 +87,64 @@ class Dashboard extends Component {
                 <FontAwesomeIcon icon={faList} />
               </button>
               <h1 className="mt-2 text-primary">Dashboard</h1>
-              <div className="row px-2">
-                <div className="col-sm-12 p-sm-2">
-                  <div className="card bg-info text-white shadow-lg">
-                    <div className="card-body">
-                      <h4 className="card-title text-center ">
-                        Shega Entertaiment
-                      </h4>
-                      <div className="row px-2">
-                        <div className="col-sm-1 p-sm-2  mr-3 "></div>
-                        <div className="col-sm-3 p-sm-2 bg-secondary mr-3 ">
-                          <h5 className="card-title text-center ">
-                            Total Number of Video
-                          </h5>
-                          <p className="text-center">
-                            <strong>{tolaNumVideo}</strong>
-                          </p>
-                        </div>
-                        <div className="col-sm-3 p-sm-2 bg-secondary mr-3">
-                          <h5 className="card-title text-center">
-                            Total Number of Uploads
-                          </h5>
-                          <p className="text-center">
-                            <strong>{totalNumUploads}</strong>
-                          </p>
-                        </div>
-                        <div className="col-sm-3 p-sm-2 bg-secondary ">
-                          <h5 className="card-title text-center">
-                            Number of Subscribers
-                          </h5>
-                          <p className="text-center">
-                            <strong>{subscriberNumber}</strong>
-                          </p>
+              {this.state.isLoadding ? (
+                <img
+                  src={spinner}
+                  style={{
+                    width: "50px",
+                    hight: "50px",
+                    margin: "auto",
+                    marginTop: "170px",
+                    display: "block",
+                  }}
+                  alt="Loading..."
+                />
+              ) : (
+                <>
+                  <div className="row px-2">
+                    <div className="col-sm-12 p-sm-2">
+                      <div className="card bg-info text-white shadow-lg">
+                        <div className="card-body">
+                          <h4 className="card-title text-center ">
+                            Shega Entertaiment
+                          </h4>
+                          <div className="row px-2">
+                            <div className="col-sm-1 p-sm-2  mr-3 "></div>
+                            <div className="col-sm-3 p-sm-2 bg-secondary mr-3 ">
+                              <h5 className="card-title text-center ">
+                                Total Number of Video
+                              </h5>
+                              <p className="text-center">
+                                <strong>
+                                  {this.state.records.tutorialVedio.length}
+                                </strong>
+                              </p>
+                            </div>
+                            <div className="col-sm-3 p-sm-2 bg-secondary mr-3">
+                              <h5 className="card-title text-center">
+                                Total Number of Uploads
+                              </h5>
+                              <p className="text-center">
+                                <strong>{totalNumUploads}</strong>
+                              </p>
+                            </div>
+                            <div className="col-sm-3 p-sm-2 bg-secondary ">
+                              <h5 className="card-title text-center">
+                                Number of Subscribers
+                              </h5>
+                              <p className="text-center">
+                                <strong>{subscriberNumber}</strong>
+                              </p>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                {this.state.isLoadding ? (
-                  <img
-                    src={spinner}
-                    style={{
-                      width: "50px",
-                      hight: "50px",
-                      margin: "auto",
-                      marginTop: "170px",
-                      display: "block",
-                    }}
-                    alt="Loading..."
-                  />
-                ) : (
-                  <>
+
                     <div className="col-sm-6 p-sm-2">
                       <div className="card bg-info text-white shadow-lg">
                         <div className="card-body">
-                          <h5 className="card-title">Languages</h5>
+                          <h5 className="card-title">Language</h5>
                           <h6>
                             Number of Vocabulary:{" "}
                             <strong>
@@ -181,16 +184,16 @@ class Dashboard extends Component {
                         <div className="card-body">
                           <h5 className="card-title">Driving License</h5>
                           <h6>
-                            Number of Rules: <strong>{numRule}</strong>
+                            የማሽከርከር ስነ-ባህሪ ትምህርት ብዛት: <strong>11</strong>
                           </h6>
                           <h6>
-                            Number of Symbols: <strong>{numSymbol}</strong>
+                            የማሽከርከር ህግና ስነ-ስርዓት ትምህርት ብዛት: <strong>12</strong>
                           </h6>
                           <h6>
-                            Number of Parts: <strong>{numParts}</strong>
+                            የተሽከርካሪ የቴክኒክ ትምህርት ብዛት: <strong>11</strong>
                           </h6>
                           <h6>
-                            Number of Video: <strong>{numDrivVideo}</strong>
+                            ቪዲዮ መርጃ ብዛት: <strong>1</strong>
                           </h6>
                           {/* <h5 style={{ color: "white" }}>
                           Number of Uploads: <strong>{totalDrivUpload}</strong>
@@ -201,9 +204,9 @@ class Dashboard extends Component {
                         </div>
                       </div>
                     </div>
-                  </>
-                )}
-              </div>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
