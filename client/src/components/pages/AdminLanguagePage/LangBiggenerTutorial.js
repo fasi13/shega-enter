@@ -165,7 +165,7 @@ class LangBiggenerTutorial extends Component {
                 <FontAwesomeIcon icon={faPlus} /> Add Vedio Link
               </button>
               <h1 className="mt-2 text-primary">
-                Biggener Level <br /> Tutorial Vedio List
+                Beginner Level <br /> Tutorial Vedio List
               </h1>
               {this.state.isLoadding ? (
                 <img

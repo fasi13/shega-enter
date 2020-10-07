@@ -177,7 +177,7 @@ class LangBiggenerVocab extends Component {
                 <FontAwesomeIcon icon={faPlus} /> Add Vocabulary
               </button>
               <h1 className="mt-2 text-primary">
-                Biggener Level <br /> Vocabulary List
+                Beginner Level <br /> Vocabulary List
               </h1>
               {this.state.isLoadding ? (
                 <img

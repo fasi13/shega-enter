@@ -177,7 +177,7 @@ class LangBiggenerGrammar extends Component {
                 <FontAwesomeIcon icon={faPlus} /> Add Grammar
               </button>
               <h1 className="mt-2 text-primary">
-                Biggener Level <br />
+                Beginner Level <br />
                 Grammar List
               </h1>
               {this.state.isLoadding ? (
