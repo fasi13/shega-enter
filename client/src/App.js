@@ -21,6 +21,7 @@ import LanguageFront from "./components/users/language/LanguageFront";
 import LanguageLanding from "./components/users/language/LanguageLandingPage/LanguageLanding";
 import LangBiggenerGrammar from "./components/pages/AdminLanguagePage/LangBiggenerGrammar";
 import LangBiggenerTutorial from "./components/pages/AdminLanguagePage/LangBiggenerTutorial";
+import LangBiggenerExercise from "./components/pages/AdminLanguagePage/LangBegginerExercise";
 import Begginer from "./components/users/language/Biggner/Beginner";
 import Intermediet from "./components/users/language/Intermediet/Intermediet";
 import Advanced from "./components/users/language/Advanced/Advanced";
@@ -116,6 +117,11 @@ class App extends Component {
                 exact
                 path="/biggenerTutorVedio"
                 component={LangBiggenerTutorial}
+              ></Route>
+              <Route
+                exact
+                path="/biggenerExercise"
+                component={LangBiggenerExercise}
               ></Route>
               <Switch>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />

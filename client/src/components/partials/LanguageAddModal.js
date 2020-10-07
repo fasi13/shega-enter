@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { addVocabulary } from "../../actions/vocabAction";
 import { addGrammar } from "../../actions/gramAction";
 import { addTutorialVid } from "../../actions/tutorialVedio";
+import { addExercise } from "../../actions/exerciseAction";
 import { withRouter } from "react-router-dom";
 import { toast } from "react-toastify";
 import $ from "jquery";
@@ -23,6 +24,12 @@ class LanguageAddModal extends React.Component {
       form: "",
       example: "",
       vedioLink: "",
+      question: "",
+      mChoiceA: "",
+      mChoiceB: "",
+      mChoiceC: "",
+      mchoiceD: "",
+      answer: "",
       errors: {},
     };
   }
@@ -72,6 +79,19 @@ class LanguageAddModal extends React.Component {
     $("#add-vedioLink-modal").modal("hide");
   };
 
+  onExerciseAdd = (e) => {
+    e.preventDefault();
+    const newData = {
+      question: this.state.question,
+      mChoiceA: this.state.mChoiceA,
+      mChoiceB: this.state.mChoiceB,
+      mChoiceC: this.state.mChoiceC,
+      mChoiceD: this.state.mChoiceD,
+      answer: this.state.answer,
+    };
+    this.props.addExercise(newData, this.props.history);
+    $("#add-exercise-modal").modal("hide");
+  };
   render() {
     const { errors } = this.state;
     return (
@@ -306,6 +326,155 @@ class LanguageAddModal extends React.Component {
             </div>
           </div>
         </div>
+        <div className="modal fade" id="add-exercise-modal" data-reset="true">
+          <div className="modal-dialog modal-lg">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h4 className="modal-title">Add Exercise List</h4>
+                <button type="button" className="close" data-dismiss="modal">
+                  &times;
+                </button>
+              </div>
+              <div className="modal-body">
+                <form
+                  noValidate
+                  onSubmit={this.onExerciseAdd}
+                  id="add-exercise"
+                >
+                  <div className="row mt-2">
+                    <div className="col-md-2">
+                      <label htmlFor="name">Question</label>
+                    </div>
+                    <div className="col-md-10">
+                      <input
+                        onChange={this.onChange}
+                        value={this.state.question}
+                        id="question"
+                        type="text"
+                        error={errors.question}
+                        className={classnames("form-control", {
+                          invalid: errors.question,
+                        })}
+                      />
+                      <span className="text-danger">{errors.question}</span>
+                    </div>
+                  </div>
+
+                  <div className="row mt-2">
+                    <div className="col-md-2">
+                      <label htmlFor="name">Choice A)</label>
+                    </div>
+                    <div className="col-md-3">
+                      <input
+                        onChange={this.onChange}
+                        value={this.state.mChoiceA}
+                        id="mChoiceA"
+                        type="text"
+                        error={errors.mChoiceA}
+                        className={classnames("form-control", {
+                          invalid: errors.mChoiceA,
+                        })}
+                      />
+                      <span className="text-danger">{errors.mChoiceA}</span>
+                    </div>
+                  </div>
+
+                  <div className="row mt-2">
+                    <div className="col-md-2">
+                      <label htmlFor="name">Choice B)</label>
+                    </div>
+                    <div className="col-md-3">
+                      <input
+                        onChange={this.onChange}
+                        value={this.state.mChoiceB}
+                        id="mChoiceB"
+                        type="text"
+                        error={errors.mChoiceB}
+                        className={classnames("form-control", {
+                          invalid: errors.mChoiceB,
+                        })}
+                      />
+                      <span className="text-danger">{errors.mChoiceB}</span>
+                    </div>
+                  </div>
+
+                  <div className="row mt-2">
+                    <div className="col-md-2">
+                      <label htmlFor="name">Choice C)</label>
+                    </div>
+                    <div className="col-md-3">
+                      <input
+                        onChange={this.onChange}
+                        value={this.state.mChoiceC}
+                        id="mChoiceC"
+                        type="text"
+                        error={errors.mChoiceC}
+                        className={classnames("form-control", {
+                          invalid: errors.mChoiceC,
+                        })}
+                      />
+                      <span className="text-danger">{errors.mChoiceC}</span>
+                    </div>
+                  </div>
+
+                  <div className="row mt-2">
+                    <div className="col-md-2">
+                      <label htmlFor="name">Choice D)</label>
+                    </div>
+                    <div className="col-md-3">
+                      <input
+                        onChange={this.onChange}
+                        value={this.state.mChoiceD}
+                        id="mChoiceD"
+                        type="text"
+                        error={errors.mChoiceD}
+                        className={classnames("form-control", {
+                          invalid: errors.mChoiceD,
+                        })}
+                      />
+                      <span className="text-danger">{errors.question}</span>
+                    </div>
+                  </div>
+
+                  <div className="row mt-2">
+                    <div className="col-md-2">
+                      <label htmlFor="name">Answer</label>
+                    </div>
+                    <div className="col-md-10">
+                      <input
+                        onChange={this.onChange}
+                        value={this.state.answer}
+                        id="answer"
+                        type="text"
+                        error={errors.answer}
+                        className={classnames("form-control", {
+                          invalid: errors.answer,
+                        })}
+                      />
+                      <span className="text-danger">{errors.answer}</span>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div className="modal-footer">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  form="add-exercise"
+                  type="submit"
+                  className="btn btn-primary"
+                >
+                  Add Exercise
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -315,6 +484,7 @@ LanguageAddModal.propTypes = {
   addVocabulary: PropTypes.func.isRequired,
   addGrammar: PropTypes.func.isRequired,
   addTutorialVid: PropTypes.func.isRequired,
+  addExercise: PropTypes.func.isRequired,
   errors: PropTypes.object.isRequired,
 };
 
@@ -326,4 +496,5 @@ export default connect(mapStateToProps, {
   addVocabulary,
   addGrammar,
   addTutorialVid,
+  addExercise,
 })(withRouter(LanguageAddModal));

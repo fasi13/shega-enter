@@ -5,6 +5,7 @@ import subCounterReducer from "./authReducers";
 import langVoc from "./langReducer";
 import langGram from "./langGramReducer";
 import langVedioLink from "./vedioLinkReducer";
+import langExercise from "./langExerciseReducer";
 export default combineReducers({
   auth: authReducer,
   errors: errorReducer,
@@ -12,4 +13,5 @@ export default combineReducers({
   langVoc: langVoc,
   langGram: langGram,
   langVedioLink: langVedioLink,
+  langExercise: langExercise,
 });

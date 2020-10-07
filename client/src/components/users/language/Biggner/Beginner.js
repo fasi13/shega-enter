@@ -19,11 +19,18 @@ function Beginner({
   const [count, setCount] = useState(0);
   const [countGram, setCountGram] = useState(0);
   const [countVedioLink, setVedioLink] = useState(0);
+  const [countExercise, setExercise] = useState(0);
+  const [show, setShow] = useState(false);
+  // const [dispQn, setDisp] = useState("Click Qn to Start the test");
 
   useEffect(() => {
     getVocabulary();
     getgrammar();
   }, [getVocabulary]);
+  function nextUpdate(a, b) {
+    setExercise(a);
+    setShow(b);
+  }
 
   if (loading) {
     return <p>Loadding....</p>;
@@ -212,31 +219,73 @@ function Beginner({
               </h2>
               <div className="test">
                 <div className="testBody">
-                  {/* <div className="rightSide">
-                    <h2 className="questionDisplay">{`${this.state.dispQn}`}</h2>
-                    <h2 className="alternativesDisplay">{`${this.state.dispAlt}`}</h2>
-                    <h2 className="answerDisplay">{`${this.state.dispAns}`}</h2>
-                  </div> */}
+                  <div className="rightSide">
+                    <h2 className="questionDisplay">
+                      {langVocs[0].exercises[countExercise].question}
+                    </h2>
+                    <div className="row mt-2" style={{ fontWeight: "bold" }}>
+                      <div className="col-md-3">
+                        A){`${langVocs[0].exercises[countExercise].mChoiceA}`}
+                      </div>
+                      <div className="col-md-3">
+                        B) {`${langVocs[0].exercises[countExercise].mChoiceB}`}
+                      </div>
+                      <div className="col-md-3">
+                        C){""}
+                        {`${langVocs[0].exercises[countExercise].mChoiceC}`}
+                      </div>
+                      <div className="col-md-3">
+                        D){""}
+                        {`${langVocs[0].exercises[countExercise].mChoiceD}`}
+                      </div>
+                    </div>
+
+                    {show ? (
+                      <h2
+                        className="answerDisplay"
+                        style={{ paddingTop: "10px" }}
+                      >
+                        {`${langVocs[0].exercises[countExercise].answer}`}
+                      </h2>
+                    ) : null}
+                  </div>
                   <div className="leftSide">
                     <h2>
-                      {/* <Button className="qn" onClick={this.displayQn}>
-                        Qn
-                      </Button> */}
+                      <Button className="qn">Qn</Button>
                     </h2>
-                    {/* <Button className="ans" onClick={this.displayAns}>
+                    <Button
+                      className="ans"
+                      onClick={() => {
+                        setShow(!show);
+                      }}
+                    >
                       Ans
-                    </Button> */}
+                    </Button>
                   </div>
                 </div>
                 <div>
-                  {/* <Button className="prevTest" onClick={this.prevTestHandle}>
+                  <Button
+                    className="prevTest"
+                    onClick={() =>
+                      countExercise
+                        ? nextUpdate(countExercise - 1, false)
+                        : setExercise(0)
+                    }
+                  >
                     <i className="fa fa-backward" aria-hidden="true"></i>
-                  </Button> */}
+                  </Button>
                 </div>
                 <div>
-                  {/* <Button className="nextTest" onClick={this.nextTestHandle}>
+                  <Button
+                    className="nextTest"
+                    onClick={() =>
+                      countExercise >= langVocs[0].exercises.length - 1
+                        ? setExercise(0)
+                        : nextUpdate(countExercise + 1, false)
+                    }
+                  >
                     <i className="fa fa-forward" aria-hidden="true"></i>
-                  </Button> */}
+                  </Button>
                 </div>
               </div>
             </div>
@@ -265,189 +314,3 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, { getVocabulary, getgrammar })(
   Beginner
 );
-
-// const Beginner = ({ getVocabulary, langVoc: { langVoc } }) => {
-//   useEffect(() => {
-//     getVocabulary();
-//   }, [getVocabulary]);
-//   return (
-//     <>
-//       <LangNavbar2 />
-
-//       <div className="languageContainer">
-//         <Container>
-//           <div className="languageTitle">
-//             <Row>
-//               <Col xs="4" className="levelInd">
-//                 <h1 className="begginerLevel">Beginner Level</h1>
-//               </Col>
-//               <Col xs="8">
-//                 <Row className="frontList">
-//                   <Col xs="10">
-//                     <h1>
-//                       <a className="list" href="#vocTtl">
-//                         Vocabulary
-//                       </a>
-//                     </h1>
-//                     <h1>
-//                       <a className="list1" href="#tensTtl">
-//                         Grammar
-//                       </a>
-//                     </h1>
-//                     <h1>
-//                       <a className="list2" href="#testTtl">
-//                         Self Test
-//                       </a>
-//                     </h1>
-//                   </Col>
-//                 </Row>
-//               </Col>
-//             </Row>
-//           </div>
-//           <div className="langHeaderContainer">
-//             <div className="content-center">
-//               <h4 className="shegaLangLang">Shega Entertainment</h4>
-//             </div>
-//           </div>
-//           <div className="languageCards">
-//             <div className="vocabularyContainer">
-//               <h2 className="vocTtl" id="vocTtl">
-//                 Vocabulary
-//               </h2>
-//               <div className="vocabulary">
-//                 <div className="vocBody">
-//                   <div className="rightSide">
-//                     <h2 className="vocEngDisplay">{console.log(langVoc)}</h2>
-//                     <h2 className="vocAmDisplay">{}</h2>
-//                     <audio controls ref="audio">
-//                       {/* <source src={} type="audio/mpeg" /> */}
-//                     </audio>
-//                   </div>
-//                   <div className="leftSide">
-//                     <h2 className="vocEnglish">English</h2>
-//                     <h2 className="vocAmharic">አማርኛ</h2>
-//                     <h2 className="sound">Sound</h2>
-//                   </div>
-//                 </div>
-//                 <div>
-//                   <Button className="prevVoc" onClick={this.prevVocHandle}>
-//                     <i className="fa fa-backward" aria-hidden="true"></i>
-//                   </Button>
-//                 </div>
-//                 <div>
-//                   <Button className="nextVoc" onClick={this.nextVocHandle}>
-//                     <i className="fa fa-forward" aria-hidden="true"></i>
-//                   </Button>
-//                 </div>
-//               </div>
-//             </div>
-
-//             {/* <div className="tenseContainer">
-//             <h2 className="tensTtl" id="tensTtl">{`${this.state.tens}`}</h2>
-//             <div className="tense">
-//               <div className="tensBody">
-//                 <div className="rightSide">
-//                   <h2 className="tenstypeDisplay">{`${this.state.tenseType}`}</h2>
-//                   <h2 className="tensStructureDisplay">{`${this.state.structure}`}</h2>
-//                   <h2 className="tensEgDisplay">{`${this.state.tenseExample}`}</h2>
-//                 </div>
-//                 <div className="leftSide">
-//                   <h2 className="tensType">Grammar</h2>
-//                   <h2 className="structure">Form</h2>
-//                   <h2 className="tensExample">Example</h2>
-//                 </div>
-//               </div>
-//               <div>
-//                 <Button className="prevTens" onClick={this.prevTensHandle}>
-//                   <i className="fa fa-backward" aria-hidden="true"></i>
-//                 </Button>
-//               </div>
-//               <div>
-//                 <Button className="nextTens" onClick={this.nextTensHandle}>
-//                   <i className="fa fa-forward" aria-hidden="true"></i>
-//                 </Button>
-//               </div>
-//             </div>
-//           </div>
-
-//           <div className="tenseContainer">
-//             <h2
-//               className="langVideoTitle"
-//               id="langVideoTitle"
-//             >{`${this.state.langVideoTitle}`}</h2>
-//             <div className="tense">
-//               <div className="langVideoBody">
-//                 <iframe
-//                   title="firstVideo"
-//                   src={`${langVideoSrc}`}
-//                   frameborder="0"
-//                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-//                   allowfullscreen
-//                 ></iframe>
-//               </div>
-//               <div>
-//                 <Button
-//                   className="prevTens"
-//                   onClick={this.prevlangVideoHandle}
-//                 >
-//                   <i className="fa fa-backward" aria-hidden="true"></i>
-//                 </Button>
-//               </div>
-//               <div>
-//                 <Button
-//                   className="nextTens"
-//                   onClick={this.nextlangVideoHandle}
-//                 >
-//                   <i className="fa fa-forward" aria-hidden="true"></i>
-//                 </Button>
-//               </div>
-//             </div>
-//           </div>
-
-//           <div className="testContainer">
-//             <h2 className="testTtl" id="testTtl">{`${this.state.exc}`}</h2>
-//             <div className="test">
-//               <div className="testBody">
-//                 <div className="rightSide">
-//                   <h2 className="questionDisplay">{`${this.state.dispQn}`}</h2>
-//                   <h2 className="alternativesDisplay">{`${this.state.dispAlt}`}</h2>
-//                   <h2 className="answerDisplay">{`${this.state.dispAns}`}</h2>
-//                 </div>
-//                 <div className="leftSide">
-//                   <h2>
-//                     <Button className="qn" onClick={this.displayQn}>
-//                       Qn
-//                     </Button>
-//                   </h2>
-//                   <Button className="ans" onClick={this.displayAns}>
-//                     Ans
-//                   </Button>
-//                 </div>
-//               </div>
-//               <div>
-//                 <Button className="prevTest" onClick={this.prevTestHandle}>
-//                   <i className="fa fa-backward" aria-hidden="true"></i>
-//                 </Button>
-//               </div>
-//               <div>
-//                 <Button className="nextTest" onClick={this.nextTestHandle}>
-//                   <i className="fa fa-forward" aria-hidden="true"></i>
-//                 </Button>
-//               </div>
-//             </div>
-//           </div> */}
-//           </div>
-//         </Container>
-//         <Footer />
-//       </div>
-//     </>
-//   );
-// };
-// Beginner.propTypes = {
-//   getVocabulary: PropTypes.func.isRequired,
-//   langVoc: PropTypes.object.isRequired,
-// };
-// const mapStateToProps = (state) => ({
-//   langVoc: state.langVoc,
-// });
-// export default connect(mapStateToProps, { getVocabulary })(Beginner);

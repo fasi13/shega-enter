@@ -1,29 +1,29 @@
 import axios from "axios";
 import {
   GET_ERRORS,
-  GRAMMAR_ADD,
-  GRAMMAR_DELETE,
-  GRAMMAR_UPDATE,
-  GET_GRAMMAR,
+  EXERCISE_ADD,
+  EXERCISE_DELETE,
+  EXERCISE_UPDATE,
+  GET_EXERCISE,
 } from "./types";
 
-export const getgrammar = () => (dispatch) => {
+export const getExercise = () => (dispatch) => {
   axios
-    .get("/api/languages/beginner-grammar")
+    .get("/api/languages/beginner")
     .then((res) => {
       dispatch({
-        type: GET_GRAMMAR,
-        payload: res.data[0].grammer_,
+        type: GET_EXERCISE,
+        payload: res.data,
       });
     })
     .catch();
 };
-export const addGrammar = (gramData, history) => (dispatch) => {
+export const addExercise = (vocabData, history) => (dispatch) => {
   axios
-    .put("/api/languages/beginner-lang-grammar", gramData)
+    .put("/api/languages/beginner-lang-exercise", vocabData)
     .then((res) =>
       dispatch({
-        type: GRAMMAR_ADD,
+        type: EXERCISE_ADD,
         payload: res,
       })
     )
@@ -35,13 +35,12 @@ export const addGrammar = (gramData, history) => (dispatch) => {
     );
 };
 
-export const updateGrammar = (updateData) => (dispatch) => {
-  console.log(updateData);
+export const updateExercise = (updateData) => (dispatch) => {
   axios
-    .post("/api/languagesupdate-B_Grammar", updateData)
+    .post("/api/languages/update-B_exercise", updateData)
     .then((res) =>
       dispatch({
-        type: GRAMMAR_UPDATE,
+        type: EXERCISE_UPDATE,
         payload: res,
       })
     )
@@ -53,12 +52,12 @@ export const updateGrammar = (updateData) => (dispatch) => {
     );
 };
 
-export const deleteGrammar = (vocData) => (dispatch) => {
+export const deleteExercise = (vocData) => (dispatch) => {
   axios
-    .delete(`/api/languages/delete-B_Grammar/${vocData._id}`)
+    .delete(`/api/languages/delete-B_exercise/${vocData._id}`)
     .then((res) =>
       dispatch({
-        type: GRAMMAR_DELETE,
+        type: EXERCISE_DELETE,
         payload: res,
       })
     )

@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { updateVocabulary } from "../../actions/vocabAction";
 import { updateGrammar } from "../../actions/gramAction";
 import { updateTutorialVid } from "../../actions/tutorialVedio";
+import { updateExercise } from "../../actions/exerciseAction";
 import { withRouter } from "react-router-dom";
 import { toast } from "react-toastify";
 import $ from "jquery";
@@ -21,6 +22,11 @@ class LanguageUpdateModal extends React.Component {
       form: this.props.record.form,
       example: this.props.record.example,
       vedioLink: this.props.record.vedioLink,
+      question: this.props.record.question,
+      mChoiceA: this.props.record.mChoiceA,
+      mChoiceB: this.props.record.mChoiceB,
+      mChoiceC: this.props.record.mChoiceC,
+      answer: this.props.record.answer,
       errors: {},
     };
   }
@@ -36,6 +42,12 @@ class LanguageUpdateModal extends React.Component {
         form: nextProps.record.form,
         example: nextProps.record.example,
         vedioLink: nextProps.record.vedioLink,
+        question: nextProps.record.question,
+        mChoiceA: nextProps.record.mChoiceA,
+        mChoiceB: nextProps.record.mChoiceB,
+        mChoiceC: nextProps.record.mChoiceC,
+        mChoiceD: nextProps.record.mChoiceD,
+        answer: nextProps.record.answer,
       });
     }
     if (nextProps.errors) {
@@ -64,8 +76,23 @@ class LanguageUpdateModal extends React.Component {
     if (e.target.id === "gram-update-example") {
       this.setState({ example: e.target.value });
     }
-    if (e.target.id === "tutorial-update-vediolink") {
-      this.setState({ vedioLink: e.target.value });
+    if (e.target.id === "exercise-update-question") {
+      this.setState({ question: e.target.value });
+    }
+    if (e.target.id === "exercise-update-mChoiceA") {
+      this.setState({ mChoiceA: e.target.value });
+    }
+    if (e.target.id === "exercise-update-mChoiceB") {
+      this.setState({ mChoiceB: e.target.value });
+    }
+    if (e.target.id === "exercise-update-mChoiceC") {
+      this.setState({ mChoiceC: e.target.value });
+    }
+    if (e.target.id === "exercise-update-mChoiceD") {
+      this.setState({ mChoiceD: e.target.value });
+    }
+    if (e.target.id === "exercise-update-answer") {
+      this.setState({ answer: e.target.value });
     }
   };
 
@@ -101,6 +128,22 @@ class LanguageUpdateModal extends React.Component {
     };
     this.props.updateTutorialVid(newData);
     $("#update-vedioLink-modal").modal("hide");
+  };
+
+  onExerciseUpdate = (e) => {
+    e.preventDefault();
+    const newData = {
+      _id: this.state.id,
+      question: this.state.question,
+      mChoiceA: this.state.mChoiceA,
+      mChoiceB: this.state.mChoiceB,
+      mChoiceC: this.state.mChoiceC,
+      mChoiceD: this.state.mChoiceD,
+      answer: this.state.answer,
+    };
+    console.log(newData);
+    this.props.updateExercise(newData);
+    $("#update-exercise-modal").modal("hide");
   };
 
   render() {
@@ -313,8 +356,8 @@ class LanguageUpdateModal extends React.Component {
               <div className="modal-body">
                 <form
                   noValidate
-                  onSubmit={this.onVedioLinkUpdate}
-                  id="update-VedioLink"
+                  onSubmit={this.onExerciseUpdate}
+                  id="update-exercise"
                 >
                   <input
                     onChange={this.onChange}
@@ -362,6 +405,162 @@ class LanguageUpdateModal extends React.Component {
             </div>
           </div>
         </div>
+        <div className="modal fade" id="update-exercise-modal">
+          <div className="modal-dialog modal-lg">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h4 className="modal-title">Update Exercise</h4>
+                <button type="button" className="close" data-dismiss="modal">
+                  &times;
+                </button>
+              </div>
+              <div className="modal-body">
+                <form
+                  noValidate
+                  onSubmit={this.onExerciseAdd}
+                  id="update-exercise"
+                >
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.id}
+                    id="exercise-update-id"
+                    type="text"
+                    className="d-none"
+                  />
+                  <div className="row mt-2">
+                    <div className="col-md-3">
+                      <label htmlFor="name">Question</label>
+                    </div>
+                    <div className="col-md-9">
+                      <input
+                        onChange={this.onChange}
+                        value={this.state.question}
+                        id="exercise-update-question"
+                        type="text"
+                        error={errors.question}
+                        className={classnames("form-control", {
+                          invalid: errors.question,
+                        })}
+                      />
+                      <span className="text-danger">{errors.question}</span>
+                    </div>
+                  </div>
+
+                  <div className="row mt-2">
+                    <div className="col-md-2">
+                      <label htmlFor="name">Choice A)</label>
+                    </div>
+                    <div className="col-md-4">
+                      <input
+                        onChange={this.onChange}
+                        value={this.state.mChoiceA}
+                        id="exercise-update-mChoiceA"
+                        type="text"
+                        error={errors.mChoiceA}
+                        className={classnames("form-control", {
+                          invalid: errors.mChoiceA,
+                        })}
+                      />
+                      <span className="text-danger">{errors.mChoiceA}</span>
+                    </div>
+                  </div>
+
+                  <div className="row mt-2">
+                    <div className="col-md-2">
+                      <label htmlFor="name">Choice B)</label>
+                    </div>
+                    <div className="col-md-4">
+                      <input
+                        onChange={this.onChange}
+                        value={this.state.mChoiceB}
+                        id="exercise-update-mChoiceB"
+                        type="text"
+                        error={errors.mChoiceB}
+                        className={classnames("form-control", {
+                          invalid: errors.mChoiceB,
+                        })}
+                      />
+                      <span className="text-danger">{errors.mChoiceB}</span>
+                    </div>
+                  </div>
+
+                  <div className="row mt-2">
+                    <div className="col-md-2">
+                      <label htmlFor="name">Choice C)</label>
+                    </div>
+                    <div className="col-md-4">
+                      <input
+                        onChange={this.onChange}
+                        value={this.state.mChoiceC}
+                        id="exercise-update-mChoiceC"
+                        type="text"
+                        error={errors.mChoiceC}
+                        className={classnames("form-control", {
+                          invalid: errors.mChoiceC,
+                        })}
+                      />
+                      <span className="text-danger">{errors.mChoiceC}</span>
+                    </div>
+                  </div>
+
+                  <div className="row mt-2">
+                    <div className="col-md-2">
+                      <label htmlFor="name">Choice D)</label>
+                    </div>
+                    <div className="col-md-4">
+                      <input
+                        onChange={this.onChange}
+                        value={this.state.mChoiceD}
+                        id="exercise-update-mChoiceD"
+                        type="text"
+                        error={errors.mChoiceD}
+                        className={classnames("form-control", {
+                          invalid: errors.mChoiceD,
+                        })}
+                      />
+                      <span className="text-danger">{errors.question}</span>
+                    </div>
+                  </div>
+
+                  <div className="row mt-2">
+                    <div className="col-md-3">
+                      <label htmlFor="name">Answer</label>
+                    </div>
+                    <div className="col-md-9">
+                      <input
+                        onChange={this.onChange}
+                        value={this.state.answer}
+                        id="exercise-update-answer"
+                        type="text"
+                        error={errors.answer}
+                        className={classnames("form-control", {
+                          invalid: errors.answer,
+                        })}
+                      />
+                      <span className="text-danger">{errors.answer}</span>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div className="modal-footer">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  form="update-exercise"
+                  type="submit"
+                  className="btn btn-primary"
+                >
+                  Update Exercise
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -371,6 +570,7 @@ LanguageUpdateModal.propTypes = {
   updateVocabulary: PropTypes.func.isRequired,
   updateGrammar: PropTypes.func.isRequired,
   updateTutorialVid: PropTypes.func.isRequired,
+  updateExercise: PropTypes.func.isRequired,
 };
 const mapStateToProps = (state) => ({
   errors: state.errors,
@@ -380,4 +580,5 @@ export default connect(mapStateToProps, {
   updateVocabulary,
   updateGrammar,
   updateTutorialVid,
+  updateExercise,
 })(LanguageUpdateModal);

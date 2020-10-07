@@ -133,7 +133,7 @@ class LangBiggenerGrammar extends Component {
 
   getData() {
     axios
-      .get("/api/langGrammar/beginner-grammar")
+      .get("/api/languages/beginner-grammar")
       .then((res) => {
         this.setState({ records: res.data[0].grammer_, isLoadding: false });
       })

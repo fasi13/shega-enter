@@ -125,7 +125,7 @@ class Dashboard extends Component {
                                 Total Number of Uploads
                               </h5>
                               <p className="text-center">
-                                <strong>72</strong>
+                                <strong>77</strong>
                               </p>
                             </div>
                             <div className="col-sm-3 p-sm-2 bg-secondary ">
@@ -152,7 +152,7 @@ class Dashboard extends Component {
                             </strong>
                           </h6>
                           <h6>
-                            Number of Sentenses:{" "}
+                            Number of Sentences:{" "}
                             <strong>
                               {this.state.records.grammer_.length}
                             </strong>

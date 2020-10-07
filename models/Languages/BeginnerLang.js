@@ -49,6 +49,22 @@ const BeiginnerLangSchema = new mongoose.Schema({
         type: String,
         require: true,
       },
+      mChoiceA: {
+        type: String,
+        require: true,
+      },
+      mChoiceB: {
+        type: String,
+        require: true,
+      },
+      mChoiceC: {
+        type: String,
+        require: true,
+      },
+      mChoiceD: {
+        type: String,
+        require: true,
+      },
       answer: {
         type: String,
         require: true,

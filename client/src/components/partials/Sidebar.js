@@ -76,10 +76,10 @@ class Sidebar extends Component {
                 }}
                 className="list-group-item list-group-item-action"
               >
-                Tutorial Vedio
+                Tutorial Video
               </Link>
               <Link
-                to="/biggenerEx"
+                to="/biggenerExercise"
                 style={{
                   backgroundColor: "gray",
                   fontSize: "14px",

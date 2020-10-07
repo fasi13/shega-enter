@@ -20,7 +20,7 @@ export const getTutorialVid = () => (dispatch) => {
 };
 export const addTutorialVid = (vocabData, history) => (dispatch) => {
   axios
-    .put("/api/langTutorVedio/beginner-lang-tutorial", vocabData)
+    .put("/api/languages/beginner-lang-tutorial", vocabData)
     .then((res) =>
       dispatch({
         type: TUTORIAL_VEDIO_ADD,
@@ -37,7 +37,7 @@ export const addTutorialVid = (vocabData, history) => (dispatch) => {
 
 export const updateTutorialVid = (updateData) => (dispatch) => {
   axios
-    .post("/api/langTutorVedio/update-B_tutorial", updateData)
+    .post("/api/languages/update-B_tutorial", updateData)
     .then((res) =>
       dispatch({
         type: TUTORIAL_VEDIO_UPDATE,
@@ -54,7 +54,7 @@ export const updateTutorialVid = (updateData) => (dispatch) => {
 
 export const deleteTutorialVid = (vocData) => (dispatch) => {
   axios
-    .delete(`/api/langTutorVedio/delete-B_tutorial/${vocData._id}`)
+    .delete(`/api/languages/delete-B_tutorial/${vocData._id}`)
     .then((res) =>
       dispatch({
         type: TUTORIAL_VEDIO_DELETE,

@@ -10,11 +10,11 @@ import axios from "axios";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import LanguageAddModal from "../../partials/LanguageAddModal";
 import LanguageUpdateModal from "../../partials/LanguageUpdateModal";
-import { deleteTutorialVid } from "../../../actions/tutorialVedio";
+import { deleteExercise } from "../../../actions/exerciseAction";
 import { toast, ToastContainer } from "react-toastify";
 import spinner from "../../users/layout/Spinner2.gif";
 
-class LangBiggenerTutorial extends Component {
+class LangBegginerExercise extends Component {
   constructor(props) {
     super(props);
 
@@ -27,8 +27,43 @@ class LangBiggenerTutorial extends Component {
         sortable: true,
       },
       {
-        key: "vedioLink",
-        text: "Vedio Link",
+        key: "question",
+        text: "Question",
+        className: "name",
+        align: "left",
+        sortable: true,
+      },
+      {
+        key: "mChoiceA",
+        text: "Choice A",
+        className: "name",
+        align: "left",
+        sortable: true,
+      },
+      {
+        key: "mChoiceB",
+        text: "Choice B",
+        className: "name",
+        align: "left",
+        sortable: true,
+      },
+      {
+        key: "mChoiceC",
+        text: "Choice C",
+        className: "name",
+        align: "left",
+        sortable: true,
+      },
+      {
+        key: "mChoiceD",
+        text: "Choice D",
+        className: "name",
+        align: "left",
+        sortable: true,
+      },
+      {
+        key: "answer",
+        text: "Answer",
         className: "name",
         align: "left",
         sortable: true,
@@ -45,7 +80,7 @@ class LangBiggenerTutorial extends Component {
             <Fragment>
               <button
                 data-toggle="modal"
-                data-target="#update-vedioLink-modal"
+                data-target="#update-exercise-modal"
                 className="btn btn-primary btn-sm"
                 onClick={() => this.editRecord(record)}
                 style={{ marginRight: "5px" }}
@@ -67,8 +102,8 @@ class LangBiggenerTutorial extends Component {
     this.config = {
       page_size: 10,
       length_menu: [10, 20, 50],
-      filename: "Tutorial Vedio Links",
-      no_data_text: "No Vids Found!",
+      filename: "Exercise List",
+      no_data_text: "No List Found!",
       button: {
         excel: true,
         print: true,
@@ -99,7 +134,12 @@ class LangBiggenerTutorial extends Component {
     this.state = {
       currentRecord: {
         id: "",
-        vedioLink: "",
+        question: "",
+        mChoiceA: "",
+        mChoiceB: "",
+        mChoiceC: "",
+        mChoiceD: "",
+        answer: "",
       },
     };
 
@@ -120,7 +160,7 @@ class LangBiggenerTutorial extends Component {
       .get("/api/languages/beginner")
       .then((res) => {
         this.setState({
-          records: res.data[0].tutorialVedio,
+          records: res.data[0].exercises,
           isLoadding: false,
         });
         console.log(this.state.records);
@@ -133,7 +173,7 @@ class LangBiggenerTutorial extends Component {
   }
 
   onDeleteRecord(record) {
-    this.props.deleteTutorialVid(record);
+    this.props.deleteExercise(record);
   }
 
   pageChange(pageData) {
@@ -160,12 +200,12 @@ class LangBiggenerTutorial extends Component {
               <button
                 className="btn btn-outline-primary float-right mt-3 mr-2"
                 data-toggle="modal"
-                data-target="#add-vedioLink-modal"
+                data-target="#add-exercise-modal"
               >
-                <FontAwesomeIcon icon={faPlus} /> Add Vedio Link
+                <FontAwesomeIcon icon={faPlus} /> Add Exercise List
               </button>
               <h1 className="mt-2 text-primary">
-                Beginner Level <br /> Tutorial Video List
+                Beginner Level <br /> Exercise List
               </h1>
               {this.state.isLoadding ? (
                 <img
@@ -196,16 +236,16 @@ class LangBiggenerTutorial extends Component {
   }
 }
 
-LangBiggenerTutorial.propTypes = {
-  deleteTutorialVid: PropTypes.func.isRequired,
-  langVedioLink: PropTypes.object.isRequired,
+LangBegginerExercise.propTypes = {
+  deleteExercise: PropTypes.func.isRequired,
+  langExercise: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   records: state.records,
-  langVedioLink: state.langVedioLink,
+  langExercise: state.langExercise,
 });
 
-export default connect(mapStateToProps, { deleteTutorialVid })(
-  LangBiggenerTutorial
+export default connect(mapStateToProps, { deleteExercise })(
+  LangBegginerExercise
 );
