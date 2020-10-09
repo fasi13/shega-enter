@@ -2,16 +2,14 @@ import React from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { addVocabulary } from "../../actions/vocabAction";
-import { addGrammar } from "../../actions/gramAction";
-import { addTutorialVid } from "../../actions/tutorialVedio";
-import { addExercise } from "../../actions/exerciseAction";
+import { addIntrVocabulary } from "../../../actions/vocabAction";
+import { addIntrGrammar } from "../../../actions/gramAction";
+import { addIntrTutorialVid } from "../../../actions/tutorialVedio";
+import { addIntrExercise } from "../../../actions/exerciseAction";
 import { withRouter } from "react-router-dom";
-import { toast } from "react-toastify";
 import $ from "jquery";
 
 import "react-toastify/dist/ReactToastify.css";
-import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 
 class LanguageAddModal extends React.Component {
   constructor() {
@@ -40,7 +38,7 @@ class LanguageAddModal extends React.Component {
         errors: nextProps.errors,
       });
     }
-    console.log("this.state");
+
     $("#add-vocabulary-modal").modal("hide");
   }
 
@@ -55,7 +53,8 @@ class LanguageAddModal extends React.Component {
       amaharic: this.state.amaharic,
       sound: this.state.sound,
     };
-    this.props.addVocabulary(newVocabulary, this.props.history);
+
+    this.props.addIntrVocabulary(newVocabulary, this.props.history);
     $("#add-vocabulary-modal").modal("hide");
   };
 
@@ -66,7 +65,7 @@ class LanguageAddModal extends React.Component {
       form: this.state.form,
       example: this.state.example,
     };
-    this.props.addGrammar(newGrammar, this.props.history);
+    this.props.addIntrGrammar(newGrammar, this.props.history);
     $("#add-grammar-modal").modal("hide");
   };
 
@@ -75,7 +74,7 @@ class LanguageAddModal extends React.Component {
     const newGrammar = {
       vedioLink: this.state.vedioLink,
     };
-    this.props.addTutorialVid(newGrammar, this.props.history);
+    this.props.addIntrTutorialVid(newGrammar, this.props.history);
     $("#add-vedioLink-modal").modal("hide");
   };
 
@@ -89,7 +88,7 @@ class LanguageAddModal extends React.Component {
       mChoiceD: this.state.mChoiceD,
       answer: this.state.answer,
     };
-    this.props.addExercise(newData, this.props.history);
+    this.props.addIntrExercise(newData, this.props.history);
     $("#add-exercise-modal").modal("hide");
   };
   render() {
@@ -481,10 +480,10 @@ class LanguageAddModal extends React.Component {
 }
 
 LanguageAddModal.propTypes = {
-  addVocabulary: PropTypes.func.isRequired,
-  addGrammar: PropTypes.func.isRequired,
-  addTutorialVid: PropTypes.func.isRequired,
-  addExercise: PropTypes.func.isRequired,
+  addIntrVocabulary: PropTypes.func.isRequired,
+  addIntrGrammar: PropTypes.func.isRequired,
+  addIntrTutorialVid: PropTypes.func.isRequired,
+  addIntrExercise: PropTypes.func.isRequired,
   errors: PropTypes.object.isRequired,
 };
 
@@ -493,8 +492,8 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, {
-  addVocabulary,
-  addGrammar,
-  addTutorialVid,
-  addExercise,
+  addIntrVocabulary,
+  addIntrGrammar,
+  addIntrTutorialVid,
+  addIntrExercise,
 })(withRouter(LanguageAddModal));

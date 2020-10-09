@@ -57,25 +57,7 @@ class Dashboard extends Component {
 
   render() {
     //const { user } = this.props.auth;
-    const {
-      tolaNumVideo,
-      totalNumUploads,
-      subscriberNumber,
-      numSelectedJokes,
-      numFamilyJokes,
-      numOfficeJokes,
-      totalNumJoks,
-      numVocabulary,
-      numSentens,
-      numLangVideo,
-      numExcercises,
-      totalLangUpload,
-      numRule,
-      numSymbol,
-      numParts,
-      numDrivVideo,
-      totalDrivUpload,
-    } = this.state;
+    const { subscriberNumber } = this.state;
     return (
       <div>
         <Navbar />

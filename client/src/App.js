@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Dashboard from "./components/pages/Dashboard";
-import LangBiggenerVocab from "./components/pages/AdminLanguagePage/LangBiggenerVocab";
+
 import Login from "./components/auth/Login";
 import Admin from "./components/pages/Admin";
 import NotFound from "./components/layout/NotFound";
@@ -19,9 +19,21 @@ import ThanksPage from "./components/users/thanksPage/ThanksPage";
 import HomePage from "./components/users/homePage/HomePage";
 import LanguageFront from "./components/users/language/LanguageFront";
 import LanguageLanding from "./components/users/language/LanguageLandingPage/LanguageLanding";
-import LangBiggenerGrammar from "./components/pages/AdminLanguagePage/LangBiggenerGrammar";
-import LangBiggenerTutorial from "./components/pages/AdminLanguagePage/LangBiggenerTutorial";
-import LangBiggenerExercise from "./components/pages/AdminLanguagePage/LangBegginerExercise";
+import LangBiggenerVocab from "./components/pages/beginner/LangBiggenerVocab";
+import LangBiggenerGrammar from "./components/pages/beginner/LangBiggenerGrammar";
+import LangBiggenerTutorial from "./components/pages/beginner/LangBiggenerTutorial";
+import LangBiggenerExercise from "./components/pages/beginner/LangBegginerExercise";
+
+import LangInterMedVocab from "./components/pages/intermediate/LangInterMedVocab";
+import LangInterMedGrammar from "./components/pages/intermediate/LangInterMedGrammar";
+import LangInterMedTutorial from "./components/pages/intermediate/LangInterMedTutorial";
+import LangInterMedExercise from "./components/pages/intermediate/LangInterMedExercise";
+
+import LangAdvancedVocab from "./components/pages/advanced/LangAdvancedVocab";
+import LangAdvancedGrammar from "./components/pages/advanced/LangAdvancedGrammar";
+import LangAdvancedTutorial from "./components/pages/advanced/LangAdvancedTutorial";
+import LangAdvancedExercise from "./components/pages/advanced/LangAdvancedExercise";
+
 import Begginer from "./components/users/language/Biggner/Beginner";
 import Intermediet from "./components/users/language/Intermediet/Intermediet";
 import Advanced from "./components/users/language/Advanced/Advanced";
@@ -122,6 +134,46 @@ class App extends Component {
                 exact
                 path="/biggenerExercise"
                 component={LangBiggenerExercise}
+              ></Route>
+              <Route
+                exact
+                path="/interMedVocab"
+                component={LangInterMedVocab}
+              />
+              <Route
+                exact
+                path="/interMedGra"
+                component={LangInterMedGrammar}
+              ></Route>
+              <Route
+                exact
+                path="/interMedTutorVedio"
+                component={LangInterMedTutorial}
+              ></Route>
+              <Route
+                exact
+                path="/interMedExercise"
+                component={LangInterMedExercise}
+              ></Route>
+              <Route
+                exact
+                path="/advancedVocab"
+                component={LangAdvancedVocab}
+              />
+              <Route
+                exact
+                path="/advancedGra"
+                component={LangAdvancedGrammar}
+              ></Route>
+              <Route
+                exact
+                path="/advancedTutorVedio"
+                component={LangAdvancedTutorial}
+              ></Route>
+              <Route
+                exact
+                path="/advancedExercise"
+                component={LangAdvancedExercise}
               ></Route>
               <Switch>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />

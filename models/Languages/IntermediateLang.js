@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const AdvancedLangSchema = new mongoose.Schema({
+const IntermediateLangSchema = new mongoose.Schema({
   LangsID: {
     type: Number,
   },
@@ -73,4 +73,4 @@ const AdvancedLangSchema = new mongoose.Schema({
   ],
 });
 
-module.exports = mongoose.model("AdvancedLang", AdvancedLangSchema);
+module.exports = mongoose.model("IntermediateLang", IntermediateLangSchema);

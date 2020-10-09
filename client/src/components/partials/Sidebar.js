@@ -90,8 +90,9 @@ class Sidebar extends Component {
                 Exercise
               </Link>
             </UncontrolledCollapse>
+
             <Link
-              to="/languages"
+              id="togglerInter"
               style={{
                 backgroundColor: "white",
                 fontSize: "14px",
@@ -102,8 +103,55 @@ class Sidebar extends Component {
               Intermediate{" "}
               <i className="fa fa-caret-down rotate-if-collapsed"></i>{" "}
             </Link>
+            <UncontrolledCollapse toggler="#togglerInter">
+              <Link
+                to="/interMedVocab"
+                style={{
+                  backgroundColor: "gray",
+                  fontSize: "14px",
+                  fontWeight: "bold",
+                }}
+                className="list-group-item list-group-item-action"
+              >
+                Vocabulary
+              </Link>
+              <Link
+                to="/interMedGra"
+                style={{
+                  backgroundColor: "gray",
+                  fontSize: "14px",
+                  fontWeight: "bold",
+                }}
+                className="list-group-item list-group-item-action"
+              >
+                Grammar
+              </Link>
+              <Link
+                to="/interMedTutorVedio"
+                style={{
+                  backgroundColor: "gray",
+                  fontSize: "14px",
+                  fontWeight: "bold",
+                }}
+                className="list-group-item list-group-item-action"
+              >
+                Tutorial Video
+              </Link>
+              <Link
+                to="/interMedExercise"
+                style={{
+                  backgroundColor: "gray",
+                  fontSize: "14px",
+                  fontWeight: "bold",
+                }}
+                className="list-group-item list-group-item-action"
+              >
+                Exercise
+              </Link>
+            </UncontrolledCollapse>
+
             <Link
-              to="/languages"
+              id="togglerAdvanced"
               style={{
                 backgroundColor: "white",
                 fontSize: "14px",
@@ -113,11 +161,54 @@ class Sidebar extends Component {
             >
               Advanced <i className="fa fa-caret-down rotate-if-collapsed"></i>
             </Link>
+            <UncontrolledCollapse toggler="#togglerAdvanced">
+              <Link
+                to="/advancedVocab"
+                style={{
+                  backgroundColor: "gray",
+                  fontSize: "14px",
+                  fontWeight: "bold",
+                }}
+                className="list-group-item list-group-item-action"
+              >
+                Vocabulary
+              </Link>
+              <Link
+                to="/advancedGra"
+                style={{
+                  backgroundColor: "gray",
+                  fontSize: "14px",
+                  fontWeight: "bold",
+                }}
+                className="list-group-item list-group-item-action"
+              >
+                Grammar
+              </Link>
+              <Link
+                to="/advancedTutorVedio"
+                style={{
+                  backgroundColor: "gray",
+                  fontSize: "14px",
+                  fontWeight: "bold",
+                }}
+                className="list-group-item list-group-item-action"
+              >
+                Tutorial Video
+              </Link>
+              <Link
+                to="/advancedExercise"
+                style={{
+                  backgroundColor: "gray",
+                  fontSize: "14px",
+                  fontWeight: "bold",
+                }}
+                className="list-group-item list-group-item-action"
+              >
+                Exercise
+              </Link>
+            </UncontrolledCollapse>
           </UncontrolledCollapse>
-          <Link
-            to="/driveLicense"
-            className="list-group-item list-group-item-action"
-          >
+          <Link to="#pablo" className="list-group-item list-group-item-action">
             Driving License
           </Link>
           <button

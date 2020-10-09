@@ -8,13 +8,13 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import axios from "axios";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import LanguageAddModal from "../../partials/LanguageAddModal";
-import LanguageUpdateModal from "../../partials/LanguageUpdateModal";
-import { deleteGrammar } from "../../../actions/gramAction";
+import LanguageAddModal from "../../partials/IntermediateModal/LanguageAddModal";
+import LanguageUpdateModal from "../../partials/IntermediateModal/LanguageUpdateModal";
+import { deleteIntrExercise } from "../../../actions/exerciseAction";
 import { toast, ToastContainer } from "react-toastify";
 import spinner from "../../users/layout/Spinner2.gif";
 
-class LangBiggenerGrammar extends Component {
+class LangInterMedExercise extends Component {
   constructor(props) {
     super(props);
 
@@ -27,23 +27,44 @@ class LangBiggenerGrammar extends Component {
         sortable: true,
       },
       {
-        key: "grammer",
-        text: "Grammar",
+        key: "question",
+        text: "Question",
         className: "name",
         align: "left",
         sortable: true,
       },
       {
-        key: "form",
-        text: "Form",
-        className: "email",
+        key: "mChoiceA",
+        text: "Choice A",
+        className: "name",
         align: "left",
         sortable: true,
       },
       {
-        key: "example",
-        text: "Example",
-        className: "date",
+        key: "mChoiceB",
+        text: "Choice B",
+        className: "name",
+        align: "left",
+        sortable: true,
+      },
+      {
+        key: "mChoiceC",
+        text: "Choice C",
+        className: "name",
+        align: "left",
+        sortable: true,
+      },
+      {
+        key: "mChoiceD",
+        text: "Choice D",
+        className: "name",
+        align: "left",
+        sortable: true,
+      },
+      {
+        key: "answer",
+        text: "Answer",
+        className: "name",
         align: "left",
         sortable: true,
       },
@@ -59,7 +80,7 @@ class LangBiggenerGrammar extends Component {
             <Fragment>
               <button
                 data-toggle="modal"
-                data-target="#update-grammar-modal"
+                data-target="#update-exercise-modal"
                 className="btn btn-primary btn-sm"
                 onClick={() => this.editRecord(record)}
                 style={{ marginRight: "5px" }}
@@ -81,8 +102,8 @@ class LangBiggenerGrammar extends Component {
     this.config = {
       page_size: 10,
       length_menu: [10, 20, 50],
-      filename: "grammar",
-      no_data_text: "No Grammar found!",
+      filename: "Exercise List",
+      no_data_text: "No List Found!",
       button: {
         excel: true,
         print: true,
@@ -113,9 +134,12 @@ class LangBiggenerGrammar extends Component {
     this.state = {
       currentRecord: {
         id: "",
-        grammer: "",
-        form: "",
-        example: "",
+        question: "",
+        mChoiceA: "",
+        mChoiceB: "",
+        mChoiceC: "",
+        mChoiceD: "",
+        answer: "",
       },
     };
 
@@ -133,9 +157,13 @@ class LangBiggenerGrammar extends Component {
 
   getData() {
     axios
-      .get("/api/languages/beginner-grammar")
+      .get("/api/languages/intermediate")
       .then((res) => {
-        this.setState({ records: res.data[0].grammer_, isLoadding: false });
+        this.setState({
+          records: res.data[0].exercises,
+          isLoadding: false,
+        });
+        console.log(this.state.records);
       })
       .catch();
   }
@@ -145,7 +173,7 @@ class LangBiggenerGrammar extends Component {
   }
 
   onDeleteRecord(record) {
-    this.props.deleteGrammar(record);
+    this.props.deleteIntrExercise(record);
   }
 
   pageChange(pageData) {
@@ -172,13 +200,12 @@ class LangBiggenerGrammar extends Component {
               <button
                 className="btn btn-outline-primary float-right mt-3 mr-2"
                 data-toggle="modal"
-                data-target="#add-grammar-modal"
+                data-target="#add-exercise-modal"
               >
-                <FontAwesomeIcon icon={faPlus} /> Add Grammar
+                <FontAwesomeIcon icon={faPlus} /> Add Exercise List
               </button>
               <h1 className="mt-2 text-primary">
-                Beginner Level <br />
-                Grammar List
+                Intermediate Level <br /> Exercise List
               </h1>
               {this.state.isLoadding ? (
                 <img
@@ -209,14 +236,16 @@ class LangBiggenerGrammar extends Component {
   }
 }
 
-LangBiggenerGrammar.propTypes = {
-  deleteGrammar: PropTypes.func.isRequired,
-  langGram: PropTypes.object.isRequired,
+LangInterMedExercise.propTypes = {
+  deleteIntrExercise: PropTypes.func.isRequired,
+  langExercise: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   records: state.records,
-  langGram: state.langGram,
+  langExercise: state.langExercise,
 });
 
-export default connect(mapStateToProps, { deleteGrammar })(LangBiggenerGrammar);
+export default connect(mapStateToProps, { deleteIntrExercise })(
+  LangInterMedExercise
+);

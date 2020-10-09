@@ -8,13 +8,13 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import axios from "axios";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import LanguageAddModal from "../../partials/LanguageAddModal";
-import LanguageUpdateModal from "../../partials/LanguageUpdateModal";
-import { deleteVocabulary } from "../../../actions/vocabAction";
+import LanguageAddModal from "../../partials/IntermediateModal/LanguageAddModal";
+import LanguageUpdateModal from "../../partials/IntermediateModal/LanguageUpdateModal";
+import { deleteIntrVocabulary } from "../../../actions/vocabAction";
 import { toast, ToastContainer } from "react-toastify";
 import spinner from "../../users/layout/Spinner2.gif";
 
-class LangBiggenerVocab extends Component {
+class LangInterMedVocab extends Component {
   constructor(props) {
     super(props);
 
@@ -133,7 +133,7 @@ class LangBiggenerVocab extends Component {
 
   getData() {
     axios
-      .get("/api/languages/beginner")
+      .get("/api/languages/intermediate")
       .then((res) => {
         this.setState({ records: res.data[0].vocabulary, isLoadding: false });
       })
@@ -145,7 +145,7 @@ class LangBiggenerVocab extends Component {
   }
 
   onDeleteRecord(record) {
-    this.props.deleteVocabulary(record);
+    this.props.deleteIntrVocabulary(record);
   }
 
   pageChange(pageData) {
@@ -177,7 +177,7 @@ class LangBiggenerVocab extends Component {
                 <FontAwesomeIcon icon={faPlus} /> Add Vocabulary
               </button>
               <h1 className="mt-2 text-primary">
-                Beginner Level <br /> Vocabulary List
+                Intermediate Level <br /> Vocabulary List
               </h1>
               {this.state.isLoadding ? (
                 <img
@@ -208,8 +208,8 @@ class LangBiggenerVocab extends Component {
   }
 }
 
-LangBiggenerVocab.propTypes = {
-  deleteVocabulary: PropTypes.func.isRequired,
+LangInterMedVocab.propTypes = {
+  deleteIntrVocabulary: PropTypes.func.isRequired,
   langVoc: PropTypes.object.isRequired,
 };
 
@@ -218,6 +218,6 @@ const mapStateToProps = (state) => ({
   langVoc: state.langVoc,
 });
 
-export default connect(mapStateToProps, { deleteVocabulary })(
-  LangBiggenerVocab
+export default connect(mapStateToProps, { deleteIntrVocabulary })(
+  LangInterMedVocab
 );

@@ -35,7 +35,7 @@ function Beginner({
   if (loading) {
     return <p>Loadding....</p>;
   }
-  // console.log("*************" + langGrams[0].form);
+
   return (
     <>
       <LangNavbar2 />

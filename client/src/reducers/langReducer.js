@@ -4,6 +4,12 @@ import {
   VOCABULARY_ADD,
   VOCABULARY_UPDATE,
   VOCABULARY_DELETE,
+  INTR_VOCABULARY_ADD,
+  INTR_VOCABULARY_UPDATE,
+  INTR_VOCABULARY_DELETE,
+  ADV_VOCABULARY_ADD,
+  ADV_VOCABULARY_UPDATE,
+  ADV_VOCABULARY_DELETE,
   ADMIN_LOADING,
 } from "../actions/types";
 const isEmpty = require("is-empty");
@@ -38,6 +44,41 @@ export default function (state = initialState, action) {
         isAuthenticated: !isEmpty(action.payload),
         langVocs: action.payload,
       };
+
+    case INTR_VOCABULARY_ADD:
+      return {
+        ...state,
+        isAuthenticated: !isEmpty(action.payload),
+        langVocs: action.payload,
+      };
+    case INTR_VOCABULARY_UPDATE:
+      return {
+        isAuthenticated: !isEmpty(action.payload),
+        langVocs: action.payload,
+      };
+    case INTR_VOCABULARY_DELETE:
+      return {
+        isAuthenticated: !isEmpty(action.payload),
+        langVocs: action.payload,
+      };
+
+    case ADV_VOCABULARY_ADD:
+      return {
+        ...state,
+        isAuthenticated: !isEmpty(action.payload),
+        langVocs: action.payload,
+      };
+    case ADV_VOCABULARY_UPDATE:
+      return {
+        isAuthenticated: !isEmpty(action.payload),
+        langVocs: action.payload,
+      };
+    case ADV_VOCABULARY_DELETE:
+      return {
+        isAuthenticated: !isEmpty(action.payload),
+        langVocs: action.payload,
+      };
+
     // case SET_CURRENT_ADMIN:
     //     return {
     //         ...state,

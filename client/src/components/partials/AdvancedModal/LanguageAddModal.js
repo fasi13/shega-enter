@@ -2,138 +2,84 @@ import React from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { updateVocabulary } from "../../actions/vocabAction";
-import { updateGrammar } from "../../actions/gramAction";
-import { updateTutorialVid } from "../../actions/tutorialVedio";
-import { updateExercise } from "../../actions/exerciseAction";
+import { addAdvanVocabulary } from "../../../actions/vocabAction";
+import { addAdvanGrammar } from "../../../actions/gramAction";
+import { addAdvanTutorialVid } from "../../../actions/tutorialVedio";
+import { addAdvanExercise } from "../../../actions/exerciseAction";
 import { withRouter } from "react-router-dom";
-import { toast } from "react-toastify";
 import $ from "jquery";
+
 import "react-toastify/dist/ReactToastify.css";
-class LanguageUpdateModal extends React.Component {
-  constructor(props) {
-    super(props);
+
+class LanguageAddModal extends React.Component {
+  constructor() {
+    super();
     this.state = {
-      id: this.props.record._id,
-      english: this.props.record.english,
-      amaharic: this.props.record.amaharic,
-      sound: this.props.record.sound,
-      grammer: this.props.record.grammer,
-      form: this.props.record.form,
-      example: this.props.record.example,
-      vedioLink: this.props.record.vedioLink,
-      question: this.props.record.question,
-      mChoiceA: this.props.record.mChoiceA,
-      mChoiceB: this.props.record.mChoiceB,
-      mChoiceC: this.props.record.mChoiceC,
-      answer: this.props.record.answer,
+      english: "",
+      amaharic: "",
+      sound: "",
+      grammer: "",
+      form: "",
+      example: "",
+      vedioLink: "",
+      question: "",
+      mChoiceA: "",
+      mChoiceB: "",
+      mChoiceC: "",
+      mchoiceD: "",
+      answer: "",
       errors: {},
     };
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.record) {
-      this.setState({
-        id: nextProps.record._id,
-        english: nextProps.record.english,
-        amaharic: nextProps.record.amaharic,
-        sound: nextProps.record.sound,
-        grammer: nextProps.record.grammer,
-        form: nextProps.record.form,
-        example: nextProps.record.example,
-        vedioLink: nextProps.record.vedioLink,
-        question: nextProps.record.question,
-        mChoiceA: nextProps.record.mChoiceA,
-        mChoiceB: nextProps.record.mChoiceB,
-        mChoiceC: nextProps.record.mChoiceC,
-        mChoiceD: nextProps.record.mChoiceD,
-        answer: nextProps.record.answer,
-      });
-    }
     if (nextProps.errors) {
       this.setState({
         errors: nextProps.errors,
       });
     }
+
+    $("#add-vocabulary-modal").modal("hide");
   }
 
   onChange = (e) => {
-    if (e.target.id === "voc-update-english") {
-      this.setState({ english: e.target.value });
-    }
-    if (e.target.id === "voc-update-amaharic") {
-      this.setState({ amaharic: e.target.value });
-    }
-    if (e.target.id === "voc-update-sound") {
-      this.setState({ sound: e.target.value });
-    }
-    if (e.target.id === "gram-update-grammar") {
-      this.setState({ grammer: e.target.value });
-    }
-    if (e.target.id === "gram-update-form") {
-      this.setState({ form: e.target.value });
-    }
-    if (e.target.id === "gram-update-example") {
-      this.setState({ example: e.target.value });
-    }
-    if (e.target.id === "exercise-update-question") {
-      this.setState({ question: e.target.value });
-    }
-    if (e.target.id === "exercise-update-mChoiceA") {
-      this.setState({ mChoiceA: e.target.value });
-    }
-    if (e.target.id === "exercise-update-mChoiceB") {
-      this.setState({ mChoiceB: e.target.value });
-    }
-    if (e.target.id === "exercise-update-mChoiceC") {
-      this.setState({ mChoiceC: e.target.value });
-    }
-    if (e.target.id === "exercise-update-mChoiceD") {
-      this.setState({ mChoiceD: e.target.value });
-    }
-    if (e.target.id === "exercise-update-answer") {
-      this.setState({ answer: e.target.value });
-    }
+    this.setState({ [e.target.id]: e.target.value });
   };
 
-  onVocabularyUpdate = (e) => {
+  onVocabularyAdd = (e) => {
     e.preventDefault();
-    const newData = {
-      _id: this.state.id,
+    const newVocabulary = {
       english: this.state.english,
       amaharic: this.state.amaharic,
       sound: this.state.sound,
     };
-    this.props.updateVocabulary(newData);
-    $("#update-vocab-modal").modal("hide");
+    this.props.addAdvanVocabulary(newVocabulary, this.props.history);
+    $("#add-vocabulary-modal").modal("hide");
   };
 
-  onGrammarUpdate = (e) => {
+  onGrammarAdd = (e) => {
     e.preventDefault();
-    const newData = {
-      _id: this.state.id,
+    const newGrammar = {
       grammer: this.state.grammer,
       form: this.state.form,
       example: this.state.example,
     };
-    this.props.updateGrammar(newData);
-    $("#update-grammar-modal").modal("hide");
+    this.props.addAdvanGrammar(newGrammar, this.props.history);
+    $("#add-grammar-modal").modal("hide");
   };
 
-  onVedioLinkUpdate = (e) => {
+  onVedioLinkAdd = (e) => {
     e.preventDefault();
-    const newData = {
-      _id: this.state.id,
+    const newGrammar = {
       vedioLink: this.state.vedioLink,
     };
-    this.props.updateTutorialVid(newData);
-    $("#update-vedioLink-modal").modal("hide");
+    this.props.addAdvanTutorialVid(newGrammar, this.props.history);
+    $("#add-vedioLink-modal").modal("hide");
   };
 
-  onExerciseUpdate = (e) => {
+  onExerciseAdd = (e) => {
     e.preventDefault();
     const newData = {
-      _id: this.state.id,
       question: this.state.question,
       mChoiceA: this.state.mChoiceA,
       mChoiceB: this.state.mChoiceB,
@@ -141,20 +87,18 @@ class LanguageUpdateModal extends React.Component {
       mChoiceD: this.state.mChoiceD,
       answer: this.state.answer,
     };
-    console.log(newData);
-    this.props.updateExercise(newData);
-    $("#update-exercise-modal").modal("hide");
+    this.props.addAdvanExercise(newData, this.props.history);
+    $("#add-exercise-modal").modal("hide");
   };
-
   render() {
     const { errors } = this.state;
     return (
       <div>
-        <div className="modal fade" id="update-vocab-modal">
+        <div className="modal fade" id="add-vocabulary-modal" data-reset="true">
           <div className="modal-dialog modal-lg">
             <div className="modal-content">
               <div className="modal-header">
-                <h4 className="modal-title">Update Vocabulary</h4>
+                <h4 className="modal-title">add Vocabulary</h4>
                 <button type="button" className="close" data-dismiss="modal">
                   &times;
                 </button>
@@ -162,16 +106,9 @@ class LanguageUpdateModal extends React.Component {
               <div className="modal-body">
                 <form
                   noValidate
-                  onSubmit={this.onVocabularyUpdate}
-                  id="update-vocabulary"
+                  onSubmit={this.onVocabularyAdd}
+                  id="add-Vocabulary"
                 >
-                  <input
-                    onChange={this.onChange}
-                    value={this.state.id}
-                    id="voc-update-id"
-                    type="text"
-                    className="d-none"
-                  />
                   <div className="row mt-2">
                     <div className="col-md-3">
                       <label htmlFor="name">English</label>
@@ -180,7 +117,7 @@ class LanguageUpdateModal extends React.Component {
                       <input
                         onChange={this.onChange}
                         value={this.state.english}
-                        id="voc-update-english"
+                        id="english"
                         type="text"
                         error={errors.english}
                         className={classnames("form-control", {
@@ -198,8 +135,8 @@ class LanguageUpdateModal extends React.Component {
                       <input
                         onChange={this.onChange}
                         value={this.state.amaharic}
-                        error={errors.amaharic}
-                        id="voc-update-amaharic"
+                        error={errors.email}
+                        id="amaharic"
                         type="text"
                         className={classnames("form-control", {
                           invalid: errors.amaharic,
@@ -217,13 +154,13 @@ class LanguageUpdateModal extends React.Component {
                         onChange={this.onChange}
                         value={this.state.sound}
                         error={errors.sound}
-                        id="voc-update-sound"
+                        id="sound"
                         type="text"
                         className={classnames("form-control", {
                           invalid: errors.sound,
                         })}
                       />
-                      <span className="text-danger">{errors.sound}</span>
+                      <span className="text-danger">{errors.example}</span>
                     </div>
                   </div>
                 </form>
@@ -237,38 +174,27 @@ class LanguageUpdateModal extends React.Component {
                   Close
                 </button>
                 <button
-                  form="update-vocabulary"
+                  form="add-Vocabulary"
                   type="submit"
                   className="btn btn-primary"
                 >
-                  Update Vocabulary
+                  Add Vocabulary
                 </button>
               </div>
             </div>
           </div>
         </div>
-        <div className="modal fade" id="update-grammar-modal">
+        <div className="modal fade" id="add-grammar-modal" data-reset="true">
           <div className="modal-dialog modal-lg">
             <div className="modal-content">
               <div className="modal-header">
-                <h4 className="modal-title">Update Vocabulary</h4>
+                <h4 className="modal-title">add Grammar</h4>
                 <button type="button" className="close" data-dismiss="modal">
                   &times;
                 </button>
               </div>
               <div className="modal-body">
-                <form
-                  noValidate
-                  onSubmit={this.onGrammarUpdate}
-                  id="update-Grammar"
-                >
-                  <input
-                    onChange={this.onChange}
-                    value={this.state.id}
-                    id="gram-update-id"
-                    type="text"
-                    className="d-none"
-                  />
+                <form noValidate onSubmit={this.onGrammarAdd} id="add-grammar">
                   <div className="row mt-2">
                     <div className="col-md-3">
                       <label htmlFor="name">Grammar</label>
@@ -277,14 +203,14 @@ class LanguageUpdateModal extends React.Component {
                       <input
                         onChange={this.onChange}
                         value={this.state.grammer}
-                        id="gram-update-grammar"
+                        id="grammer"
                         type="text"
                         error={errors.grammer}
                         className={classnames("form-control", {
                           invalid: errors.grammer,
                         })}
                       />
-                      <span className="text-danger">{errors.english}</span>
+                      <span className="text-danger">{errors.grammer}</span>
                     </div>
                   </div>
                   <div className="row mt-2">
@@ -296,13 +222,13 @@ class LanguageUpdateModal extends React.Component {
                         onChange={this.onChange}
                         value={this.state.form}
                         error={errors.form}
-                        id="gram-update-form"
+                        id="form"
                         type="text"
                         className={classnames("form-control", {
                           invalid: errors.form,
                         })}
                       />
-                      <span className="text-danger">{errors.amaharic}</span>
+                      <span className="text-danger">{errors.form}</span>
                     </div>
                   </div>
                   <div className="row mt-2">
@@ -314,13 +240,13 @@ class LanguageUpdateModal extends React.Component {
                         onChange={this.onChange}
                         value={this.state.example}
                         error={errors.example}
-                        id="gram-update-example"
+                        id="example"
                         type="text"
                         className={classnames("form-control", {
                           invalid: errors.example,
                         })}
                       />
-                      <span className="text-danger">{errors.sound}</span>
+                      <span className="text-danger">{errors.example}</span>
                     </div>
                   </div>
                 </form>
@@ -334,21 +260,21 @@ class LanguageUpdateModal extends React.Component {
                   Close
                 </button>
                 <button
-                  form="update-Grammar"
+                  form="add-grammar"
                   type="submit"
                   className="btn btn-primary"
                 >
-                  Update Grammar
+                  Add Grammar
                 </button>
               </div>
             </div>
           </div>
         </div>
-        <div className="modal fade" id="update-vedioLink-modal">
+        <div className="modal fade" id="add-vedioLink-modal" data-reset="true">
           <div className="modal-dialog modal-lg">
             <div className="modal-content">
               <div className="modal-header">
-                <h4 className="modal-title">Update Vedio Link</h4>
+                <h4 className="modal-title">Add Vedio Link</h4>
                 <button type="button" className="close" data-dismiss="modal">
                   &times;
                 </button>
@@ -356,25 +282,18 @@ class LanguageUpdateModal extends React.Component {
               <div className="modal-body">
                 <form
                   noValidate
-                  onSubmit={this.onExerciseUpdate}
-                  id="update-exercise"
+                  onSubmit={this.onVedioLinkAdd}
+                  id="add-vedioLink"
                 >
-                  <input
-                    onChange={this.onChange}
-                    value={this.state.id}
-                    id="gram-update-id"
-                    type="text"
-                    className="d-none"
-                  />
                   <div className="row mt-2">
                     <div className="col-md-3">
-                      <label htmlFor="name">Vedio Link</label>
+                      <label htmlFor="name">Tutorial Vedio Link</label>
                     </div>
                     <div className="col-md-9">
                       <input
                         onChange={this.onChange}
                         value={this.state.vedioLink}
-                        id="tutorial-update-vediolink"
+                        id="vedioLink"
                         type="text"
                         error={errors.vedioLink}
                         className={classnames("form-control", {
@@ -395,21 +314,21 @@ class LanguageUpdateModal extends React.Component {
                   Close
                 </button>
                 <button
-                  form="update-VedioLink"
+                  form="add-vedioLink"
                   type="submit"
                   className="btn btn-primary"
                 >
-                  Update Vedio Link
+                  Add Vedio Link
                 </button>
               </div>
             </div>
           </div>
         </div>
-        <div className="modal fade" id="update-exercise-modal">
+        <div className="modal fade" id="add-exercise-modal" data-reset="true">
           <div className="modal-dialog modal-lg">
             <div className="modal-content">
               <div className="modal-header">
-                <h4 className="modal-title">Update Exercise</h4>
+                <h4 className="modal-title">Add Exercise List</h4>
                 <button type="button" className="close" data-dismiss="modal">
                   &times;
                 </button>
@@ -418,24 +337,17 @@ class LanguageUpdateModal extends React.Component {
                 <form
                   noValidate
                   onSubmit={this.onExerciseAdd}
-                  id="update-exercise"
+                  id="add-exercise"
                 >
-                  <input
-                    onChange={this.onChange}
-                    value={this.state.id}
-                    id="exercise-update-id"
-                    type="text"
-                    className="d-none"
-                  />
                   <div className="row mt-2">
-                    <div className="col-md-3">
+                    <div className="col-md-2">
                       <label htmlFor="name">Question</label>
                     </div>
-                    <div className="col-md-9">
+                    <div className="col-md-10">
                       <input
                         onChange={this.onChange}
                         value={this.state.question}
-                        id="exercise-update-question"
+                        id="question"
                         type="text"
                         error={errors.question}
                         className={classnames("form-control", {
@@ -450,11 +362,11 @@ class LanguageUpdateModal extends React.Component {
                     <div className="col-md-2">
                       <label htmlFor="name">Choice A)</label>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-3">
                       <input
                         onChange={this.onChange}
                         value={this.state.mChoiceA}
-                        id="exercise-update-mChoiceA"
+                        id="mChoiceA"
                         type="text"
                         error={errors.mChoiceA}
                         className={classnames("form-control", {
@@ -469,11 +381,11 @@ class LanguageUpdateModal extends React.Component {
                     <div className="col-md-2">
                       <label htmlFor="name">Choice B)</label>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-3">
                       <input
                         onChange={this.onChange}
                         value={this.state.mChoiceB}
-                        id="exercise-update-mChoiceB"
+                        id="mChoiceB"
                         type="text"
                         error={errors.mChoiceB}
                         className={classnames("form-control", {
@@ -488,11 +400,11 @@ class LanguageUpdateModal extends React.Component {
                     <div className="col-md-2">
                       <label htmlFor="name">Choice C)</label>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-3">
                       <input
                         onChange={this.onChange}
                         value={this.state.mChoiceC}
-                        id="exercise-update-mChoiceC"
+                        id="mChoiceC"
                         type="text"
                         error={errors.mChoiceC}
                         className={classnames("form-control", {
@@ -507,11 +419,11 @@ class LanguageUpdateModal extends React.Component {
                     <div className="col-md-2">
                       <label htmlFor="name">Choice D)</label>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-3">
                       <input
                         onChange={this.onChange}
                         value={this.state.mChoiceD}
-                        id="exercise-update-mChoiceD"
+                        id="mChoiceD"
                         type="text"
                         error={errors.mChoiceD}
                         className={classnames("form-control", {
@@ -523,14 +435,14 @@ class LanguageUpdateModal extends React.Component {
                   </div>
 
                   <div className="row mt-2">
-                    <div className="col-md-3">
+                    <div className="col-md-2">
                       <label htmlFor="name">Answer</label>
                     </div>
-                    <div className="col-md-9">
+                    <div className="col-md-10">
                       <input
                         onChange={this.onChange}
                         value={this.state.answer}
-                        id="exercise-update-answer"
+                        id="answer"
                         type="text"
                         error={errors.answer}
                         className={classnames("form-control", {
@@ -551,11 +463,11 @@ class LanguageUpdateModal extends React.Component {
                   Close
                 </button>
                 <button
-                  form="update-exercise"
+                  form="add-exercise"
                   type="submit"
                   className="btn btn-primary"
                 >
-                  Update Exercise
+                  Add Exercise
                 </button>
               </div>
             </div>
@@ -566,19 +478,21 @@ class LanguageUpdateModal extends React.Component {
   }
 }
 
-LanguageUpdateModal.propTypes = {
-  updateVocabulary: PropTypes.func.isRequired,
-  updateGrammar: PropTypes.func.isRequired,
-  updateTutorialVid: PropTypes.func.isRequired,
-  updateExercise: PropTypes.func.isRequired,
+LanguageAddModal.propTypes = {
+  addAdvanVocabulary: PropTypes.func.isRequired,
+  addAdvanGrammar: PropTypes.func.isRequired,
+  addAdvanTutorialVid: PropTypes.func.isRequired,
+  addAdvanExercise: PropTypes.func.isRequired,
+  errors: PropTypes.object.isRequired,
 };
+
 const mapStateToProps = (state) => ({
   errors: state.errors,
 });
 
 export default connect(mapStateToProps, {
-  updateVocabulary,
-  updateGrammar,
-  updateTutorialVid,
-  updateExercise,
-})(LanguageUpdateModal);
+  addAdvanVocabulary,
+  addAdvanGrammar,
+  addAdvanTutorialVid,
+  addAdvanExercise,
+})(withRouter(LanguageAddModal));
