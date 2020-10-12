@@ -11,7 +11,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import LanguageAddModal from "../../partials/BeginnerModal/LanguageAddModal";
 import LanguageUpdateModal from "../../partials/BeginnerModal/LanguageUpdateModal";
 import { deleteVocabulary } from "../../../actions/vocabAction";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import spinner from "../../users/layout/Spinner2.gif";
 
 class LangBiggenerVocab extends Component {

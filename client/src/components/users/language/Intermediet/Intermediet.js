@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getIntrVocabulary } from "../../../../actions/vocabAction";
@@ -8,7 +8,7 @@ import { Button, Container, Row, Col } from "reactstrap";
 // core components
 import Footer from "../../footer/Footer";
 import LangNavbar2 from "../../navbars/LangNavbar2";
-import spinner from "../../layout/Spinner2.gif";
+// import spinner from "../../layout/Spinner2.gif";
 
 function Intermediate({
   getIntrVocabulary,

@@ -10,34 +10,34 @@ import image6 from "../../../assets/img//rule/66.png";
 import image7 from "../../../assets/img//rule/77.png";
 import image8 from "../../../assets/img//rule/88.jpeg";
 import image9 from "../../../assets/img//rule/99.jpg";
-import image10 from "../../../assets/img//rule/100.png";
+// import image10 from "../../../assets/img//rule/100.png";
 import image11 from "../../../assets/img//rule/111.png";
 import image12 from "../../../assets/img//rule/112.png";
 import image13 from "../../../assets/img//rule/113.png";
 import image14 from "../../../assets/img//rule/114.png";
 
-import sym1 from "../../../assets/img//rule/4.png";
-import sym2 from "../../../assets/img//rule/10.png";
-import sym3 from "../../../assets/img//rule/13.png";
-import sym4 from "../../../assets/img//rule/14.png";
-import sym5 from "../../../assets/img//rule/17.png";
-import sym6 from "../../../assets/img//rule/18.png";
-import sym7 from "../../../assets/img//rule/11.png";
-import sym8 from "../../../assets/img//rule/9.png";
-import sym9 from "../../../assets/img//rule/16.png";
-import sym10 from "../../../assets/img//rule/12.png";
+// import sym1 from "../../../assets/img//rule/4.png";
+// import sym2 from "../../../assets/img//rule/10.png";
+// import sym3 from "../../../assets/img//rule/13.png";
+// import sym4 from "../../../assets/img//rule/14.png";
+// import sym5 from "../../../assets/img//rule/17.png";
+// import sym6 from "../../../assets/img//rule/18.png";
+// import sym7 from "../../../assets/img//rule/11.png";
+// import sym8 from "../../../assets/img//rule/9.png";
+// import sym9 from "../../../assets/img//rule/16.png";
+// import sym10 from "../../../assets/img//rule/12.png";
 
-import part1 from "../../../assets/img/part/full.jpg";
-import part2 from "../../../assets/img/part/gearbox-min.jpg";
-import part3 from "../../../assets/img/part/filter.jpg";
-import part4 from "../../../assets/img/part/gearbox.png";
+// import part1 from "../../../assets/img/part/full.jpg";
+// import part2 from "../../../assets/img/part/gearbox-min.jpg";
+// import part3 from "../../../assets/img/part/filter.jpg";
+// import part4 from "../../../assets/img/part/gearbox.png";
 import part5 from "../../../assets/img/part/moter.png";
 import part6 from "../../../assets/img/part/pestata.png";
 import part7 from "../../../assets/img/part/fuelPump.png";
 import part8 from "../../../assets/img/part/injectionPump.png";
 import part9 from "../../../assets/img/part/kamShaft.png";
 import part10 from "../../../assets/img/part/filtro.png";
-import part11 from "../../../assets/img/part/moter.png";
+// import part11 from "../../../assets/img/part/moter.png";
 import part12 from "../../../assets/img/part/chansis.png";
 import part13 from "../../../assets/img/part/dashBoard.png";
 import part14 from "../../../assets/img/part/bela.png";
@@ -545,7 +545,7 @@ class DriveFront extends React.Component {
   /////////////////////////////////////////////////////////////
 
   render() {
-    const { ruleImg, symbolImg, partImg, drvVideoSrc } = this.state;
+    const { symbolImg, partImg, drvVideoSrc } = this.state;
     // var base64Flag = "data:image/jpeg;base64,";
     return (
       <>

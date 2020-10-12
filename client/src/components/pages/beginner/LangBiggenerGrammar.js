@@ -11,7 +11,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import LanguageAddModal from "../../partials/BeginnerModal/LanguageAddModal";
 import LanguageUpdateModal from "../../partials/BeginnerModal/LanguageUpdateModal";
 import { deleteGrammar } from "../../../actions/gramAction";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import spinner from "../../users/layout/Spinner2.gif";
 
 class LangBiggenerGrammar extends Component {

@@ -11,7 +11,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import LanguageAddModal from "../../partials/IntermediateModal/LanguageAddModal";
 import LanguageUpdateModal from "../../partials/IntermediateModal/LanguageUpdateModal";
 import { deleteIntrExercise } from "../../../actions/exerciseAction";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import spinner from "../../users/layout/Spinner2.gif";
 
 class LangInterMedExercise extends Component {
