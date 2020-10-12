@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { getVocabulary } from "../../../../actions/vocabAction";
 import { getgrammar } from "../../../../actions/gramAction";
 // reactstrap components
-import { Button, Container, Row, Col } from "reactstrap";
+import { Button, Container, Row, Col , Card } from "reactstrap";
 // core components
 import Footer from "../../footer/Footer";
 import LangNavbar2 from "../../navbars/LangNavbar2";
@@ -75,7 +75,9 @@ function Beginner({
               <h4 className="shegaLangLang">Shega Entertainment</h4>
             </div>
           </div>
+        
           <div className="languageCards">
+          
             <div className="vocabularyContainer">
               <h2 className="vocTtl" id="vocTtl">
                 Vocabulary
