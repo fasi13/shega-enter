@@ -120,9 +120,36 @@
     background-color: white;
     color: rgba(0, 46, 102, 0.8);
 } */
+
+div#container {
+  height: 150px;
+  width: auto;
+  overflow: scroll;
+}
+div#content {
+  height: 160px;
+}
+/* custom scrollbar */
+content::-webkit-scrollbar {
+  width: 12px;
+}
+
+content::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+content::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+content::-webkit-scrollbar-thumb:hover {
+  background-color: black;
+}
 /*************Rules**************************************/
 .traficRuleContainer {
-  background-color: white;
   border-radius: 40px;
 }
 .traficRule {
