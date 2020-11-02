@@ -591,8 +591,8 @@ class DriveFront extends React.Component {
                 display: "block",
                 marginLeft: "auto",
                 marginRight: "auto",
-                height: "500px",
-                width: "500px",
+                height: "300px",
+                width: "300px",
               }}
             >
               <Card.Img
@@ -626,8 +626,8 @@ class DriveFront extends React.Component {
                 display: "block",
                 marginLeft: "auto",
                 marginRight: "auto",
-                height: "500px",
-                width: "500px",
+                height: "300px",
+                width: "300px",
               }}
             >
               <Card.Img
