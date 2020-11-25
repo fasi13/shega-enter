@@ -32,8 +32,9 @@ function WelcomePage({ onRoutChange, subscriptionHandler }) {
   };
 
   const stopSub = () => {
+    console.log("--------------------");
     let version = IOSversion();
-    console.log(version);
+    console.log("--------------------", version);
     if (IOSversion() != false && version[0] > 7) {
       window.open("sms:6764 &body=Stop");
     } else window.open("sms:6764 ?body=Stop");
@@ -89,9 +90,9 @@ function WelcomePage({ onRoutChange, subscriptionHandler }) {
                 >
                   SUBSCRIBE
                 </Button>
-                <p onClick={() => stopSub()}>
+                <p>
                   To{" "}
-                  <a href="" style={{ color: "red" }}>
+                  <a href="" onClick={() => stopSub()} style={{ color: "red" }}>
                     Unsubscribe
                   </a>
                   , Send 'STOP' to 6764

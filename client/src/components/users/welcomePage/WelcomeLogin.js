@@ -82,9 +82,9 @@ function WelcomeLogin({ onRoutChange, subscriptionHandler }) {
                 >
                   Log-In
                 </Button>
-                <p onClick={() => stopSub()}>
+                <p>
                   To{" "}
-                  <a href="" style={{ color: "red" }}>
+                  <a href="" onClick={() => stopSub()} style={{ color: "red" }}>
                     Unsubscribe
                   </a>
                   , Send 'STOP' to 6764
