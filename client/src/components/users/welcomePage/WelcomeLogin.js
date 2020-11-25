@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Welcome.css";
 import video from "../../../assets/mp4/bg.mp4";
 import { Button, Collapse } from "reactstrap";
@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { increment } from "../../../actions/subCountAction";
 import { Link, Redirect } from "react-router-dom";
 
-function WelcomePage({ onRoutChange, subscriptionHandler }) {
+function WelcomeLogin({ onRoutChange, subscriptionHandler }) {
   // collapse states and functions
   const [collapses, setCollapses] = React.useState([1]);
   const [incValue, setIncValue] = useState("");
@@ -17,19 +17,12 @@ function WelcomePage({ onRoutChange, subscriptionHandler }) {
       setCollapses([...collapses, collapse]);
     }
   };
-  function handleChange(e) {
-    if (e.target.value.length >= 10) {
-      setIncValue(e.target.value);
+  function loginAuth(e) {
+    let incomming = e.target.value;
+    if (incomming.length >= 10) {
+      setIncValue(incomming);
     }
   }
-  const toMessageApp = () => {
-    let incomming = document.getElementById("inputPhone");
-    let version = IOSversion();
-    console.log(version);
-    if (IOSversion() != false && version[0] > 7) {
-      window.open("sms:6764 &body=ok");
-    } else window.open("sms:6764 ?body=ok");
-  };
 
   const stopSub = () => {
     let version = IOSversion();
@@ -75,19 +68,19 @@ function WelcomePage({ onRoutChange, subscriptionHandler }) {
                     className="form-control"
                     type="tel"
                     id="inputPhone"
-                    placeholder="ስልኮውን ያስገቡ: 0911 --"
+                    placeholder="ስልኮውን ያስገቡ : 0911 --"
                     maxLength="10"
-                    onChange={handleChange}
+                    onChange={loginAuth}
                   />
                 </div>
                 <Button
                   className="btn subPhoneBtn"
-                  id="subscribe"
-                  href="/loginPanel"
-                  onClick={() => toMessageApp()}
+                  id="log-in"
+                  href="/thanks"
+                  onClick={() => loginAuth()}
                   disabled={!incValue}
                 >
-                  SUBSCRIBE
+                  Log-In
                 </Button>
                 <p onClick={() => stopSub()}>
                   To{" "}
@@ -99,8 +92,8 @@ function WelcomePage({ onRoutChange, subscriptionHandler }) {
                 <p>
                   {" "}
                   ከዚህ በፊት ተመዝገበዋል ?{" "}
-                  <a href="/loginPanel" style={{ color: "dark-green" }}>
-                    Login
+                  <a href="/" style={{ color: "dark-green" }}>
+                    Subscribe
                   </a>{" "}
                 </p>
                 {/* <h4 className="mt-5 text-center">
@@ -474,4 +467,4 @@ function WelcomePage({ onRoutChange, subscriptionHandler }) {
   );
 }
 
-export default WelcomePage;
+export default WelcomeLogin;

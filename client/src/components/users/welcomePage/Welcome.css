@@ -147,6 +147,19 @@ video {
   }
 }
 
+.inputPhone {
+  min-width: 30vw !important;
+  padding-bottom: 10px;
+}
+@media only screen and (max-width: 600px) {
+  .inputPhone {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 45% !important;
+    padding-bottom: 10px;
+  }
+}
 .subPhoneBtn {
   min-width: 30vw !important;
   min-height: 3vw !important;

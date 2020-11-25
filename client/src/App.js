@@ -12,9 +12,9 @@ import store from "./store";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentAdmin, logoutAdmin } from "./actions/authActions";
-
 //////////////////////////User Components///////////////////////////////////////
 import WelcomePage from "./components/users/welcomePage/WelcomePage";
+import WelcomeLogin from "./components/users/welcomePage/WelcomeLogin";
 import ThanksPage from "./components/users/thanksPage/ThanksPage";
 import HomePage from "./components/users/homePage/HomePage";
 import LanguageFront from "./components/users/language/LanguageFront";
@@ -77,6 +77,11 @@ class App extends Component {
                 exact
                 path="/thanks"
                 render={(props) => <ThanksPage {...props} />}
+              />
+              <Route
+                exact
+                path="/loginPanel"
+                render={(props) => <WelcomeLogin {...props} />}
               />
               <Route
                 exact
