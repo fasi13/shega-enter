@@ -28,8 +28,8 @@ function WelcomeLogin({ onRoutChange, subscriptionHandler }) {
     let version = IOSversion();
     console.log(version);
     if (IOSversion() != false && version[0] > 7) {
-      window.open("sms:6764 &body=Stop");
-    } else window.open("sms:6764 ?body=Stop");
+      window.open("sms:7672 &body=Stop");
+    } else window.open("sms:7672 ?body=Stop");
   };
 
   const IOSversion = () => {
@@ -60,34 +60,36 @@ function WelcomeLogin({ onRoutChange, subscriptionHandler }) {
               {/* <a href="/login" className="homeAdminBtn">Admin</a> */}
               {/* {<Link to="/login" className="homeAdminBtn">Admin</Link> } */}
               <div class="masthead-content text-white py-5 py-md-0">
-                <h1 class="mb-5">Shega Entertainment</h1>
+                <h1 class="mb-5">Shega Infotainment</h1>
                 <p class="mb-3">First 3 Days Free, Then 2 Birrs Per day</p>
                 <p>የመጀመሪያ 3 ቀን በነፃ፤ ቀጥሎ በቀን 2 ብር</p>
-                <div className="inputPhone">
-                  <input
-                    className="form-control"
-                    type="tel"
-                    id="inputPhone"
-                    placeholder="ስልኮውን ያስገቡ : 0911 --"
-                    maxLength="10"
-                    onChange={loginAuth}
-                  />
-                </div>
-                <Button
-                  className="btn subPhoneBtn"
-                  id="log-in"
-                  href="/thanks"
-                  onClick={() => loginAuth()}
-                  disabled={!incValue}
-                >
-                  Log-In
-                </Button>
+                <form class="form-inline">
+                  <div class="form-group mx-sm-3 mb-2">
+                    <input
+                      className="form-control"
+                      type="tel"
+                      id="inputPhone"
+                      placeholder="ስልኮውን ያስገቡ : 0911 --"
+                      maxLength="10"
+                      onChange={loginAuth}
+                    />
+                  </div>
+                  <button
+                    class="btn btn-primary mb-2"
+                    id="log-in"
+                    href="/thanks"
+                    onClick={() => loginAuth()}
+                    disabled={!incValue}
+                  >
+                    Log-In
+                  </button>
+                </form>
                 <p>
                   To{" "}
                   <a href="" onClick={() => stopSub()} style={{ color: "red" }}>
                     Unsubscribe
                   </a>
-                  , Send 'STOP' to 6764
+                  , Send 'STOP' to 7672
                 </p>
                 <p>
                   {" "}
