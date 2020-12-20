@@ -57,6 +57,8 @@ class WelcomeLogin extends Component {
     }
     if (this.state.authorize) {
       this.props.history.push("/home");
+    } else if (this.state.authorize === 0) {
+      alert("Please Subscribe");
     }
   }
   login = () => {
@@ -129,7 +131,7 @@ class WelcomeLogin extends Component {
                           alt="Loading..."
                         />
                       </h3>
-                    ) : !this.state.initRender ? (
+                    ) : (
                       <button
                         class="btn btn-primary mb-2"
                         id="log-in"
@@ -140,8 +142,6 @@ class WelcomeLogin extends Component {
                       >
                         Log-In
                       </button>
-                    ) : (
-                      alert("Please Subscribe")
                     )}
                   </form>
                   <p>
