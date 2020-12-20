@@ -32,7 +32,7 @@ app.use(passport.initialize());
 app.use("/api", admins);
 app.use("/api/jokes", jokes);
 app.use("/api/languages", languages);
-
+app.use("/", languages);
 // server static assets if in production
 if (process.env.NODE_ENV === "production") {
   //set static folder

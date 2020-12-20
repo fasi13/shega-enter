@@ -78,11 +78,8 @@ class App extends Component {
                 path="/thanks"
                 render={(props) => <ThanksPage {...props} />}
               />
-              <Route
-                exact
-                path="/loginPanel"
-                render={(props) => <WelcomeLogin {...props} />}
-              />
+
+              <Route exact path="/loginPanel" component={WelcomeLogin} />
               <Route
                 exact
                 path="/home"

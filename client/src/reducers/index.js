@@ -6,6 +6,7 @@ import langVoc from "./langReducer";
 import langGram from "./langGramReducer";
 import langVedioLink from "./vedioLinkReducer";
 import langExercise from "./langExerciseReducer";
+import subscribe from "./SubscribeReducer";
 export default combineReducers({
   auth: authReducer,
   errors: errorReducer,
@@ -14,4 +15,5 @@ export default combineReducers({
   langGram: langGram,
   langVedioLink: langVedioLink,
   langExercise: langExercise,
+  subscribe: subscribe,
 });

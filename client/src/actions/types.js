@@ -4,6 +4,7 @@ export const SET_CURRENT_ADMIN = "SET_CURRENT_ADMIN";
 export const ADMIN_ADD = "ADMIN_ADD";
 export const ADMIN_UPDATE = "ADMIN_UPDATE";
 export const LOGOUT = "LOGOUT";
+export const SUBSCRIBTION_NUMBER = "SUBSCRIBTION_NUMBER";
 
 export const INCREMENT = "INCREMENT";
 export const DECREMENT = "DECREMENT";
