@@ -69,14 +69,14 @@ function WelcomePage({ onRoutChange, subscriptionHandler }) {
                 <h1 class="mb-5">Shega Infotainment</h1>
                 <p class="mb-3">First 3 Days Free, Then 2 Birrs Per day</p>
                 <p>የመጀመሪያ 3 ቀን በነፃ፤ ቀጥሎ በቀን 2 ብር</p>
-                <form class="form-inline">
-                  <div class="form-group mx-sm-3 mb-2">
+                <form class="form-inline" style={{ paddingLeft: "50px" }}>
+                  <div class=" px-2 mb-2">
                     <input
                       className="form-control"
                       type="tel"
                       id="inputPhone"
-                      placeholder="ስልኮውን ያስገቡ: 0911 --"
-                      maxLength="10"
+                      placeholder="ስልኮውን ያስገቡ: 251911 --"
+                      maxLength="13"
                       onChange={handleChange}
                     />
                   </div>
