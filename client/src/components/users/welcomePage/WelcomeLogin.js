@@ -103,8 +103,8 @@ class WelcomeLogin extends Component {
                     First 3 Days Free, Then 2 Birrs Per day
                   </p>
                   <p>የመጀመሪያ 3 ቀን በነፃ፤ ቀጥሎ በቀን 2 ብር</p>
-                  <form class="form-inline">
-                    <div class="form-group mx-sm-3 mb-2">
+                  <form class="form-inline" style={{ paddingLeft: "80px" }}>
+                    <div class=" px-2 mb-2">
                       <label for="inputPassword2" class="sr-only">
                         Password
                       </label>
