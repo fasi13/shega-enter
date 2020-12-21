@@ -39,201 +39,200 @@ import part24 from "../../../assets/img/part/pistonPin.png";
 import part25 from "../../../assets/img/part/radiator.png";
 import part26 from "../../../assets/img/part/salvatiyo.png";
 // reactstrap components
-import { Button, Container, Row, Col } from "reactstrap";
-import { createStore } from "redux";
+import { Button, Container } from "reactstrap";
 
 // core components
 import Footer from "../footer/Footer";
 import DriveNavbar from "../navbars/DriveNavbar";
 import Slider from "react-slick";
 ////////////////Symbol///////////////////////////
-function drivSymbol(stateA = 0, action) {
-  switch (action.type) {
-    case "INCREMENTA":
-      return stateA + 1;
-    case "DECREMENTA":
-      return stateA - 1;
-    default:
-      return stateA;
-  }
-}
-let symbolStore = createStore(drivSymbol);
+// function drivSymbol(stateA = 0, action) {
+//   switch (action.type) {
+//     case "INCREMENTA":
+//       return stateA + 1;
+//     case "DECREMENTA":
+//       return stateA - 1;
+//     default:
+//       return stateA;
+//   }
+// }
+// let symbolStore = createStore(drivSymbol);
 //////////////////Parts/////////////////////////
-function drivPart(stateW = 0, action) {
-  switch (action.type) {
-    case "INCREMENTW":
-      return stateW + 1;
-    case "DECREMENTW":
-      return stateW - 1;
-    default:
-      return stateW;
-  }
-}
-let partStore = createStore(drivPart);
+// function drivPart(stateW = 0, action) {
+//   switch (action.type) {
+//     case "INCREMENTW":
+//       return stateW + 1;
+//     case "DECREMENTW":
+//       return stateW - 1;
+//     default:
+//       return stateW;
+//   }
+// }
+// let partStore = createStore(drivPart);
 ///////////////////video////////////////////////
-function videoDrive(stateW = 0, action) {
-  switch (action.type) {
-    case "INCREMENTW":
-      return stateW + 1;
-    case "DECREMENTW":
-      return stateW - 1;
-    default:
-      return stateW;
-  }
-}
-let storeDrvVideo = createStore(videoDrive);
+// function videoDrive(stateW = 0, action) {
+//   switch (action.type) {
+//     case "INCREMENTW":
+//       return stateW + 1;
+//     case "DECREMENTW":
+//       return stateW - 1;
+//     default:
+//       return stateW;
+//   }
+// }
+// let storeDrvVideo = createStore(videoDrive);
 ///////////////////////////////////////////
-const drivBox = {
-  traficPart: [
-    // {
-    //   partD: "ሞተር （ኢንጅን）",
-    //   meaningPrtD: " Exploded view",
-    //   partImgD: part1,
-    // },
-    // {
-    //   partD: "Gear Box (Transmission)",
-    //   meaningPrtD:
-    //     "The Gear Box, or transmission, comes in at a close second to the engine and is what commonly needs attention when vehicles fail.      The transmission is what contains the different gears that the vehicle needs to shift into depending on speed. These gears transfer the engine’s power to the wheels of the vehicle. There are many types of gearbox parts in different cars.",
-    //   partImgD: part2,
-    // },
-    // {
-    //   partD: "Oil Filter",
-    //   meaningPrtD:
-    //     "Filters are essential in removing dust and abrasive particles from the engine oil. Such particles can harm the engine and prevent proper functioning. Oil filters are mainly used to segregate the engine oil from unwanted debris and dust particles. Most of the oil filters are classified as high-efficiency filters as it segregates abrasive materials from the engine oil.",
-    //   partImgD: part3,
-    // },
-    // {
-    //   partD: "Gear Box parts and oil filter",
-    //   meaningPrtD:
-    //     "There are quite a variety of gearbox parts included in the transmission. Most of these parts can be purchased from the online stores for replacement but that’s less than half the battle, you’ll need technical expertise to fix a transmission. Some of the parts include the gearbox cover, the shifter fork, the shifter rod, gearbox fork, and synchronizer rings or hubs.",
-    //   partImgD: part4,
-    // },
-    // {
-    //   meaningPrtD:
-    //     "One of the most important components of a vehicle includes the engine. This is the most important component of an automobile by all accords. The performance of a vehicle depends on its engine and it is the heart of every car.",
-    //   partD: "ሞተር （ኢንጅን）",
-    //   partImgD: part5,
-    // },
-    {
-      partD: "ቴስታታ （ሲሊንደር ሄድ）",
-      meaningPrtD: " ",
-      partImgD: part6,
-    },
-    {
-      partD: "የነዳጅ ፓምፕ （ፊዩል ፓምፕ) ",
-      meaningPrtD: " ",
-      partImgD: part7,
-    },
-    {
-      partD: "ኢንጀክሽን ፐምፕ",
-      meaningPrtD: " ",
-      partImgD: part8,
-    },
-    {
-      partD: "ካም ሻፍት",
-      meaningPrtD: " ",
-      partImgD: part9,
-    },
-    {
-      partD: "የነዳጅ ማጣሪያ （ፊልትሮ ） ",
-      meaningPrtD: " ",
-      partImgD: part10,
-    },
-    // {
-    //   partD: "ሞተር （ኢንጅን）",
-    //   meaningPrtD: " ",
-    //   partImgD: part11,
-    // },
-    {
-      partD: "ቻንሲስ ",
-      meaningPrtD: " ",
-      partImgD: part12,
-    },
-    {
-      partD: "ዳሽቦርድ",
-      meaningPrtD: " ",
-      partImgD: part13,
-    },
-    {
-      partD: "ቤላ（ኮኔክቲን ሮድ",
-      meaningPrtD: " ",
-      partImgD: part14,
-    },
-    {
-      partD: "ደብራተር （የአየር ማጣሪያ）",
-      meaningPrtD: " ",
-      partImgD: part15,
-    },
-    {
-      partD: "ጭስ መውጭ",
-      meaningPrtD: " ",
-      partImgD: part15,
-    },
-    {
-      partD: "ደብራተር （የአየር ማጣሪያ）",
-      meaningPrtD: " ",
-      partImgD: part16,
-    },
-    {
-      partD: "የኤለትሪክ ክፍሎች",
-      meaningPrtD: " ",
-      partImgD: part17,
-    },
-    {
-      partD: "ፋን （ቬንትሌተር)",
-      meaningPrtD: " ",
-      partImgD: part18,
-    },
-    {
-      partD: "ካርቦሬተር",
-      meaningPrtD: " ",
-      partImgD: part19,
-    },
-    {
-      partD: "ኮሎ （ክራንክ ሻፍት）",
-      meaningPrtD: " ",
-      partImgD: part20,
-    },
-    {
-      partD: "ማኒኮቶ （ራዲያተር ሆዝ）",
-      meaningPrtD: " ",
-      partImgD: part21,
-    },
-    {
-      partD: "ማኖ ብሎክ （ሲሊንደር ብሎክ）",
-      meaningPrtD: " ",
-      partImgD: part22,
-    },
+// const drivBox = {
+//   traficPart: [
+//     // {
+//     //   partD: "ሞተር （ኢንጅን）",
+//     //   meaningPrtD: " Exploded view",
+//     //   partImgD: part1,
+//     // },
+//     // {
+//     //   partD: "Gear Box (Transmission)",
+//     //   meaningPrtD:
+//     //     "The Gear Box, or transmission, comes in at a close second to the engine and is what commonly needs attention when vehicles fail.      The transmission is what contains the different gears that the vehicle needs to shift into depending on speed. These gears transfer the engine’s power to the wheels of the vehicle. There are many types of gearbox parts in different cars.",
+//     //   partImgD: part2,
+//     // },
+//     // {
+//     //   partD: "Oil Filter",
+//     //   meaningPrtD:
+//     //     "Filters are essential in removing dust and abrasive particles from the engine oil. Such particles can harm the engine and prevent proper functioning. Oil filters are mainly used to segregate the engine oil from unwanted debris and dust particles. Most of the oil filters are classified as high-efficiency filters as it segregates abrasive materials from the engine oil.",
+//     //   partImgD: part3,
+//     // },
+//     // {
+//     //   partD: "Gear Box parts and oil filter",
+//     //   meaningPrtD:
+//     //     "There are quite a variety of gearbox parts included in the transmission. Most of these parts can be purchased from the online stores for replacement but that’s less than half the battle, you’ll need technical expertise to fix a transmission. Some of the parts include the gearbox cover, the shifter fork, the shifter rod, gearbox fork, and synchronizer rings or hubs.",
+//     //   partImgD: part4,
+//     // },
+//     // {
+//     //   meaningPrtD:
+//     //     "One of the most important components of a vehicle includes the engine. This is the most important component of an automobile by all accords. The performance of a vehicle depends on its engine and it is the heart of every car.",
+//     //   partD: "ሞተር （ኢንጅን）",
+//     //   partImgD: part5,
+//     // },
+//     {
+//       partD: "ቴስታታ （ሲሊንደር ሄድ）",
+//       meaningPrtD: " ",
+//       partImgD: part6,
+//     },
+//     {
+//       partD: "የነዳጅ ፓምፕ （ፊዩል ፓምፕ) ",
+//       meaningPrtD: " ",
+//       partImgD: part7,
+//     },
+//     {
+//       partD: "ኢንጀክሽን ፐምፕ",
+//       meaningPrtD: " ",
+//       partImgD: part8,
+//     },
+//     {
+//       partD: "ካም ሻፍት",
+//       meaningPrtD: " ",
+//       partImgD: part9,
+//     },
+//     {
+//       partD: "የነዳጅ ማጣሪያ （ፊልትሮ ） ",
+//       meaningPrtD: " ",
+//       partImgD: part10,
+//     },
+//     // {
+//     //   partD: "ሞተር （ኢንጅን）",
+//     //   meaningPrtD: " ",
+//     //   partImgD: part11,
+//     // },
+//     {
+//       partD: "ቻንሲስ ",
+//       meaningPrtD: " ",
+//       partImgD: part12,
+//     },
+//     {
+//       partD: "ዳሽቦርድ",
+//       meaningPrtD: " ",
+//       partImgD: part13,
+//     },
+//     {
+//       partD: "ቤላ（ኮኔክቲን ሮድ",
+//       meaningPrtD: " ",
+//       partImgD: part14,
+//     },
+//     {
+//       partD: "ደብራተር （የአየር ማጣሪያ）",
+//       meaningPrtD: " ",
+//       partImgD: part15,
+//     },
+//     {
+//       partD: "ጭስ መውጭ",
+//       meaningPrtD: " ",
+//       partImgD: part15,
+//     },
+//     {
+//       partD: "ደብራተር （የአየር ማጣሪያ）",
+//       meaningPrtD: " ",
+//       partImgD: part16,
+//     },
+//     {
+//       partD: "የኤለትሪክ ክፍሎች",
+//       meaningPrtD: " ",
+//       partImgD: part17,
+//     },
+//     {
+//       partD: "ፋን （ቬንትሌተር)",
+//       meaningPrtD: " ",
+//       partImgD: part18,
+//     },
+//     {
+//       partD: "ካርቦሬተር",
+//       meaningPrtD: " ",
+//       partImgD: part19,
+//     },
+//     {
+//       partD: "ኮሎ （ክራንክ ሻፍት）",
+//       meaningPrtD: " ",
+//       partImgD: part20,
+//     },
+//     {
+//       partD: "ማኒኮቶ （ራዲያተር ሆዝ）",
+//       meaningPrtD: " ",
+//       partImgD: part21,
+//     },
+//     {
+//       partD: "ማኖ ብሎክ （ሲሊንደር ብሎክ）",
+//       meaningPrtD: " ",
+//       partImgD: part22,
+//     },
 
-    {
-      partD: "ቫልቭ",
-      meaningPrtD: " ",
-      partImgD: part23,
-    },
-    {
-      partD: "ፒስተን ፒን",
-      meaningPrtD: " ",
-      partImgD: part24,
-    },
-    {
-      partD: "ራዲያተር",
-      meaningPrtD: " ",
-      partImgD: part25,
-    },
-    {
-      partD: "ሰልቫቲዮ （የነዳጅ ጋን）",
-      meaningPrtD: " ",
-      partImgD: part26,
-    },
-  ],
+//     {
+//       partD: "ቫልቭ",
+//       meaningPrtD: " ",
+//       partImgD: part23,
+//     },
+//     {
+//       partD: "ፒስተን ፒን",
+//       meaningPrtD: " ",
+//       partImgD: part24,
+//     },
+//     {
+//       partD: "ራዲያተር",
+//       meaningPrtD: " ",
+//       partImgD: part25,
+//     },
+//     {
+//       partD: "ሰልቫቲዮ （የነዳጅ ጋን）",
+//       meaningPrtD: " ",
+//       partImgD: part26,
+//     },
+//   ],
 
-  drvVid: [
-    { urlDr: "https://www.youtube.com/embed/ZmUm29fc6nI" },
-    { urlDr: "https://www.youtube.com/embed/_1CZYJFRT08" },
-    { urlDr: "https://www.youtube.com/embed/ZmUm29fc6nI" },
-    { urlDr: "https://www.youtube.com/embed/_1CZYJFRT08" },
-  ],
-};
+//   drvVid: [
+//     { urlDr: "https://www.youtube.com/embed/ZmUm29fc6nI" },
+//     { urlDr: "https://www.youtube.com/embed/_1CZYJFRT08" },
+//     { urlDr: "https://www.youtube.com/embed/ZmUm29fc6nI" },
+//     { urlDr: "https://www.youtube.com/embed/_1CZYJFRT08" },
+//   ],
+// };
 
 class DriveFront extends React.Component {
   constructor(props) {
@@ -647,7 +646,7 @@ class DriveFront extends React.Component {
   }
 
   render() {
-    const { symbolImg, partImg, drvVideoSrc } = this.state;
+    const { drvVideoSrc } = this.state;
     var settings = {
       dots: false,
       infinite: true,

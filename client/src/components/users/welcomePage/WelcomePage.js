@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import "./Welcome.css";
 import video from "../../../assets/mp4/bg.mp4";
-import { Button, Collapse } from "reactstrap";
-import { useDispatch } from "react-redux";
-import { increment } from "../../../actions/subCountAction";
-import { Link, Redirect } from "react-router-dom";
+import { Collapse } from "reactstrap";
 
 function WelcomePage({ onRoutChange, subscriptionHandler }) {
   // collapse states and functions
@@ -23,17 +20,17 @@ function WelcomePage({ onRoutChange, subscriptionHandler }) {
     }
   }
   const toMessageApp = () => {
-    let incomming = document.getElementById("inputPhone");
+    // let incomming = document.getElementById("inputPhone");
     let version = IOSversion();
     console.log(version);
-    if (IOSversion() != false && version[0] > 7) {
+    if (IOSversion() !== false && version[0] > 7) {
       window.open("sms:7672 &body=ok");
     } else window.open("sms:7672 ?body=ok");
   };
 
   const stopSub = () => {
     let version = IOSversion();
-    if (IOSversion() != false && version[0] > 7) {
+    if (IOSversion() !== false && version[0] > 7) {
       window.open("sms:7672 &body=Stop");
     } else window.open("sms:7672 ?body=Stop");
   };
@@ -46,7 +43,7 @@ function WelcomePage({ onRoutChange, subscriptionHandler }) {
     } else return false;
   };
   // const coutSubscribers = useSelector(state => state.subCounterReducer);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   return (
     <div className="welcomeContainer">
       <div class="overlay"></div>
@@ -63,7 +60,9 @@ function WelcomePage({ onRoutChange, subscriptionHandler }) {
         <div class="container h-100">
           <div class="row h-100">
             <div class="col-12 my-auto">
-              {/* <a href="/login" className="homeAdminBtn">Admin</a> */}
+              <a href="/login" className="homeAdminBtn">
+                Admin
+              </a>
               {/* {<Link to="/login" className="homeAdminBtn">Admin</Link> } */}
               <div class="masthead-content text-white py-5 py-md-0">
                 <h1 class="mb-5">Shega Infotainment</h1>
@@ -93,7 +92,11 @@ function WelcomePage({ onRoutChange, subscriptionHandler }) {
                 </form>
                 <p>
                   To{" "}
-                  <a href="" onClick={() => stopSub()} style={{ color: "red" }}>
+                  <a
+                    href="/#"
+                    onClick={() => stopSub()}
+                    style={{ color: "red" }}
+                  >
                     Unsubscribe
                   </a>
                   , Send 'STOP' to 7672

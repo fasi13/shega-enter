@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { getVocabulary } from "../../../../actions/vocabAction";
 import { getgrammar } from "../../../../actions/gramAction";
 // reactstrap components
-import { Button, Container, Row, Col, Card } from "reactstrap";
+import { Button, Container, Row, Col } from "reactstrap";
 // core components
 import Footer from "../../footer/Footer";
 import LangNavbar2 from "../../navbars/LangNavbar2";
@@ -26,7 +26,7 @@ function Beginner({
   useEffect(() => {
     getVocabulary();
     getgrammar();
-  }, [getVocabulary]);
+  }, [getVocabulary, getgrammar]);
   function nextUpdate(a, b) {
     setExercise(a);
     setShow(b);

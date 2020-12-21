@@ -1,11 +1,8 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { Component } from "react";
 import axios from "axios";
 import "./Welcome.css";
 import video from "../../../assets/mp4/bg.mp4";
-import { Button, Collapse } from "reactstrap";
-import { useDispatch } from "react-redux";
-import { increment } from "../../../actions/subCountAction";
-import { Link, Redirect } from "react-router-dom";
+import { Collapse } from "reactstrap";
 import { getSubscribNumber } from "../../../actions/subscription";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -20,21 +17,9 @@ class WelcomeLogin extends Component {
       clickButton: false,
       initRender: false,
       collapses: [1],
+      termsRegulation: false,
     };
   }
-  changeCollapse = (collapse) => {
-    if (this.state.collapses.includes(collapse)) {
-      this.setState({
-        collapses: this.state.collapses.filter(
-          (prop) => prop !== this.state.collapses
-        ),
-      });
-    } else {
-      this.setState({
-        collapses: [...this.state.collapses, this.state.collapse],
-      });
-    }
-  };
   loginAuth = (e) => {
     let incomming = e.target.value;
     if (incomming.length >= 10) {
@@ -45,29 +30,29 @@ class WelcomeLogin extends Component {
     if (this.state.clickButton) {
       axios
         .get(`/api/${this.state.incValue}`)
-        .then((res) =>
+        .then((res) => {
           this.setState({
             isLoading: false,
             authorize: res.data,
             clickButton: false,
             initRender: true,
-          })
-        )
+          });
+          if (res.data) {
+            this.props.history.push("/home");
+          } else {
+            return alert("please Subscribe");
+          }
+        })
         .catch((err) => console.log(err));
-    }
-    if (this.state.authorize) {
-      this.props.history.push("/home");
-    } else if (this.state.authorize === 0) {
-      alert("Please Subscribe");
     }
   }
   login = () => {
     this.setState({ clickButton: true, isLoading: true });
   };
-  topSub = () => {
+  stopSub = () => {
     let version = this.IOSversion();
     console.log(version);
-    if (this.IOSversion() != false && version[0] > 7) {
+    if (this.IOSversion() !== false && version[0] > 7) {
       window.open("sms:7672 &body=Stop");
     } else window.open("sms:7672 ?body=Stop");
   };
@@ -113,7 +98,7 @@ class WelcomeLogin extends Component {
                         type="tel"
                         id="inputPhone"
                         placeholder="ስልኮውን ያስገቡ : 251911 --"
-                        maxLength="13"
+                        maxLength="12"
                         onChange={this.loginAuth}
                       />
                     </div>
@@ -147,7 +132,7 @@ class WelcomeLogin extends Component {
                   <p>
                     To{" "}
                     <a
-                      href=""
+                      href="/pablo"
                       onClick={() => this.stopSub()}
                       style={{ color: "red" }}
                     >
@@ -158,7 +143,7 @@ class WelcomeLogin extends Component {
                   <p>
                     {" "}
                     ከዚህ በፊት ተመዝገበዋል ?{" "}
-                    <a href="/" style={{ color: "dark-green" }}>
+                    <a href="/#" style={{ color: "dark-green" }}>
                       Subscribe
                     </a>{" "}
                   </p>
@@ -175,13 +160,15 @@ class WelcomeLogin extends Component {
                     href="terms"
                     onClick={(e) => {
                       e.preventDefault();
-                      this.changeCollapse(2);
+                      this.state.termsRegulation
+                        ? this.setState({ termsRegulation: false })
+                        : this.setState({ termsRegulation: true });
                     }}
                   >
                     Terms and Conditions{" "}
                     <i className="fa fa-caret-down rotate-if-collapsed"></i>
                   </a>
-                  <Collapse isOpen={this.state.collapses.includes(2)}>
+                  <Collapse isOpen={this.state.termsRegulation}>
                     <div
                       className="termsAndConditionsContaint"
                       style={{

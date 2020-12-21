@@ -26,7 +26,7 @@ function Advanced({
   useEffect(() => {
     getAdvanVocabulary();
     getAdvangrammar();
-  }, [getAdvanVocabulary]);
+  }, [getAdvanVocabulary, getAdvangrammar]);
   function nextUpdate(a, b) {
     setExercise(a);
     setShow(b);

@@ -26,7 +26,7 @@ function Intermediate({
   useEffect(() => {
     getIntrVocabulary();
     getIntrgrammar();
-  }, [getIntrVocabulary]);
+  }, [getIntrVocabulary, getIntrgrammar]);
   function nextUpdate(a, b) {
     setExercise(a);
     setShow(b);
