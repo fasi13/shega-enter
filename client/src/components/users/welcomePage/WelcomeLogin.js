@@ -107,8 +107,8 @@ class WelcomeLogin extends Component {
                         <img
                           src={spinner}
                           style={{
-                            width: "15px",
-                            hight: "15px",
+                            width: "30px",
+                            hight: "30px",
                             margin: "auto",
                             marginTop: "10px",
                             display: "block",
