@@ -151,12 +151,13 @@ router.post("/login", (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-  fetch("https://www.jaktechtest.com/test/api.php?phone=" + req.params.id).then(
-    function (response) {
-      response.text().then(function (text) {
-        res.send(text);
-      });
-    }
-  );
+  fetch(
+    "http://196.188.106.101:8181/jaktech/application/api/customer_login.php?phone=" +
+      req.params.id
+  ).then(function (response) {
+    response.text().then(function (text) {
+      res.send(text);
+    });
+  });
 });
 module.exports = router;
