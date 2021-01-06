@@ -68,7 +68,7 @@ function WelcomePage({ onRoutChange, subscriptionHandler }) {
                 <h1 class="mb-5">Shega Infotainment</h1>
                 <p class="mb-3">First 3 Days Free, Then 2 Birrs Per day</p>
                 <p>የመጀመሪያ 3 ቀን በነፃ፤ ቀጥሎ በቀን 2 ብር</p>
-                <form class="form-inline" style={{ paddingLeft: "50px" }}>
+                <form class="form-inline" style={{ paddingLeft: "20px" }}>
                   <div class=" px-2 mb-2">
                     <input
                       className="form-control"
